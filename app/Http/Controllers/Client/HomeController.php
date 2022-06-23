@@ -7,6 +7,7 @@ use App\Models\Certificate;
 use App\Models\News;
 use App\Models\Page;
 use App\Models\Product;
+use App\Models\Gallery;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Slider;
@@ -42,15 +43,19 @@ class HomeController extends Controller
     {
         $page = Page::where('key', 'home')->firstOrFail();
 
-        return Inertia::render('Gallery/Gallery', ["seo" => [
-            "title" => $page->meta_title,
-            "description" => $page->meta_description,
-            "keywords" => $page->meta_keyword,
-            "og_title" => $page->meta_og_title,
-            "og_description" => $page->meta_og_description,
-            //            "image" => "imgg",
-            //            "locale" => App::getLocale()
-        ]])->withViewData([
+        return Inertia::render('Gallery/Gallery', [
+            "links" => asset('storage/images'),
+            'images' => Gallery::all(),
+            "seo" => [
+                "title" => $page->meta_title,
+                "description" => $page->meta_description,
+                "keywords" => $page->meta_keyword,
+                "og_title" => $page->meta_og_title,
+                "og_description" => $page->meta_og_description,
+                //            "image" => "imgg",
+                //            "locale" => App::getLocale()
+            ]
+        ])->withViewData([
             'meta_title' => $page->meta_title,
             'meta_description' => $page->meta_description,
             'meta_keyword' => $page->meta_keyword,

@@ -24,7 +24,6 @@ const Header = () => {
 
     // const { pathname } = useLocation();
     const { pathname, currentLocale, locale_urls, locales } = usePage().props;
-    console.log(locale_urls);
 
 
 

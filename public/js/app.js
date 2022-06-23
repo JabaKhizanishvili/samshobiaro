@@ -3319,6 +3319,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Gallery_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Gallery.css */ "./resources/js/Pages/Gallery/Gallery.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Pagination/Pagination */ "./resources/js/components/Pagination/Pagination.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 
 
@@ -3335,8 +3336,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Gallery = function Gallery(_ref) {
-  var seo = _ref.seo;
+  var seo = _ref.seo,
+      images = _ref.images,
+      links = _ref.links;
+  // const { images, links, name } = usePage().props;
+  console.log(images);
   var photos = [{
     img: "/assets/images/doctors/3.png",
     span: 1
@@ -3386,15 +3392,15 @@ var Gallery = function Gallery(_ref) {
     className: "wrapper main "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid"
-  }, photos.map(function (photo) {
+  }, images.map(function (photo, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      key: i,
       className: "img",
       style: {
-        gridColumn: "span ".concat(photo.span)
+        gridColumn: "span ".concat(1)
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: photo.img,
-      alt: ""
+      src: links + "/" + photo.name
     }));
   })))));
 };
@@ -4609,7 +4615,6 @@ var Header = function Header() {
       currentLocale = _usePage$props2.currentLocale,
       locale_urls = _usePage$props2.locale_urls,
       locales = _usePage$props2.locales;
-  console.log(locale_urls);
   var transparent = false;
 
   if (pathname === "/") {

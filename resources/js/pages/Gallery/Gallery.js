@@ -13,8 +13,12 @@ import Layout from "../../Layouts/Layout";
 // import Photo5 from "../../assets/images/gallery/5.png";
 // import Photo6 from "../../assets/images/gallery/6.png";
 import { Pagination } from "../../components/Pagination/Pagination";
+import { Link, usePage } from "@inertiajs/inertia-react";
 
-const Gallery = ({ seo }) => {
+const Gallery = ({ seo, images, links }) => {
+
+    // const { images, links, name } = usePage().props;
+    console.log(images);
     const photos = [
         {
             img: "/assets/images/doctors/3.png",
@@ -73,10 +77,11 @@ const Gallery = ({ seo }) => {
                 <PageHead title="გალერეა" prev="მთავარი" active="გალერეა" />
                 <div className="wrapper main ">
                     <div className="grid">
-                        {photos.map((photo) => {
+                        {images.map((photo, i) => {
                             return (
-                                <div className="img" style={{ gridColumn: `span ${photo.span}` }}>
-                                    <img src={photo.img} alt="" />
+                                <div key={i} className="img" style={{ gridColumn: `span ${1}` }}>
+                                    {/* <img src={photo.img} alt="" /> */}
+                                    <img src={links + "/" + photo.name}></img>
                                 </div>
                             );
                         })}
