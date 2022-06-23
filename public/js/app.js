@@ -4579,8 +4579,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Header = function Header() {
-  var locales = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.locales;
-
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       mobileMenu = _useState2[0],
@@ -4609,7 +4607,9 @@ var Header = function Header() {
   var _usePage$props2 = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       pathname = _usePage$props2.pathname,
       currentLocale = _usePage$props2.currentLocale,
-      user = _usePage$props2.user;
+      locale_urls = _usePage$props2.locale_urls,
+      locales = _usePage$props2.locales;
+  console.log(locale_urls);
   var transparent = false;
 
   if (pathname === "/") {
@@ -4699,7 +4699,7 @@ var Header = function Header() {
   }, Object.keys(locales).map(function (e, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       key: i,
-      href: "/"
+      href: locale_urls[e]
     }, e));
   }))))));
 };

@@ -3,7 +3,8 @@
   'locales' => 
   array (
     'ქართული' => 'ge',
-    'English' => 'en',
+    'english' => 'en',
+    'armenian' => 'am',
   ),
   'locale_separator' => '-',
   'locale' => NULL,

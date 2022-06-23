@@ -12,7 +12,6 @@ import "./Header.css";
 
 
 const Header = () => {
-    const { locales } = usePage().props
     const [mobileMenu, setMobileMenu] = useState(false);
     const { errors, gphone, gemail, gaddress } = usePage().props;
     const toggleMobileMenu = () => {
@@ -24,7 +23,9 @@ const Header = () => {
 
 
     // const { pathname } = useLocation();
-    const { pathname, currentLocale, user } = usePage().props;
+    const { pathname, currentLocale, locale_urls, locales } = usePage().props;
+    console.log(locale_urls);
+
 
 
     let transparent = false;
@@ -119,7 +120,7 @@ const Header = () => {
                                 Object.keys(locales).map((e, i) => {
                                     return (
                                         <React.Fragment>
-                                            <Link key={i} href="/">{e}</Link>
+                                            <Link key={i} href={locale_urls[e]}>{e}</Link>
                                         </React.Fragment>
                                     )
                                 })
