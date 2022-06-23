@@ -10,8 +10,10 @@ import { Title3 } from "../../components/Titles/Titles";
 // import Doctor7 from "/assets/images/doctors/2.png";
 // import Doctor8 from "/assets/images/doctors/5.png";
 import "./OurDoctors.css";
+import Layout from "../../Layouts/Layout";
 
-const OurDoctors = () => {
+
+const OurDoctors = ({ seo }) => {
     const doctors = [
         {
             img: "/assets/images/doctors/3.png",
@@ -79,36 +81,38 @@ const OurDoctors = () => {
         },
     ];
     return (
-        <div className="ourDoctorsPage">
-            <PageHead title="ჩვენი ექიმები" prev="მთავარი" active="ჩვენი ექიმები" />
-            <div className="wrapper2">
-                <div className="heading">
-                    <Title3 text="გაიცანით ჩვენი ექიმები" />
-                    <p>
-                        დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე
-                        საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც სპეციფიური
-                        ინსტრუმენტი ჭირდება. ასეთი
-                    </p>
-                </div>
-                <div className="grid">
-                    {doctors.map((doctor) => {
-                        return (
-                            <div className="item">
-                                <div className="img">
-                                    <img src={doctor.img} alt="" />
+        <Layout seo={seo}>
+            <div className="ourDoctorsPage">
+                <PageHead title="ჩვენი ექიმები" prev="მთავარი" active="ჩვენი ექიმები" />
+                <div className="wrapper2">
+                    <div className="heading">
+                        <Title3 text="გაიცანით ჩვენი ექიმები" />
+                        <p>
+                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე
+                            საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც სპეციფიური
+                            ინსტრუმენტი ჭირდება. ასეთი
+                        </p>
+                    </div>
+                    <div className="grid">
+                        {doctors.map((doctor) => {
+                            return (
+                                <div className="item">
+                                    <div className="img">
+                                        <img src={doctor.img} alt="" />
+                                    </div>
+                                    <div className="name">{doctor.name}</div>
+                                    <div className="pos">{doctor.position}</div>
+                                    <div className="exp" style={{ color: "#778197" }}>
+                                        {doctor.experience}
+                                    </div>
+                                    <p>{doctor.description}</p>
                                 </div>
-                                <div className="name">{doctor.name}</div>
-                                <div className="pos">{doctor.position}</div>
-                                <div className="exp" style={{ color: "#778197" }}>
-                                    {doctor.experience}
-                                </div>
-                                <p>{doctor.description}</p>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 

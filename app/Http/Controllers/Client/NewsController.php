@@ -13,10 +13,8 @@ class NewsController extends Controller
 {
     public function index()
     {
-
         $news = News::where("status", 1)->with(['file', 'translations'])->paginate(3);
-        //        dd(1);
-        $page = Page::where('key', 'news')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
 
         return Inertia::render('News/News', ["news" => $news, "seo" => [

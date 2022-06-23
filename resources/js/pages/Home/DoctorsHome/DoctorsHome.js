@@ -8,7 +8,8 @@ import "./DoctorsHome.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const DoctorsHome = () => {
+
+const DoctorsHome = ({ seo, info }) => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);

@@ -1,7 +1,8 @@
 import React from "react";
 import "./NewsItem.css";
 import Calendar from "/assets/images/icons/news/calendar.svg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 
 const NewsItem = (props) => {
     return (

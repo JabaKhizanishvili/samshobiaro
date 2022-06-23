@@ -69,9 +69,9 @@ const NewsHome = () => {
                 <MainBtn text="ყველა სიახლე" />
             </div>
             <div className="news_slider flex" data-aos="fade-right">
-                <button className="arrow prev">
+                {/* <button className="arrow prev">
                     <ArrowDown color="#1dbfcc" />
-                </button>
+                </button> */}
                 <Carousel breakPoints={breakPoints}>
                     {newsData.map((item, i) => {
                         return (
@@ -98,9 +98,9 @@ const NewsHome = () => {
                         );
                     })}
                 </Carousel>
-                <button className="arrow next">
+                {/* <button className="arrow next">
                     <ArrowDown color="#1dbfcc" />
-                </button>
+                </button> */}
             </div>
         </div>
     );

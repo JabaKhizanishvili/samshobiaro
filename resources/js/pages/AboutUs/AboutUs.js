@@ -15,8 +15,10 @@ import { MainBtn } from "../../components/MainBtn/MainBtn";
 import { ServiceBox } from "../../components/ServiceBox/ServiceBox";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Layout from "../../Layouts/Layout";
 
-const AboutUs = () => {
+
+const AboutUs = ({ seo, page }) => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
@@ -55,100 +57,102 @@ const AboutUs = () => {
         },
     ];
     return (
-        <div className="aboutPage">
-            <PageHead title="ჩვენ შესახებ" prev="მთავარი" active="ჩვენ შესახებ" />
-            <div className="showcase">
-                <div className="wrapper">
-                    <div className="content">
-                        <h4>ახალი N2 სამშობიარო სახლი</h4>
-                        <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                            ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                            სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                            უამრავია, თუმცა არსებობს რამდენიმე ძირითად.
-                        </p>
-                        <div className="checks">
-                            {checkList.map((item) => {
+        <Layout seo={seo}>
+            <div className="aboutPage">
+                <PageHead title="ჩვენ შესახებ" prev="მთავარი" active="ჩვენ შესახებ" />
+                <div className="showcase">
+                    <div className="wrapper">
+                        <div className="content">
+                            <h4>ახალი N2 სამშობიარო სახლი</h4>
+                            <p>
+                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
+                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
+                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
+                                უამრავია, თუმცა არსებობს რამდენიმე ძირითად.
+                            </p>
+                            <div className="checks">
+                                {checkList.map((item) => {
+                                    return (
+                                        <div className="item">
+                                            <span>
+                                                <img src="/assets/images/icons/service/check.svg" alt="" />
+                                            </span>
+                                            {item}
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="section2">
+                    <div className="wrapper flex">
+                        <div className="lft">
+                            <Title2 text="ვინ ვართ ჩვენ?" />
+                            <p>
+                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
+                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
+                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
+                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი,
+                            </p>
+                            <div className="img_flex flex">
+                                <div className="img">
+                                    <img src="/assets/images/about/1.png" alt="" />
+                                </div>
+                                <div className="img">
+                                    <img src="/assets/images/about/2.png" alt="" />
+                                </div>
+                            </div>
+                            <p>
+                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
+                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
+                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
+                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
+                                ყველაზე ხშირად ვიყენებთ ხოლმე.
+                            </p>
+                            <MainBtn text="დაგვიკავშირდი" />
+                        </div>
+                        <div className="rgt">
+                            <Title2 text="ჩვენი მისია და მიზანი" />
+                            <p>
+                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
+                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
+                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
+                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
+                                ყველაზე ხშირად ვიყენებთ ხოლმე.
+                            </p>
+                            <div className="img" data-aos="flip-left">
+                                <img src="/assets/images/about/3.png" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="about_service wrapper ">
+                    <Title2 text="ჩვენი სერვისი" />
+                    <div className="flex">
+                        <div data-aos="fade-right">
+                            <img src="/assets/images/about/4.png" alt="" style={{ marginBottom: "30px" }} />
+                            <p>
+                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
+                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
+                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და
+                            </p>
+                        </div>
+                        <div className="grid" data-aos="fade-left">
+                            {serviceBoxData.map((box) => {
                                 return (
-                                    <div className="item">
-                                        <span>
-                                            <img src="/assets/images/icons/service/check.svg" alt="" />
-                                        </span>
-                                        {item}
-                                    </div>
+                                    <ServiceBox
+                                        icon={box.icon}
+                                        title={box.title}
+                                        paragraph={box.para}
+                                    />
                                 );
                             })}
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="section2">
-                <div className="wrapper flex">
-                    <div className="lft">
-                        <Title2 text="ვინ ვართ ჩვენ?" />
-                        <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                            ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                            სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                            უამრავია, თუმცა არსებობს რამდენიმე ძირითადი,
-                        </p>
-                        <div className="img_flex flex">
-                            <div className="img">
-                                <img src="/assets/images/about/1.png" alt="" />
-                            </div>
-                            <div className="img">
-                                <img src="/assets/images/about/2.png" alt="" />
-                            </div>
-                        </div>
-                        <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                            ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                            სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                            უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
-                            ყველაზე ხშირად ვიყენებთ ხოლმე.
-                        </p>
-                        <MainBtn text="დაგვიკავშირდი" />
-                    </div>
-                    <div className="rgt">
-                        <Title2 text="ჩვენი მისია და მიზანი" />
-                        <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                            ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                            სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                            უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
-                            ყველაზე ხშირად ვიყენებთ ხოლმე.
-                        </p>
-                        <div className="img" data-aos="flip-left">
-                            <img src="/assets/images/about/3.png" alt="" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="about_service wrapper ">
-                <Title2 text="ჩვენი სერვისი" />
-                <div className="flex">
-                    <div data-aos="fade-right">
-                        <img src="/assets/images/about/4.png" alt="" style={{ marginBottom: "30px" }} />
-                        <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                            ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                            სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და
-                        </p>
-                    </div>
-                    <div className="grid" data-aos="fade-left">
-                        {serviceBoxData.map((box) => {
-                            return (
-                                <ServiceBox
-                                    icon={box.icon}
-                                    title={box.title}
-                                    paragraph={box.para}
-                                />
-                            );
-                        })}
-                    </div>
-                </div>
-            </div>
-        </div>
+        </Layout>
     );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 import {
     ArrowDown,
     Call,
@@ -9,12 +10,18 @@ import {
 import { SocialMedia } from "../SocialMedia/SocialMedia";
 import "./Header.css";
 
-const Header = () => {
-    const [mobileMenu, setMobileMenu] = useState(false);
 
+const Header = () => {
+    const { locales } = usePage().props
+    const [mobileMenu, setMobileMenu] = useState(false);
+    const { errors, gphone, gemail, gaddress } = usePage().props;
     const toggleMobileMenu = () => {
         setMobileMenu(!mobileMenu);
     };
+
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
+
 
     // const { pathname } = useLocation();
     const { pathname, currentLocale, user } = usePage().props;
@@ -27,28 +34,28 @@ const Header = () => {
     }
     const navbar = [
         {
-            nav: "მთავარი",
-            link: "/",
+            nav: __('client.nav_main', sharedData),
+            link: route("client.home.index"),
         },
         {
-            nav: "ჩვენ შესახებ",
-            link: "/about-us",
+            nav: __("client.nav_aboutus", sharedData),
+            link: route("client.about.index"),
         },
         {
-            nav: "სიახლეები",
-            link: "/news",
+            nav: __("client.nav_news", sharedData),
+            link: route("client.news.index"),
         },
         {
-            nav: "ჩვენი ექიმები",
-            link: "/doctors",
+            nav: __("client.nav_doctors", sharedData),
+            link: route("client.doctors.index"),
         },
         {
-            nav: "გალერეა",
-            link: "/gallery",
+            nav: __("client.nav_gallery", sharedData),
+            link: route("client.gallery.index"),
         },
         {
-            nav: "კონტაქტი",
-            link: "/contact",
+            nav: __("client.nav_contact", sharedData),
+            link: route("client.contact.index"),
         },
     ];
     return (
@@ -57,22 +64,22 @@ const Header = () => {
                 <div className="wrapper flex">
                     <Link href="/" className="logo">
                         <img src='/assets/images/header/logo.png' alt="" />
-                        ახალი N2 სამშობიარო სახლი
+                        {renderHTML(__('client.home_logo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </Link>
                     <div className="flex" style={{ height: "100%" }}>
                         <SocialMedia color="#1DBFCC" />
                         <div className="contact_info">
                             <Link href="/">
                                 <Call color="#fff" />
-                                +995 032 2 111 111
+                                {gphone.value}
                             </Link>
                             <Link href="/">
                                 <Mail color="#fff" />
-                                2_samshobiaro@mail.ru
+                                {gemail.value}
                             </Link>
                             <Link href="/">
                                 <Location color="#fff" />
-                                ქუთაისი, ლორთქიფანიძის ქუჩა №13
+                                {gaddress.value}
                             </Link>
                         </div>
                     </div>
@@ -106,9 +113,17 @@ const Header = () => {
                         <div className="active">
                             ქრთ <ArrowDown color="#171C26" />
                         </div>
+
                         <div className="drop">
-                            <Link href="/">ENG</Link>
-                            <Link href="/">РУС</Link>
+                            {
+                                Object.keys(locales).map((e, i) => {
+                                    return (
+                                        <React.Fragment>
+                                            <Link key={i} href="/">{e}</Link>
+                                        </React.Fragment>
+                                    )
+                                })
+                            }
                         </div>
                     </div>
                 </div>

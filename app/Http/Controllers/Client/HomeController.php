@@ -40,7 +40,7 @@ class HomeController extends Controller
 
     public function gallery()
     {
-        $page = Page::where('key', 'gallery')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
         return Inertia::render('Gallery/Gallery', ["seo" => [
             "title" => $page->meta_title,
@@ -62,7 +62,7 @@ class HomeController extends Controller
 
     public function doctors()
     {
-        $page = Page::where('key', 'doctors')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
         return Inertia::render('OurDoctors/OurDoctors', ["seo" => [
             "title" => $page->meta_title,

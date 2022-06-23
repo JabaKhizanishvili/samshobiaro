@@ -60,7 +60,7 @@ const GalleryHome = () => {
                     );
                 })}
             </div>
-            <MainBtn text="ნახე სრულად" />
+            <MainBtn text="ნახე სრულად" link="/ge/gallery" />
         </div>
     );
 };

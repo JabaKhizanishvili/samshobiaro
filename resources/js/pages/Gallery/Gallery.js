@@ -1,6 +1,7 @@
 import React from "react";
 import { PageHead } from "../../components/PageHead/PageHead";
 import "./Gallery.css";
+import Layout from "../../Layouts/Layout";
 // import Doctor1 from "../../assets/images/doctors/3.png";
 // import Doctor2 from "../../assets/images/doctors/4.png";
 // import Doctor3 from "../../assets/images/doctors/5.png";
@@ -13,7 +14,7 @@ import "./Gallery.css";
 // import Photo6 from "../../assets/images/gallery/6.png";
 import { Pagination } from "../../components/Pagination/Pagination";
 
-const Gallery = () => {
+const Gallery = ({ seo }) => {
     const photos = [
         {
             img: "/assets/images/doctors/3.png",
@@ -66,21 +67,24 @@ const Gallery = () => {
         },
     ];
     return (
-        <div className="galleryPage">
-            <PageHead title="გალერეა" prev="მთავარი" active="გალერეა" />
-            <div className="wrapper main ">
-                <div className="grid">
-                    {photos.map((photo) => {
-                        return (
-                            <div className="img" style={{ gridColumn: `span ${photo.span}` }}>
-                                <img src={photo.img} alt="" />
-                            </div>
-                        );
-                    })}
+        <Layout seo={seo}>
+
+            <div className="galleryPage">
+                <PageHead title="გალერეა" prev="მთავარი" active="გალერეა" />
+                <div className="wrapper main ">
+                    <div className="grid">
+                        {photos.map((photo) => {
+                            return (
+                                <div className="img" style={{ gridColumn: `span ${photo.span}` }}>
+                                    <img src={photo.img} alt="" />
+                                </div>
+                            );
+                        })}
+                    </div>
+                    {/* <Pagination /> */}
                 </div>
-                <Pagination />
             </div>
-        </div>
+        </Layout>
     );
 };
 

@@ -16,13 +16,13 @@ const Home = ({ page, seo, images }) => {
     }, []);
     return (
         <Layout seo={seo}>
-        <div className="homePage">
-            <HeroSlider />
-            <ServiceHome />
-            <DoctorsHome />
-            <NewsHome />
-            <GalleryHome />
-        </div>
+            <div className="homePage">
+                <HeroSlider />
+                <ServiceHome />
+                <DoctorsHome />
+                <NewsHome />
+                <GalleryHome />
+            </div>
         </Layout >
     );
 };

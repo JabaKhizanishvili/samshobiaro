@@ -8,10 +8,11 @@ import { PageHead } from "../../components/PageHead/PageHead";
 import NewsItem from "./NewsItem/NewsItem";
 import { Title3 } from "../../components/Titles/Titles";
 import { ConsultBox } from "../../components/ConsultBox/ConsultBox";
+import Layout from "../../Layouts/Layout";
 import "./News.css";
 import { Pagination } from "../../components/Pagination/Pagination";
 
-const News = () => {
+const News = ({ seo, page }) => {
     const newsData = [
         {
             img: "/assets/images/news/6.png",
@@ -37,36 +38,38 @@ const News = () => {
     ];
     const imgGrid = ["/assets/images/news/6.png", "/assets/images/news/5.png", "/assets/images/news/4.png", "/assets/images/news/1.png", "/assets/images/news/3.png", "/assets/images/news/6.png"];
     return (
-        <div className="newsPage">
-            <PageHead title="სიახლეები" prev="მთავარი" active="სიახლეები" />
-            <div className="wrapper2 flex main">
-                <div className="news_list">
-                    {newsData.map((item) => {
-                        return (
-                            <NewsItem
-                                imgSrc={item.img}
-                                title={item.title}
-                                paragraph={item.paragraph}
-                                date={item.date}
-                            />
-                        );
-                    })}
-                    <Pagination />
-                </div>
-                <div className="right">
-                    <Title3 text="გალერეა" />
-                    <div className="img_grid">
-                        {imgGrid.map((img) => {
-                            return <img src={img} alt="" />;
+        <Layout seo={seo}>
+            <div className="newsPage">
+                <PageHead title="სიახლეები" prev="მთავარი" active="სიახლეები" />
+                <div className="wrapper2 flex main">
+                    <div className="news_list">
+                        {newsData.map((item) => {
+                            return (
+                                <NewsItem
+                                    imgSrc={item.img}
+                                    title={item.title}
+                                    paragraph={item.paragraph}
+                                    date={item.date}
+                                />
+                            );
                         })}
+                        <Pagination />
                     </div>
-                    <ConsultBox
-                        content="კონსულტაციაზე ჩასაწერად დაგვიკავშირდით"
-                        number="+995 032 2 111 111"
-                    />
+                    <div className="right">
+                        <Title3 text="გალერეა" />
+                        <div className="img_grid">
+                            {imgGrid.map((img, i) => {
+                                return <img key={i} src={img} alt="" />;
+                            })}
+                        </div>
+                        <ConsultBox
+                            content="კონსულტაციაზე ჩასაწერად დაგვიკავშირდით"
+                            number="+995 032 2 111 111"
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+        </Layout>
     );
 };
 

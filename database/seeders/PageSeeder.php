@@ -22,10 +22,10 @@ class PageSeeder extends Seeder
             ],
             // about us
             [
-                'key' => 'purpose'
+                'key' => 'doctors'
             ],
             [
-                'key' => 'ethics'
+                'key' => 'news'
             ],
             [
                 'key' => 'politics'

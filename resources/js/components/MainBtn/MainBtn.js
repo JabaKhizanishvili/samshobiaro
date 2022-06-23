@@ -3,9 +3,9 @@ import React from "react";
 import { Link } from '@inertiajs/inertia-react'
 import "./MainBtn.css";
 
-export const MainBtn = ({ text }) => {
+export const MainBtn = ({ text, link }) => {
     return (
-        <Link href="/" style={{ width: "fit-content" }}>
+        <Link href={link} style={{ width: "fit-content" }}>
             <div className="main_btn">
                 <button>
                     <span>{text}</span>
