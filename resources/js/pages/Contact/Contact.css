@@ -1,0 +1,97 @@
+.contactPage .main {
+  padding-top: 70px;
+}
+.contactPage .content {
+  align-items: flex-start;
+}
+.contactPage .map {
+  height: 260px;
+  width: 100%;
+  margin-bottom: 80px;
+}
+.contactPage .title2 {
+  font-size: 30px;
+}
+.contactPage .title2::after {
+  bottom: -11px;
+}
+.contactPage p {
+  margin-bottom: 40px;
+}
+.contactPage .left {
+  max-width: 600px;
+  margin-right: 150px;
+}
+.contactPage input,
+.contactPage textarea {
+  width: 100%;
+  height: 50px;
+  padding-left: 15px;
+  border: 1px solid #1dbfcc;
+  margin-bottom: 20px;
+}
+.contactPage textarea {
+  height: 100px;
+  padding-top: 12px;
+}
+.contactPage .main_btn {
+  margin: auto;
+  margin-right: 0;
+}
+.contactPage .contact_info {
+  justify-content: flex-start;
+  margin-bottom: 45px;
+}
+.contactPage .contact_info .icon {
+  width: 51px;
+  height: 51px;
+  border: 1px solid #1dbfcc;
+  margin-right: 30px;
+}
+.contactPage .contact_info .txt {
+  opacity: 0.5;
+}
+.contactPage .contact_info h5 {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1300px) {
+  .contactPage .left {
+    max-width: 535px;
+    margin-right: 55px;
+  }
+}
+@media screen and (max-width: 860px) {
+  .contactPage .content {
+    flex-direction: column;
+  }
+  .contactPage .left {
+    max-width: none;
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
+  .contactPage .main {
+    padding-top: 42px;
+  }
+  .contactPage .map {
+    height: 188px;
+    margin-bottom: 40px;
+  }
+  .contactPage .title2 {
+    font-size: 23px;
+  }
+  .contactPage .contact_info {
+    margin-bottom: 16px;
+  }
+  .contactPage .contact_info .icon {
+    margin-right: 15px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contactPage .contact_info h5 {
+    font-size: 16px;
+  }
+  .contactPage .contact_info .txt {
+    font-size: 13px;
+  }
+}

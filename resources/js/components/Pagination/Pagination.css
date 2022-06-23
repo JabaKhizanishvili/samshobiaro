@@ -1,0 +1,12 @@
+.pagination .pageNum {
+  font-size: 20px;
+  margin: 0 8px;
+  opacity: 0.3;
+  color: #171c26;
+}
+.pagination .pageNum.active {
+  opacity: 1;
+}
+.pagination .arrow {
+  margin: 0 5px;
+}

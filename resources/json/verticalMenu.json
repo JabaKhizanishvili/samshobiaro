@@ -1,0 +1,168 @@
+{
+    "menu": [
+        {
+            "url": "page.index",
+            "name": "Pages",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
+        },
+        {
+            "url": "javascript:void(0)",
+            "name": "Language Settings",
+            "i18n": "language",
+            "icon": "language",
+            "slug": "language",
+            "submenu": [
+                {
+                    "url": "language.index",
+                    "name": "Languages",
+                    "i18n": "language",
+                    "icon": "language",
+                    "slug": "language"
+                },
+                {
+                    "url": "translation.index",
+                    "name": "Translations",
+                    "i18n": "translation",
+                    "icon": "g_translate",
+                    "slug": "translation"
+                }
+            ]
+        },
+        {
+            "url": "setting.index",
+            "name": "Settings",
+            "i18n": "setting",
+            "icon": "language",
+            "slug": "setting"
+        },
+        {
+            "url": "password.index",
+            "name": "Change Password",
+            "i18n": "change password",
+            "icon": "g_translate",
+            "slug": "change_password"
+        },
+        {
+            "url": "javascript:void(0)",
+            "name": "Customers",
+            "i18n": "customers",
+            "icon": "user",
+            "slug": "customers",
+            "submenu": [
+                {
+                    "url": "customer.index",
+                    "name": "Customers",
+                    "i18n": "language",
+                    "icon": "language",
+                    "slug": "language"
+                },
+                {
+                    "url": "classification.index",
+                    "name": "Classifications",
+                    "i18n": "setting",
+                    "icon": "language",
+                    "slug": "classification"
+                }
+            ]
+        },
+        {
+            "url": "staff.index",
+            "name": "Staff",
+            "i18n": "staff",
+            "icon": "g_translate",
+            "slug": "staff"
+        },
+        {
+            "url": "javascript:void(0)",
+            "name": "Vacancy",
+            "i18n": "vacancy",
+            "icon": "vacancy",
+            "slug": "vacancy",
+            "submenu": [
+                {
+                    "url": "vacancy.index",
+                    "name": "Vacancy",
+                    "i18n": "vacancy",
+                    "icon": "vacancy",
+                    "slug": "vacancy"
+                },
+                {
+                    "url": "skill.index",
+                    "name": "Skills",
+                    "i18n": "skill",
+                    "icon": "skill",
+                    "slug": "skill"
+                }
+            ]
+        },
+        {
+            "url": "javascript:void(0)",
+            "name": "applications",
+            "i18n": "vacancy",
+            "icon": "vacancy",
+            "slug": "vacancy",
+            "submenu": [
+                {
+                    "url": "ownerapplications.index",
+                    "name": "ownerapplications",
+                    "i18n": "vacancy",
+                    "icon": "vacancy",
+                    "slug": "vacancy"
+                },
+                {
+                    "url": "evaluations.index",
+                    "name": "evaluation",
+                    "i18n": "skill",
+                    "icon": "skill",
+                    "slug": "skill"
+                }
+            ]
+        }
+    ],
+    "_comment": [
+        {
+            "url": "certificate.index",
+            "name": "certificate",
+            "i18n": "certificate",
+            "icon": "language",
+            "slug": "certificate"
+        },
+        {
+            "url": "category.index",
+            "name": "category",
+            "i18n": "category",
+            "icon": "language",
+            "slug": "category"
+        },
+        {
+            "url": "product.index",
+            "name": "product",
+            "i18n": "product",
+            "icon": "language",
+            "slug": "product"
+        },
+        {
+            "url": "project.index",
+            "name": "project",
+            "i18n": "project",
+            "icon": "language",
+            "slug": "project"
+        },
+        {
+            "url": "language.index",
+            "name": "Languages",
+            "i18n": "language",
+            "icon": "language",
+            "slug": "language"
+        },
+        {
+            "url": "vacancy.index",
+            "name": "Vacancies",
+            "i18n": "vacancy",
+            "icon": "vacancy",
+            "slug": "vacancy"
+        }
+    ]
+}

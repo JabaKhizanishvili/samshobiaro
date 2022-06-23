@@ -1,0 +1,52 @@
+.service_box {
+  width: 100%;
+  height: 100%;
+  padding: 30px 60px;
+  border-bottom-right-radius: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.service_box::after {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: 0.4s;
+  background-color: #db0761;
+  transform: translate(-100%, -100%);
+  border-bottom-right-radius: 60px;
+  z-index: 0;
+}
+.service_box .icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 18px;
+  background-color: #fff;
+  z-index: 10;
+  position: relative;
+  box-shadow: 0 0 10px #21262d17;
+}
+.service_box .title {
+  color: #171c26;
+  font-size: 20px;
+  margin-bottom: 21px;
+  z-index: 10;
+  transition: 0.4s;
+  position: relative;
+}
+.service_box .para {
+  color: #778197;
+  z-index: 10;
+  transition: 0.4s;
+  position: relative;
+}
+.service_box:hover::after {
+  transform: translate(0, 0);
+}
+.service_box:hover .title {
+  color: #fff;
+}
+.service_box:hover .para {
+  color: #fff;
+}

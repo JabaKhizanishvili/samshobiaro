@@ -1,0 +1,141 @@
+.serviceHome {
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+  height: 830px;
+}
+.serviceHome .wrapper {
+  align-items: flex-end;
+}
+.service_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+.serviceHome .left {
+  width: 600px;
+  padding-right: 100px;
+  flex-shrink: 0;
+  background-color: #1dbfcc;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+.serviceHome .left .main_btn {
+  margin-top: 20px;
+}
+.serviceHome .left .main_btn button {
+  background-color: #db0861;
+}
+.serviceHome .left .main_btn .plus {
+  background-color: #fff;
+  color: #db0861;
+}
+.serviceHome .left p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+.serviceHome .left h2 {
+  font-size: 50px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.serviceHome .left::before {
+  width: 100%;
+  height: 100%;
+  right: 99%;
+  top: 0;
+  background-color: #1dbfcc;
+  z-index: -1;
+}
+
+.serviceHome .right .title1 {
+  margin-left: 60px;
+}
+.serviceHome .right .p {
+  margin-left: 60px;
+  max-width: 430px;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1550px) {
+  .serviceHome {
+    height: 920px;
+  }
+  .serviceHome .left {
+    width: 546px;
+    padding-right: 31px;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .serviceHome .wrapper {
+    flex-direction: column-reverse;
+  }
+  .serviceHome {
+    height: auto;
+  }
+  .serviceHome .left {
+    width: 100%;
+    height: auto;
+    padding: 30px 0;
+  }
+  .serviceHome .left::before {
+    width: 60px;
+  }
+  .serviceHome .left::after {
+    width: 60px;
+    height: 100%;
+    left: 99%;
+    top: 0;
+    background-color: #1dbfcc;
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 1075px) {
+  .serviceHome {
+    padding-bottom: 22px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .serviceHome .right .title1 {
+    margin-left: 0;
+  }
+  .serviceHome .right .p {
+    margin-left: 0;
+  }
+  .serviceHome .left h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+  }
+  .serviceHome .left p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .service_grid {
+    grid-template-columns: 1fr;
+  }
+  .service_box .icon {
+    margin-bottom: 11px;
+  }
+  .service_box .title {
+    font-size: 18px;
+    margin-bottom: 6px;
+  }
+  .serviceHome .left h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .service_box {
+    padding: 24px 17px;
+  }
+}

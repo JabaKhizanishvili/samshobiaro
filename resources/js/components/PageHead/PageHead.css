@@ -1,0 +1,31 @@
+.pageHead {
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 30px 0;
+}
+.pageHead h2 {
+  font-size: 42px;
+}
+.pageHead span {
+  padding: 0 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .pageHead h2 {
+    font-size: 33px;
+  }
+  .pageHead {
+    padding: 18px 0;
+  }
+}
+@media screen and (max-width: 550px) {
+  .pageHead h2 {
+    font-size: 26px;
+  }
+  .pageHead {
+    padding: 11px 0;
+  }
+  .pageHead .path {
+    font-size: 14px;
+  }
+}

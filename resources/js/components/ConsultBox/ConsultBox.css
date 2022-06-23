@@ -1,0 +1,33 @@
+.consult_box {
+    width: 100%;
+    min-height: 284px;
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+    background: url(/assets/images/news/stethoscope.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.consult_box::before {
+    width: 100%;
+    height: 100%;
+    background: #4accd6;
+    opacity: 0.3;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+
+.consult_box h2 {
+    font-size: 30px;
+    margin-bottom: 27px;
+    z-index: 10;
+    position: relative;
+}
+
+.consult_box h2 .main_btn {
+    z-index: 10;
+    position: relative;
+}
