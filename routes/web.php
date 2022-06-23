@@ -82,6 +82,14 @@ Route::prefix('{locale?}')
                 Route::resource('setting', SettingController::class);
                 Route::get('setting/{setting}/destroy', [SettingController::class, 'destroy'])->name('setting.destroy');
 
+                //gallery
+                Route::resource('gallery', GalleryController::class);
+                // Route::get('gallery', [GalleryController::class, 'index'])->name('gallery.index');
+                Route::post('addimg', [GalleryController::class, 'img'])->name('galleryaddimg');
+                Route::get('delimg', [GalleryController::class, 'delImg'])->name('gallerydelimg');
+
+
+
                 Route::resource('customer', \App\Http\Controllers\Admin\CustomerController::class);
                 Route::get('customer/{customer}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'destroy'])->name('customer.destroy');
                 Route::get('customer/doc/{doc}/destroy', [\App\Http\Controllers\Admin\CustomerController::class, 'docDelete'])->name('customer.delete-doc');

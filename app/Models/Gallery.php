@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Gallery extends Model
 {
-    use SoftDeletes, HasFactory, ScopeFilter;
+    // use SoftDeletes, HasFactory, ScopeFilter;
 
     /**
      * @var string
@@ -23,41 +23,41 @@ class Gallery extends Model
      * @var string[]
      */
     protected $fillable = [
-        'status'
+        'name',
+        'size',
     ];
 
-    public function getFilterScopes(): array
-    {
-        return [
-            'id' => [
-                'hasParam' => true,
-                'scopeMethod' => 'id'
-            ],
-            'status' => [
-                'hasParam' => true,
-                'scopeMethod' => 'status'
-            ],
-            'title' => [
-                'hasParam' => true,
-                'scopeMethod' => 'titleTranslation'
-            ]
-        ];
-    }
+    // public function getFilterScopes(): array
+    // {
+    //     return [
+    //         'id' => [
+    //             'hasParam' => true,
+    //             'scopeMethod' => 'id'
+    //         ],
+    //         'status' => [
+    //             'hasParam' => true,
+    //             'scopeMethod' => 'status'
+    //         ],
+    //         'title' => [
+    //             'hasParam' => true,
+    //             'scopeMethod' => 'titleTranslation'
+    //         ]
+    //     ];
+    // }
 
-    /**
-     * @return MorphMany
-     */
-    public function files(): MorphMany
-    {
-        return $this->morphMany(File::class, 'fileable');
-    }
+    // /**
+    //  * @return MorphMany
+    //  */
+    // public function files(): MorphMany
+    // {
+    //     return $this->morphMany(File::class, 'fileable');
+    // }
 
-    /**
-     * @return MorphOne
-     */
-    public function file(): MorphOne
-    {
-        return $this->morphOne(File::class, 'fileable');
-    }
-
+    // /**
+    //  * @return MorphOne
+    //  */
+    // public function file(): MorphOne
+    // {
+    //     return $this->morphOne(File::class, 'fileable');
+    // }
 }

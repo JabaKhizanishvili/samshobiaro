@@ -3,14 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\GalleryRequest;
-use App\Http\Requests\Admin\ProductRequest;
-use App\Models\Category;
+use App\Http\Requests\Admin\SettingRequest;
+use App\Models\Setting;
 use App\Models\Gallery;
-use App\Models\Product;
-use App\Repositories\CategoryRepositoryInterface;
-use App\Repositories\GalleryRepositoryInterface;
-use App\Repositories\ProductRepositoryInterface;
+use App\Repositories\SettingRepositoryInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -22,164 +18,107 @@ use Illuminate\Support\Arr;
 class GalleryController extends Controller
 {
     /**
-     * @var GalleryRepositoryInterface
+     * @var SettingRepositoryInterface
      */
-    private $galleryRepository;
+
 
     /**
-     * @param GalleryRepositoryInterface $galleryRepository
      */
-    public function __construct(
-        GalleryRepositoryInterface  $galleryRepository
-    )
-    {
-        $this->galleryRepository = $galleryRepository;
-    }
+    // public function __construct(
+    //     SettingRepositoryInterface  $settingRepository
+    // ) {
+    //     $this->settingRepository = $settingRepository;
+    // }
+
 
     /**
-     * Display a listing of the resource.
-     *
+     * @param SettingRequest $request
      * @return Application|Factory|View
      */
-    public function index(GalleryRequest $request)
+    public function index(SettingRequest $request, Gallery $img)
     {
-        /*return view('admin.pages.gallery.index', [
-            'galleries' => $this->galleryRepository->getData($request)
+        /*return view('admin.pages.setting.index', [
+            'settings' => $this->settingRepository->getData($request, ['translations'])
         ]);*/
-
         return view('admin.nowa.views.gallery.index', [
-            'galleries' => $this->galleryRepository->getData($request)
+            "img" => $img->paginate(4),
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return Application|Factory|View
-     */
-    public function create()
+    public function img(Request $request, Gallery $img)
     {
-        $gallery = $this->galleryRepository->model;
-
-        $url = locale_route('gallery.store', [], false);
-        $method = 'POST';
-
-//        dd($gallery);
-
-        /*return view('admin.pages.gallery.form', [
-            'gallery' => $gallery,
-            'url' => $url,
-            'method' => $method,
-        ]);*/
-
-        return view('admin.nowa.views.gallery.form', [
-            'gallery' => $gallery,
-            'url' => $url,
-            'method' => $method,
-        ]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param ProductRequest $request
-     *
-     * @return Application|RedirectResponse|Redirector
-     * @throws ReflectionException
-     */
-    public function store(GalleryRequest $request)
-    {
-        $saveData = Arr::except($request->except('_token'), []);
-        $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
-
-        $gallery = $this->galleryRepository->create($saveData);
-
-        // Save Files
-        if ($request->hasFile('images')) {
-            $product = $this->galleryRepository->saveFiles($gallery->id, $request);
+        if ($request->img) {
+            $name = $request->file('img')->getClientOriginalName();
+            $size = $request->file('img')->getSize();
+            // dd($request->file('img'));
+            $request->file('img')->storeAs('public/images/', $name);
+            $img->create([
+                "name" => $name,
+                "size" => $size,
+                "user_id" => $request->session()->get('loggedUser'),
+            ]);
+            return redirect()->back();
+        } else {
+            return back();
         }
-
-        return redirect(locale_route('gallery.edit', $gallery->id))->with('success', __('admin.create_successfully'));
-
     }
 
+    public function delImg(Request $request, Gallery $img)
+    {
+        // $img->remove($request->file('avatar'));
+        $res = $img->where('id', $request->input('id'))->delete();
+        return back();
+    }
     /**
-     * Display the specified resource.
-     *
      * @param string $locale
-     * @param Product $product
-     *
+     * @param Setting $setting
      * @return Application|Factory|View
      */
-    public function show(string $locale, Gallery $gallery)
-    {
-        return view('admin.pages.gallery.show', [
-            'gallery' => $gallery,
-        ]);
-    }
+
 
     /**
-     * Show the form for editing the specified resource.
-     *
      * @param string $locale
-     * @param Category $category
-     *
+     * @param Setting $setting
      * @return Application|Factory|View
      */
-    public function edit(string $locale, Gallery $gallery)
+    public function edit(string $locale, Setting $setting)
     {
-        $url = locale_route('gallery.update', $gallery->id, false);
+        $url = locale_route('setting.update', $setting->id, false);
         $method = 'PUT';
 
-        /*return view('admin.pages.gallery.form', [
-            'gallery' => $gallery,
+        /*return view('admin.pages.setting.form', [
+            'setting' => $setting,
             'url' => $url,
             'method' => $method,
-
         ]);*/
 
-        return view('admin.nowa.views.gallery.form', [
-            'gallery' => $gallery,
+        return view('admin.nowa.views.setting.form', [
+            'setting' => $setting,
             'url' => $url,
             'method' => $method,
-
         ]);
     }
 
+
     /**
-     * Update the specified resource in storage.
-     *
-     * @param ProductRequest $request
+     * @param SettingRequest $request
      * @param string $locale
-     * @param Product $product
+     * @param Setting $setting
      * @return Application|RedirectResponse|Redirector
-     * @throws ReflectionException
      */
-    public function update(GalleryRequest $request, string $locale, Gallery $gallery)
+    public function update(SettingRequest $request, string $locale, Setting $setting)
     {
         $saveData = Arr::except($request->except('_token'), []);
-        $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
-
-        $this->galleryRepository->update($gallery->id, $saveData);
-
-        $this->galleryRepository->saveFiles($gallery->id, $request);
+        $this->settingRepository->update($setting->id, $saveData);
 
 
-        return redirect(locale_route('gallery.index', $gallery->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('setting.index', $setting->id))->with('success', __('admin.update_successfully'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param string $locale
-     * @param Product $product
-     * @return Application|RedirectResponse|Redirector
-     */
-    public function destroy(string $locale, Gallery $gallery)
+
+    public function setActive(Request $request)
     {
-        if (!$this->galleryRepository->delete($gallery->id)) {
-            return redirect(locale_route('gallery.show', $gallery->id))->with('danger', __('admin.not_delete_message'));
-        }
-        return redirect(locale_route('gallery.index'))->with('success', __('admin.delete_message'));
+        //dd($request->all());
+        Setting::where('id', $request->get('id'))->update(['active' => $request->get('active')]);
     }
 }
