@@ -39,7 +39,7 @@ class NewsController extends Controller
     {
         $news = News::where("status", 1)->where("slug", $slug)->with(['file', 'translations'])->firstOrFail();
         $lastNews = News::where("status", 1)->where('slug', '<>', $slug)->latest()->with(["file", "translations"])->take(3)->get();
-        $page = Page::where('key', 'news')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
 
 

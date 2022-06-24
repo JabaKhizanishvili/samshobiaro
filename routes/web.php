@@ -45,7 +45,7 @@ Route::prefix('{locale?}')
             Route::middleware('auth')->group(function () {
                 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
-                Route::redirect('', 'adminpanel/page');
+                Route::redirect('', 'adminpanel/doctors');
 
                 // Language
                 Route::resource('language', LanguageController::class);
@@ -111,6 +111,10 @@ Route::prefix('{locale?}')
                 //staff
                 Route::resource('staff', \App\Http\Controllers\Admin\StaffController::class);
                 Route::get('staff/{staff}/destroy', [\App\Http\Controllers\Admin\StaffController::class, 'destroy'])->name('staff.destroy');
+
+                //doctors
+                Route::resource('doctors', \App\Http\Controllers\Admin\DoctorsController::class);
+                Route::get('doctors/{doctors}/destroy', [\App\Http\Controllers\Admin\DoctorsController::class, 'destroy'])->name('doctors.destroy');
 
                 //ownerapplications
                 Route::resource('ownerapplications', \App\Http\Controllers\Admin\OwnerAppController::class);

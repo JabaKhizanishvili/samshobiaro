@@ -1,8 +1,8 @@
 {
     "menu": [
         {
-            "url": "page.index",
-            "name": "Pages",
+            "url": "doctors.index",
+            "name": "Doctors",
             "i18n": "page",
             "icon": "language",
             "slug": "page"
@@ -50,82 +50,6 @@
             "i18n": "change password",
             "icon": "g_translate",
             "slug": "change_password"
-        },
-        {
-            "url": "javascript:void(0)",
-            "name": "Customers",
-            "i18n": "customers",
-            "icon": "user",
-            "slug": "customers",
-            "submenu": [
-                {
-                    "url": "customer.index",
-                    "name": "Customers",
-                    "i18n": "language",
-                    "icon": "language",
-                    "slug": "language"
-                },
-                {
-                    "url": "classification.index",
-                    "name": "Classifications",
-                    "i18n": "setting",
-                    "icon": "language",
-                    "slug": "classification"
-                }
-            ]
-        },
-        {
-            "url": "staff.index",
-            "name": "Staff",
-            "i18n": "staff",
-            "icon": "g_translate",
-            "slug": "staff"
-        },
-        {
-            "url": "javascript:void(0)",
-            "name": "Vacancy",
-            "i18n": "vacancy",
-            "icon": "vacancy",
-            "slug": "vacancy",
-            "submenu": [
-                {
-                    "url": "vacancy.index",
-                    "name": "Vacancy",
-                    "i18n": "vacancy",
-                    "icon": "vacancy",
-                    "slug": "vacancy"
-                },
-                {
-                    "url": "skill.index",
-                    "name": "Skills",
-                    "i18n": "skill",
-                    "icon": "skill",
-                    "slug": "skill"
-                }
-            ]
-        },
-        {
-            "url": "javascript:void(0)",
-            "name": "applications",
-            "i18n": "vacancy",
-            "icon": "vacancy",
-            "slug": "vacancy",
-            "submenu": [
-                {
-                    "url": "ownerapplications.index",
-                    "name": "ownerapplications",
-                    "i18n": "vacancy",
-                    "icon": "vacancy",
-                    "slug": "vacancy"
-                },
-                {
-                    "url": "evaluations.index",
-                    "name": "evaluation",
-                    "i18n": "skill",
-                    "icon": "skill",
-                    "slug": "skill"
-                }
-            ]
         }
     ],
     "_comment": [

@@ -13,7 +13,7 @@ import "./OurDoctors.css";
 import Layout from "../../Layouts/Layout";
 
 
-const OurDoctors = ({ seo }) => {
+const OurDoctors = ({ seo, doctor }) => {
     const doctors = [
         {
             img: "/assets/images/doctors/3.png",
@@ -94,18 +94,23 @@ const OurDoctors = ({ seo }) => {
                         </p>
                     </div>
                     <div className="grid">
-                        {doctors.map((doctor) => {
+                        {doctor.map((doctor, index) => {
                             return (
-                                <div className="item">
+                                <div className="item" key={index}>
                                     <div className="img">
-                                        <img src={doctor.img} alt="" />
+                                        <img src={doctor.latest_image != null
+                                            ? "/" +
+                                            doctor.latest_image.path +
+                                            "/" +
+                                            doctor.latest_image.title
+                                            : null} alt="" />
                                     </div>
                                     <div className="name">{doctor.name}</div>
-                                    <div className="pos">{doctor.position}</div>
+                                    <div className="pos">{doctor.proffesion}</div>
                                     <div className="exp" style={{ color: "#778197" }}>
                                         {doctor.experience}
                                     </div>
-                                    <p>{doctor.description}</p>
+                                    <p>{doctor.text}</p>
                                 </div>
                             );
                         })}

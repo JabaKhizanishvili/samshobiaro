@@ -1,11 +1,13 @@
 import React from "react";
 // import { Link } from "react-router-dom";
 import { Link } from '@inertiajs/inertia-react'
+import { usePage } from "@inertiajs/inertia-react";
 
 export const SocialMedia = ({ color }) => {
+    const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gyoutube } = usePage().props;
     return (
         <div className="socialmedia flex centered">
-            <Link href="/" style={{ marginRight: "20px" }}>
+            <Link href={gyoutube.value} style={{ marginRight: "20px" }}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="23.657"
@@ -21,7 +23,7 @@ export const SocialMedia = ({ color }) => {
                     />
                 </svg>
             </Link>
-            <Link href="/" style={{ marginRight: "20px" }}>
+            <Link href={ginstagram.value} style={{ marginRight: "20px" }}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="15.492"
@@ -37,7 +39,7 @@ export const SocialMedia = ({ color }) => {
                     />
                 </svg>
             </Link>
-            <Link href="/">
+            <Link href={gfacebook.value}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="9.415"

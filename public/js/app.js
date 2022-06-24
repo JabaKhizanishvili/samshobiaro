@@ -3206,7 +3206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _components_Map_Map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Map/Map.js */ "./resources/js/components/Map/Map.js");
 /* harmony import */ var _components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/MainBtn/MainBtn */ "./resources/js/components/MainBtn/MainBtn.js");
 /* harmony import */ var _components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/PageHead/PageHead */ "./resources/js/components/PageHead/PageHead.js");
@@ -3777,11 +3777,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_elastic_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-elastic-carousel */ "./node_modules/react-elastic-carousel/dist/index.es.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/MainBtn/MainBtn */ "./resources/js/components/MainBtn/MainBtn.js");
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
 /* harmony import */ var _NewsHome_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NewsHome.css */ "./resources/js/Pages/Home/NewsHome/NewsHome.css");
-/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
+/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_8__);
@@ -4096,7 +4096,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _NewsItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewsItem.css */ "./resources/js/Pages/News/NewsItem/NewsItem.css");
-/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
+/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 
@@ -4162,7 +4162,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var OurDoctors = function OurDoctors(_ref) {
-  var seo = _ref.seo;
+  var seo = _ref.seo,
+      doctor = _ref.doctor;
   var doctors = [{
     img: "/assets/images/doctors/3.png",
     name: "სახელი გვარი",
@@ -4228,24 +4229,25 @@ var OurDoctors = function OurDoctors(_ref) {
     text: "\u10D2\u10D0\u10D8\u10EA\u10D0\u10DC\u10D8\u10D7 \u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid"
-  }, doctors.map(function (doctor) {
+  }, doctor.map(function (doctor, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "item"
+      className: "item",
+      key: index
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: doctor.img,
+      src: doctor.latest_image != null ? "/" + doctor.latest_image.path + "/" + doctor.latest_image.title : null,
       alt: ""
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "name"
     }, doctor.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "pos"
-    }, doctor.position), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    }, doctor.proffesion), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "exp",
       style: {
         color: "#778197"
       }
-    }, doctor.experience), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, doctor.description));
+    }, doctor.experience), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, doctor.text));
   })))));
 };
 
@@ -4440,7 +4442,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Map_Map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Map/Map */ "./resources/js/components/Map/Map.js");
 /* harmony import */ var _SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../SocialMedia/SocialMedia */ "./resources/js/components/SocialMedia/SocialMedia.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _Footer_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer.css */ "./resources/js/components/Footer/Footer.css");
  // import { Link, useLocation } from "react-router-dom";
 
@@ -4562,7 +4564,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SocialMedia/SocialMedia */ "./resources/js/components/SocialMedia/SocialMedia.js");
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.css */ "./resources/js/components/Header/Header.css");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -4818,7 +4820,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Pagination": () => (/* binding */ Pagination)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _Pagination_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.css */ "./resources/js/components/Pagination/Pagination.css");
 
 
@@ -4907,12 +4909,21 @@ __webpack_require__.r(__webpack_exports__);
  // import { Link } from "react-router-dom";
 
 
+
 var SocialMedia = function SocialMedia(_ref) {
   var color = _ref.color;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
+      errors = _usePage$props.errors,
+      gphone = _usePage$props.gphone,
+      gemail = _usePage$props.gemail,
+      gaddress = _usePage$props.gaddress,
+      gfacebook = _usePage$props.gfacebook,
+      ginstagram = _usePage$props.ginstagram,
+      gyoutube = _usePage$props.gyoutube;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "socialmedia flex centered"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/",
+    href: gyoutube.value,
     style: {
       marginRight: "20px"
     }
@@ -4928,7 +4939,7 @@ var SocialMedia = function SocialMedia(_ref) {
     transform: "translate(-0.007 -5.424)",
     fill: color
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/",
+    href: ginstagram.value,
     style: {
       marginRight: "20px"
     }
@@ -4944,7 +4955,7 @@ var SocialMedia = function SocialMedia(_ref) {
     transform: "translate(0.005 -2.238)",
     fill: color
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    href: "/"
+    href: gfacebook.value
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",
     width: "9.415",
@@ -46802,7 +46813,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\samshobiaro"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\samshobiaro","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

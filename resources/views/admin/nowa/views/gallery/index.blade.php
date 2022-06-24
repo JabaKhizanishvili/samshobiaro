@@ -22,11 +22,29 @@
   <button class="btn btn-primary">add img</button>
 
 </form>
+<table class="table">
+  <thead class='pb-5'>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">img</th>
+      <th scope="col">del</th>
+    </tr>
+  </thead>
+  <tbody>
+      @foreach ($img as $v)
+      <tr>
+        <td>{{ $v['id'] }}</td>
+        <td><img src={{asset('storage/images')."/".$v['name']}} width="auto" height="100"></img></td>
+        <td><a class="btn btn-danger" href={{route('gallerydelimg',['id'=>$v['id']])}}>del</a></td>
+      </tr>
+        @endforeach
 
-@foreach ($img as $v)
-    <img src={{asset('storage/images')."/".$v['name']}} width="auto" height="100"></img>
-    <a class="btn btn-danger" href={{route('gallerydelimg',['id'=>$v['id']])}}>del</a>
-@endforeach
+
+  </tbody>
+</table>
+
+
+
 
 
 <div class="jaba">
