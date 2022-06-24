@@ -1,17 +1,28 @@
 <?php
 
+/**
+ *  app/Http/Controllers/Admin/ProductController.php
+ *
+ * Date-Time: 30.07.21
+ * Time: 10:37
+ * @author Insite LLC <hello@insite.international>
+ */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\PageRequest;
-use App\Http\Requests\Admin\DoctorRequest;
+use App\Http\Requests\Admin\CustomerRequest;
+use App\Http\Requests\Admin\NewsRequest;
+use App\Models\Category;
+use App\Models\Customer;
 use App\Models\File;
-use App\Models\Page;
-use App\Models\Doctor;
-use App\Repositories\Eloquent\PageSectionRepository;
-use App\Repositories\Eloquent\DoctorRepository as DoctorRepository;
-use App\Repositories\PageRepositoryInterface;
-use App\Repositories\DoctorRepositoryInterface;
+use App\Models\Product;
+use App\Models\Skill;
+use App\Models\News;
+use App\Repositories\CategoryRepositoryInterface;
+use App\Repositories\Eloquent\CustomerRepository;
+use App\Repositories\Eloquent\NewsRepository;
+use App\Repositories\ProductRepositoryInterface;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -19,22 +30,23 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Storage;
+use ReflectionException;
+use Illuminate\Support\Facades\Hash;
 
-class DoctorsController extends Controller
+class NewsController extends Controller
 {
-
     /**
-     * @var PageRepositoryInterface
+     * @var ProductRepositoryInterface
      */
-    private $doctorRepository;
+    private $newsRepository;
 
-    /**
-     * @param PageRepositoryInterface $pageRepository
-     */
+
+
+
     public function __construct(
-        DoctorRepository $doctorRepository
+        NewsRepository $newsRepository
     ) {
-        $this->doctorRepository = $doctorRepository;
+        $this->newsRepository = $newsRepository;
     }
 
     /**
@@ -42,14 +54,14 @@ class DoctorsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function index(PageRequest $request)
+    public function index(NewsRequest $request)
     {
         /*return view('admin.pages.product.index', [
             'products' => $this->productRepository->getData($request, ['translations', 'categories'])
         ]);*/
 
-        return view('admin.nowa.views.doctors.index', [
-            'data' => $this->doctorRepository->getData($request),
+        return view('admin.nowa.views.news.index', [
+            'data' => $this->newsRepository->getData($request),
         ]);
     }
 
@@ -60,8 +72,8 @@ class DoctorsController extends Controller
      */
     public function create()
     {
-        $doctor = $this->doctorRepository->model;
-        $url = locale_route('doctors.store', [], false);
+        $news = $this->newsRepository->model;
+        $url = locale_route('news.store', [], false);
         $method = 'POST';
 
         /*return view('admin.pages.product.form', [
@@ -71,10 +83,10 @@ class DoctorsController extends Controller
             'categories' => $this->categories
         ]);*/
 
-        return view('admin.nowa.views.doctors.form', [
+        return view('admin.nowa.views.news.form', [
             'url' => $url,
             'method' => $method,
-            'doctor' => $doctor,
+            'news' => $news,
         ]);
     }
 
@@ -86,14 +98,14 @@ class DoctorsController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function store(DoctorRequest $request)
+    public function store(NewsRequest $request)
     {
 
         //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         //$saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
-        $customer = $this->doctorRepository->create($saveData);
+        $customer = $this->newsRepository->create($saveData);
 
 
         //dd($saveData);
@@ -101,10 +113,10 @@ class DoctorsController extends Controller
 
         // Save Files
         if ($request->hasFile('images')) {
-            $customer = $this->doctorRepository->saveFiles($customer->id, $request);
+            $customer = $this->newsRepository->saveFiles($customer->id, $request);
         }
 
-        return redirect(locale_route('doctors.index', $customer->id))->with('success', __('admin.create_successfully'));
+        return redirect(locale_route('news.index', $customer->id))->with('success', __('admin.create_successfully'));
     }
 
     /**
@@ -115,7 +127,7 @@ class DoctorsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function show(string $locale, Customer $product)
+    public function show(string $locale, News $product)
     {
         return view('admin.pages.product.show', [
             'product' => $product,
@@ -130,9 +142,9 @@ class DoctorsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function edit(string $locale, Doctor $doctor)
+    public function edit(string $locale, News $news)
     {
-        $url = locale_route('doctors.update', $doctor->id, false);
+        $url = locale_route('news.update', $news->id, false);
         $method = 'PUT';
 
         /*return view('admin.pages.product.form', [
@@ -142,8 +154,8 @@ class DoctorsController extends Controller
             'categories' => $this->categories
         ]);*/
 
-        return view('admin.nowa.views.doctors.form', [
-            'doctor' => $doctor,
+        return view('admin.nowa.views.news.form', [
+            'news' => $news,
             'url' => $url,
             'method' => $method,
         ]);
@@ -158,22 +170,22 @@ class DoctorsController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function update(DoctorRequest $request, string $locale, Doctor $doctor)
+    public function update(NewsRequest $request, string $locale, News $news)
     {
         //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
 
-        //dd($doctor->id);
+        //dd($news->id);
 
-        if ($this->doctorRepository->update($doctor->id, $saveData)) {
+        if ($this->newsRepository->update($news->id, $saveData)) {
         }
 
-        $this->doctorRepository->saveFiles($doctor->id, $request);
+        $this->newsRepository->saveFiles($news->id, $request);
 
 
-        return redirect(locale_route('doctors.index', $doctor->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('news.index', $news->id))->with('success', __('admin.update_successfully'));
     }
 
     /**
@@ -183,13 +195,12 @@ class DoctorsController extends Controller
      * @param Product $product
      * @return Application|RedirectResponse|Redirector
      */
-
-    public function destroy(string $locale, $doctor)
+    public function destroy(string $locale, News $news)
     {
-        if (!$this->doctorRepository->delete($doctor)) {
-            return redirect(locale_route('doctors.index', $doctor))->with('danger', __('admin.not_delete_message'));
+        if (!$this->newsRepository->delete($news->id)) {
+            return redirect(locale_route('news.index', $news->id))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('doctors.index'))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('news.index'))->with('success', __('admin.delete_message'));
     }
 
     public function docDelete($locale, $id)

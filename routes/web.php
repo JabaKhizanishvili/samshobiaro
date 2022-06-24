@@ -112,6 +112,10 @@ Route::prefix('{locale?}')
                 Route::resource('staff', \App\Http\Controllers\Admin\StaffController::class);
                 Route::get('staff/{staff}/destroy', [\App\Http\Controllers\Admin\StaffController::class, 'destroy'])->name('staff.destroy');
 
+                //news
+                Route::resource('news', \App\Http\Controllers\Admin\NewsController::class);
+                Route::get('news/{news}/destroy', [\App\Http\Controllers\Admin\NewsController::class, 'destroy'])->name('staff.destroy');
+
                 //doctors
                 Route::resource('doctors', \App\Http\Controllers\Admin\DoctorsController::class);
                 Route::get('doctors/{doctors}/destroy', [\App\Http\Controllers\Admin\DoctorsController::class, 'destroy'])->name('doctors.destroy');

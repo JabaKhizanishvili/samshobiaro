@@ -13,7 +13,7 @@ namespace App\Models\Translations;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductTranslation extends BaseTranslationModel
+class NewsTranslation extends BaseTranslationModel
 {
     use HasFactory;
 
@@ -22,6 +22,7 @@ class ProductTranslation extends BaseTranslationModel
      */
     protected $fillable = [
         'title',
+        'date',
         'short_description',
         'description',
         'meta_title',

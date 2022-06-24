@@ -4,7 +4,6 @@
   array (
     'ქართული' => 'ge',
     'english' => 'en',
-    'armenian' => 'am',
   ),
   'locale_separator' => '-',
   'locale' => NULL,
