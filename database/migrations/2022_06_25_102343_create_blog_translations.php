@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNewsTranslationsTable extends Migration
+class CreateBlogTranslations extends Migration
 {
     /**
      * Run the migrations.
@@ -13,23 +13,22 @@ class CreateNewsTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_translations', function (Blueprint $table) {
+        Schema::create('blog_translations', function (Blueprint $table) {
+            // $table->id();
+            // $table->timestamps();
             $table->bigIncrements('id');
-            $table->bigInteger('news_id')->unsigned();
+            $table->bigInteger('blog_id')->unsigned();
             $table->string('locale')->index();
 
             $table->string('title')->nullable();
             $table->string('date')->nullable();
             $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();
-            $table->string('meta_title')->nullable();
-            $table->string('meta_description')->nullable();
-            $table->string('meta_keyword')->nullable();
 
-            $table->unique(['news_id','locale']);
-            $table->foreign('news_id')
+            $table->unique(['blog_id', 'locale']);
+            $table->foreign('blog_id')
                 ->references('id')
-                ->on('news')
+                ->on('blogs')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
         });
@@ -42,6 +41,6 @@ class CreateNewsTranslationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_translations');
+        Schema::dropIfExists('blog_translations');
     }
 }

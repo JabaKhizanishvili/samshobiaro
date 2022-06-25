@@ -19,6 +19,7 @@ use App\Models\File;
 use App\Models\Product;
 use App\Models\Skill;
 use App\Models\News;
+use App\Models\Blog;
 use App\Repositories\CategoryRepositoryInterface;
 use App\Repositories\Eloquent\CustomerRepository;
 use App\Repositories\Eloquent\NewsRepository;
@@ -127,7 +128,7 @@ class NewsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function show(string $locale, News $product)
+    public function show(string $locale, Blog $product)
     {
         return view('admin.pages.product.show', [
             'product' => $product,
@@ -142,7 +143,7 @@ class NewsController extends Controller
      *
      * @return Application|Factory|View
      */
-    public function edit(string $locale, News $news)
+    public function edit(string $locale, Blog $news)
     {
         $url = locale_route('news.update', $news->id, false);
         $method = 'PUT';
@@ -170,7 +171,7 @@ class NewsController extends Controller
      * @return Application|RedirectResponse|Redirector
      * @throws ReflectionException
      */
-    public function update(NewsRequest $request, string $locale, News $news)
+    public function update(NewsRequest $request, string $locale, Blog $news)
     {
         //dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
@@ -195,7 +196,7 @@ class NewsController extends Controller
      * @param Product $product
      * @return Application|RedirectResponse|Redirector
      */
-    public function destroy(string $locale, News $news)
+    public function destroy(string $locale, Blog $news)
     {
         if (!$this->newsRepository->delete($news->id)) {
             return redirect(locale_route('news.index', $news->id))->with('danger', __('admin.not_delete_message'));

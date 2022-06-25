@@ -11,7 +11,6 @@
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\LanguageController;
-use App\Http\Controllers\Admin\OwnerAppController;
 use App\Http\Controllers\Admin\EvaluationController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\SettingController;
@@ -113,8 +112,8 @@ Route::prefix('{locale?}')
                 Route::get('staff/{staff}/destroy', [\App\Http\Controllers\Admin\StaffController::class, 'destroy'])->name('staff.destroy');
 
                 //news
-                Route::resource('news', \App\Http\Controllers\Admin\NewsController::class);
-                Route::get('news/{news}/destroy', [\App\Http\Controllers\Admin\NewsController::class, 'destroy'])->name('staff.destroy');
+                Route::resource('news', \App\Http\Controllers\Admin\BlogController::class);
+                Route::get('news/{news}/destroy', [\App\Http\Controllers\Admin\BlogController::class, 'destroy'])->name('news.destroy');
 
                 //doctors
                 Route::resource('doctors', \App\Http\Controllers\Admin\DoctorsController::class);

@@ -27,16 +27,16 @@
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="left-content">
-            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$news->created_at ? __('admin.news-update') : __('admin.news-create')}}</span>
+            <span class="main-content-title mg-b-0 mg-b-lg-1">{{$blog->created_at ? __('admin.skill-update') : __('admin.skill-create')}}</span>
         </div>
         <div class="justify-content-center mt-2">
             @include('admin.nowa.views.layouts.components.breadcrump')
         </div>
     </div>
     <!-- /breadcrumb -->
-    <input name="old-images[]" id="old_images" hidden disabled value="{{$news->files}}">
+    <input name="old-images[]" id="old_images" hidden disabled value="{{$blog->files}}">
     <!-- row -->
-    {!! Form::model($news,['url' => $url, 'method' => $method,'files' => true]) !!}
+    {!! Form::model($blog,['url' => $url, 'method' => $method,'files' => true]) !!}
     <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="card">
@@ -73,8 +73,21 @@
                                         ?>
                                         <div class="tab-pane {{$active}}" id="lang-{{$locale}}">
                                             <div class="form-group">
+                                                <label class="form-label">@lang('admin.name')</label>
+                                                <input type="text" name="{{$locale.'[name]'}}" class="form-control" placeholder="@lang('admin.name')" value="{{$blog->translate($locale)->name ?? ''}}">
+
+                                            </div>
+                                            @error($locale.'.name')
+                                            <small class="text-danger">
+                                                <div class="error">
+                                                    {{$message}}
+                                                </div>
+                                            </small>
+                                            @enderror
+
+                                            <div class="form-group">
                                                 <label class="form-label">@lang('admin.title')</label>
-                                                <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="@lang('admin.title')" value="{{$news->translate($locale)->name ?? ''}}">
+                                                <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="@lang('admin.title')" value="{{$blog->translate($locale)->name ?? ''}}">
 
                                             </div>
                                             @error($locale.'.title')
@@ -87,7 +100,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.date')</label>
-                                                <input type="text" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$news->translate($locale)->proffesion ?? ''}}">
+                                                <input type="text" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->proffesion ?? ''}}">
                                             </div>
                                             @error($locale.'.date')
                                             <small class="text-danger">
@@ -100,7 +113,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.short_description')</label>
-                                                <input type="text" name="{{$locale.'[short_description]'}}" class="form-control" placeholder="@lang('admin.short_description')" value="{{$news->translate($locale)->experience ?? ''}}">
+                                                <input type="text" name="{{$locale.'[short_description]'}}" class="form-control" placeholder="@lang('admin.short_description')" value="{{$blog->translate($locale)->experience ?? ''}}">
                                             </div>
                                             @error($locale.'.short_description')
                                             <small class="text-danger">
@@ -112,7 +125,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.description')</label>
-                                                <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$news->translate($locale)->text ?? ''}}">
+                                                <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$blog->translate($locale)->text ?? ''}}">
                                             </div>
                                             @error($locale.'.description')
                                             <small class="text-danger">
@@ -121,7 +134,6 @@
                                                 </div>
                                             </small>
                                             @enderror
-
 
                                         </div>
 
@@ -137,14 +149,14 @@
                     {{-- <div class="form-group mb-0 justify-content-end">
                         <div class="checkbox">
                             <div class="custom-checkbox custom-control">
-                                <input type="checkbox" data-checkboxes="mygroup" name="status" class="custom-control-input" id="checkbox-2" {{$news->status ? 'checked' : ''}}>
+                                <input type="checkbox" data-checkboxes="mygroup" name="status" class="custom-control-input" id="checkbox-2" {{$staff->status ? 'checked' : ''}}>
                                 <label for="checkbox-2" class="custom-control-label mt-1">{{__('admin.status')}}</label>
                             </div>
                         </div>
                     </div> --}}
                     <div class="form-group mb-0 mt-3 justify-content-end">
                         <div>
-                            {!! Form::submit($news->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
+                            {!! Form::submit($blog->created_at ? __('admin.update') : __('admin.create'),['class' => 'btn btn-primary']) !!}
                         </div>
                     </div>
 

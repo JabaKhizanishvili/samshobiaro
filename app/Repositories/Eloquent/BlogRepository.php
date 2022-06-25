@@ -14,27 +14,24 @@ namespace App\Repositories\Eloquent;
 use App\Models\File;
 use App\Models\Page;
 use App\Models\Staff;
-use App\Models\Doctor;
-use App\Models\News;
 use App\Models\Blog;
 use App\Models\Vacancy;
 use App\Repositories\Eloquent\Base\BaseRepository;
 use App\Repositories\PageRepositoryInterface;
-use App\Repositories\NewsRepositoryInterface;
+use App\Repositories\BlogRepositoryInterface;
 use App\Repositories\StaffRepositoryInterface;
-use App\Repositories\DoctorRepositoryInterface;
 use App\Repositories\VacancyRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use ReflectionClass;
 
 
-class NewsRepository extends BaseRepository implements NewsRepositoryInterface
+class BlogRepository extends BaseRepository implements BlogRepositoryInterface
 {
     /**
      * @param Page $model
      */
-    public function __construct(Blog $model)
+    public function __construct(Blog $blog)
     {
-        parent::__construct($model);
+        parent::__construct($blog);
     }
 }
