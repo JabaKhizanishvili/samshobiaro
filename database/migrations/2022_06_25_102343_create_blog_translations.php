@@ -20,7 +20,7 @@ class CreateBlogTranslations extends Migration
             $table->bigInteger('blog_id')->unsigned();
             $table->string('locale')->index();
 
-            $table->string('title')->nullable();
+            $table->string('name')->nullable();
             $table->string('date')->nullable();
             $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();

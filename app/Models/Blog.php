@@ -49,7 +49,7 @@ class Blog extends Model
     }
 
     public $translatedAttributes = [
-        'title',
+        'name',
         'date',
         'short_description',
         'description',

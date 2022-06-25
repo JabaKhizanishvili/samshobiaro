@@ -86,21 +86,8 @@
                                             @enderror
 
                                             <div class="form-group">
-                                                <label class="form-label">@lang('admin.title')</label>
-                                                <input type="text" name="{{$locale.'[title]'}}" class="form-control" placeholder="@lang('admin.title')" value="{{$blog->translate($locale)->name ?? ''}}">
-
-                                            </div>
-                                            @error($locale.'.title')
-                                            <small class="text-danger">
-                                                <div class="error">
-                                                    {{$message}}
-                                                </div>
-                                            </small>
-                                            @enderror
-
-                                            <div class="form-group">
                                                 <label class="form-label">@lang('admin.date')</label>
-                                                <input type="text" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->proffesion ?? ''}}">
+                                                <input type="text" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->date ?? ''}}">
                                             </div>
                                             @error($locale.'.date')
                                             <small class="text-danger">
@@ -113,7 +100,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.short_description')</label>
-                                                <input type="text" name="{{$locale.'[short_description]'}}" class="form-control" placeholder="@lang('admin.short_description')" value="{{$blog->translate($locale)->experience ?? ''}}">
+                                                <input type="text" name="{{$locale.'[short_description]'}}" class="form-control" placeholder="@lang('admin.short_description')" value="{{$blog->translate($locale)->short_description ?? ''}}">
                                             </div>
                                             @error($locale.'.short_description')
                                             <small class="text-danger">
@@ -125,7 +112,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.description')</label>
-                                                <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$blog->translate($locale)->text ?? ''}}">
+                                                <input type="text" name="{{$locale.'[description]'}}" class="form-control" placeholder="@lang('admin.description')" value="{{$blog->translate($locale)->description ?? ''}}">
                                             </div>
                                             @error($locale.'.description')
                                             <small class="text-danger">

@@ -14,7 +14,7 @@ class BlogTranslation extends BaseTranslationModel
     //     'position',
     // ];
     protected $fillable = [
-        'title',
+        'name',
         'date',
         'short_description',
         'description',
