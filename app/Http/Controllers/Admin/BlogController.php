@@ -40,7 +40,7 @@ class BlogController extends Controller
     public function create()
     {
         $blog = $this->blogRepository->model;
-        $url = locale_route('news.store', [], false);
+        $url = locale_route('blogs.store', [], false);
         $method = 'POST';
 
         return view('admin.nowa.views.news.form', [
@@ -67,7 +67,7 @@ class BlogController extends Controller
             $customer = $this->blogRepository->saveFiles($customer->id, $request);
         }
 
-        return redirect(locale_route('news.index', $customer->id))->with('success', __('admin.create_successfully'));
+        return redirect(locale_route('blogs.index', $customer->id))->with('success', __('admin.create_successfully'));
     }
 
     /**
@@ -95,7 +95,7 @@ class BlogController extends Controller
      */
     public function edit(string $locale, Blog $blog)
     {
-        $url = locale_route('news.update', $blog, false);
+        $url = locale_route('blogs.update', $blog, false);
         $method = 'PUT';
 
 
@@ -109,28 +109,27 @@ class BlogController extends Controller
 
     public function update(BlogRequest $request, string $locale, Blog $blog)
     {
-        dd($request->all());
         $saveData = Arr::except($request->except('_token'), []);
         $saveData['status'] = isset($saveData['status']) && (bool)$saveData['status'];
 
 
         //dd($staff->id);
 
-        if ($this->staffRepository->update($blog->id, $saveData)) {
+        if ($this->blogRepository->update($blog->id, $saveData)) {
         }
 
-        $this->staffRepository->saveFiles($blog->id, $request);
+        $this->blogRepository->saveFiles($blog->id, $request);
 
 
-        return redirect(locale_route('news.index', $blog->id))->with('success', __('admin.update_successfully'));
+        return redirect(locale_route('blogs.index', $blog->id))->with('success', __('admin.update_successfully'));
     }
 
     public function destroy(string $locale, $blog)
     {
         if (!$this->blogRepository->delete($blog)) {
-            return redirect(locale_route('news.index', $blog))->with('danger', __('admin.not_delete_message'));
+            return redirect(locale_route('blogs.index', $blog))->with('danger', __('admin.not_delete_message'));
         }
-        return redirect(locale_route('news.index'))->with('success', __('admin.delete_message'));
+        return redirect(locale_route('blogs.index'))->with('success', __('admin.delete_message'));
     }
 
     public function docDelete($locale, $id)

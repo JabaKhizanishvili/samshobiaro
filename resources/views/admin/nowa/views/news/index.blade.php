@@ -12,7 +12,7 @@
  <!-- breadcrumb -->
  <div class="breadcrumb-header justify-content-between">
     <div class="left-content">
-        <span class="main-content-title mg-b-0 mg-b-lg-1">@lang('admin.news')</span>
+        <span class="main-content-title mg-b-0 mg-b-lg-1">@lang('admin.blogs')</span>
     </div>
     <div class="justify-content-center mt-2">
         @include('admin.nowa.views.layouts.components.breadcrump')
@@ -28,7 +28,7 @@
                 <div class="d-flex justify-content-between">
                     <h4 class="card-title mg-b-0">@lang('admin.skills')</h4>
                 </div>
-                <a href="{{locale_route('news.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a>
+                <a href="{{locale_route('blogs.create')}}" class="btn ripple btn-primary" type="button">@lang('admin.createbutt')</a>
 
                 {{--<p class="tx-12 tx-gray-500 mb-2">Example of Nowa Simple Table. <a href="">Learn more</a></p>--}}
             </div>
@@ -109,12 +109,12 @@
 
                                         <td>
 
-                                            <a href="{{locale_route('news.edit',$item->id)}}"
+                                            <a href="{{locale_route('blogs.edit',$item->id)}}"
                                                class="pl-3">
                                                 <i class="fa fa-edit">შეცვლა</i>
                                             </a>
 
-                                            <a href="{{locale_route('news.destroy',$item->id)}}"
+                                            <a href="{{locale_route('blogs.destroy',$item->id)}}"
                                                onclick="return confirm('Are you sure?')" class="pl-3">
                                                 <i class="fa fa-edit">წაშლა</i>
                                             </a>

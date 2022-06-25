@@ -15,7 +15,7 @@
             "slug": "page"
         },
         {
-            "url": "news.index",
+            "url": "blogs.index",
             "name": "News",
             "i18n": "page",
             "icon": "language",
