@@ -4030,7 +4030,6 @@ var News = function News(_ref) {
       page = _ref.page,
       news = _ref.news,
       blog = _ref.blog;
-  console.log(blog);
 
   var links = function links(_links) {
     var rows = []; //links.shift();
@@ -4125,7 +4124,8 @@ var News = function News(_ref) {
       imgSrc: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null,
       title: item.name,
       paragraph: item.short_description,
-      date: item.date
+      date: item.date,
+      id: item.id
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.id));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagination flex centered"
@@ -4190,7 +4190,7 @@ var NewsItem = function NewsItem(props) {
     src: _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
     alt: ""
   }), props.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
-    href: "/single-news",
+    href: route("client.news.show", props.id),
     className: "more"
   }, "\u10E1\u10E0\u10E3\u10DA\u10D0\u10D3 \u10DC\u10D0\u10EE\u10D5\u10D0 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "plus"
@@ -4342,6 +4342,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ConsultBox/ConsultBox */ "./resources/js/components/ConsultBox/ConsultBox.js");
 /* harmony import */ var _SingleNews_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SingleNews.css */ "./resources/js/Pages/SingleNews/SingleNews.css");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 
  // import Img1 from "/assets/images/news/6.png";
 // import Img2 from "/assets/images/news/5.png";
@@ -4356,21 +4357,26 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var SingleNews = function SingleNews() {
+
+var SingleNews = function SingleNews(_ref) {
+  var seo = _ref.seo,
+      news = _ref.news;
   var otherNews = [{
-    img: Img2,
+    img: "/assets/images/news/5.png",
     para: "დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, ",
     date: "12 ოქტომბერი, 2021"
   }, {
-    img: Img3,
+    img: "/assets/images/news/5.png",
     para: "დეველოპერის ანობაში ხშირად არის ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, ის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე საჭ",
     date: "12 ოქტომბერი, 2021"
   }, {
-    img: Img4,
+    img: "/assets/images/news/5.png",
     para: "დეველოპერის ან დიზაინერირო ისეთი ამოცანების მარტივად შესრღიურ საქმიანობაში ლება, ყოველდღიურ საქმიანობაში  ",
     date: "12 ოქტომბერი, 2021"
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    seo: seo
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "newsPage singleNewsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
     title: "\u10D0\u10EE\u10D0\u10DA\u10D8 N2 \u10E1\u10D0\u10DB\u10E8\u10DD\u10D1\u10D8\u10D0\u10E0\u10DD \u10E1\u10D0\u10EE\u10DA\u10D8",
@@ -4382,17 +4388,17 @@ var SingleNews = function SingleNews() {
     className: "news_list"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     className: "main_img",
-    src: Img1,
+    src: news.latest_image != null ? "/" + news.latest_image.path + "/" + news.latest_image.title : null,
     alt: ""
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4.\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, news.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, news.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, news.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "date"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/news/calendar.svg",
     alt: ""
-  }), "12 \u10DD\u10E5\u10E2\u10DD\u10DB\u10D1\u10D4\u10E0\u10D8, 2021"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
-    href: "/news",
+  }), news.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+    href: route("client.news.index"),
     className: "return"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     style: {
@@ -4427,7 +4433,7 @@ var SingleNews = function SingleNews() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__.ConsultBox, {
     content: "\u10D9\u10DD\u10DC\u10E1\u10E3\u10DA\u10E2\u10D0\u10EA\u10D8\u10D0\u10D6\u10D4 \u10E9\u10D0\u10E1\u10D0\u10EC\u10D4\u10E0\u10D0\u10D3 \u10D3\u10D0\u10D2\u10D5\u10D8\u10D9\u10D0\u10D5\u10E8\u10D8\u10E0\u10D3\u10D8\u10D7",
     number: "+995 032 2 111 111"
-  }))));
+  })))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleNews);
@@ -46884,7 +46890,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\samshobiaro"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\samshobiaro","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\test\\\\samshobiaro"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\test\\\\samshobiaro","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

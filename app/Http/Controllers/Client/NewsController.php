@@ -42,25 +42,26 @@ class NewsController extends Controller
 
     public function show(string $locale, $slug)
     {
-        $news = Blog::where("status", 1)->where("slug", $slug)->with(['file', 'translations'])->firstOrFail();
-        $lastNews = Blog::where("status", 1)->where('slug', '<>', $slug)->latest()->with(["file", "translations"])->take(3)->get();
         $page = Page::where('key', 'home')->firstOrFail();
 
 
-
-        return Inertia::render('SingleNews/SingleNews', ["news" => $news, "lastNews" => $lastNews, "seo" => [
-            "title" => $news->meta_title ?? $page->meta_title,
-            "description" => $news->meta_description ?? $page->meta_description,
-            "keywords" => $news->meta_keyword ?? $page->meta_keyword,
-            "og_title" => $page->meta_og_title,
-            "og_description" => $page->meta_og_description,
-            //            "image" => "imgg",
-            //            "locale" => App::getLocale()
-        ]])->withViewData([
-            'meta_title' => $news->meta_title ?? $page->meta_title,
-            'meta_description' => $news->meta_description ?? $page->meta_description,
-            'meta_keyword' => $news->meta_keyword ?? $page->meta_keyword,
-            "image" => $news->file,
+        return Inertia::render('SingleNews/SingleNews', [
+            // "news" => $news, "lastNews" => $lastNews,
+            "news" => Blog::with('latestImage')->find($slug),
+            "seo" => [
+                "title" => $page->meta_title ?? $page->meta_title,
+                "description" => $page->meta_description ?? $page->meta_description,
+                "keywords" => $page->meta_keyword ?? $page->meta_keyword,
+                "og_title" => $page->meta_og_title,
+                "og_description" => $page->meta_og_description,
+                //            "image" => "imgg",
+                //            "locale" => App::getLocale()
+            ]
+        ])->withViewData([
+            'meta_title' => $page->meta_title ?? $page->meta_title,
+            'meta_description' => $page->meta_description ?? $page->meta_description,
+            'meta_keyword' => $page->meta_keyword ?? $page->meta_keyword,
+            "image" => $page->file,
             'og_title' => $page->meta_og_title,
             'og_description' => $page->meta_og_description
         ]);

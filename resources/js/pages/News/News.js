@@ -14,7 +14,6 @@ import "../../components/Pagination/Pagination.css";
 
 const News = ({ seo, page, news, blog }) => {
 
-    console.log(blog);
     let links = function (links) {
         let rows = [];
         //links.shift();
@@ -114,6 +113,7 @@ const News = ({ seo, page, news, blog }) => {
                                         title={item.name}
                                         paragraph={item.short_description}
                                         date={item.date}
+                                        id={item.id}
                                     />
                                     <p>{item.id}</p>
                                 </React.Fragment>

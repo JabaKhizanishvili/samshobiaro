@@ -17,7 +17,7 @@ const NewsItem = (props) => {
                     <img src={Calendar} alt="" />
                     {props.date}
                 </div>
-                <Link href="/single-news" className="more">
+                <Link href={route("client.news.show", props.id)} className="more">
                     სრულად ნახვა <div className="plus">+</div>
                 </Link>
             </div>
