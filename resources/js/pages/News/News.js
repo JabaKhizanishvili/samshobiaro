@@ -1,18 +1,76 @@
 import React from "react";
 import { PageHead } from "../../components/PageHead/PageHead";
-// import Img1 from "/assets/images/news/6.png";
-// import Img2 from "/assets/images/news/5.png";
-// import Img3 from "/assets/images/news/4.png";
-// import Img4 from "/assets/images/news/1.png";
-// import Img5 from "/assets/images/news/3.png";
 import NewsItem from "./NewsItem/NewsItem";
 import { Title3 } from "../../components/Titles/Titles";
 import { ConsultBox } from "../../components/ConsultBox/ConsultBox";
 import Layout from "../../Layouts/Layout";
 import "./News.css";
 import { Pagination } from "../../components/Pagination/Pagination";
+import { ArrowDown } from "/assets/images/icons/contact/contactIcons";
+import { Link } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
+import "../../components/Pagination/Pagination.css";
 
-const News = ({ seo, page }) => {
+
+const News = ({ seo, page, news, blog }) => {
+
+    console.log(blog);
+    let links = function (links) {
+        let rows = [];
+        //links.shift();
+        //links.splice(-1);
+        {
+            links.map(function (item, index) {
+                if (index > 0 && index < links.length - 1) {
+                    rows.push(
+                        <Link
+                            href={item.url}
+                            className={item.active ? "pageNum active" : "pageNum"}
+                        >
+                            {item.label}
+                        </Link>
+                    );
+                }
+            });
+        }
+        return <div className="nums"> {rows.length > 1 ? rows : null} </div>;
+    };
+
+    let linksPrev = function (links) {
+        let rowCount = 0;
+        links.map(function (item, index) {
+            if (index > 0 && index < links.length - 1) {
+                rowCount++;
+            }
+        });
+        return rowCount > 1 ? (
+            <Link href={links[0].url}>
+                {/* <Arrow color="#2F3E51" rotate="90" /> */}
+                <button className="arrow" style={{ transform: "rotate(-90deg)" }}>
+                    <ArrowDown color="#1DBFCC" />
+                </button>
+                {/* <Arrow color="#2F3E51" rotate="90" /> */}
+
+            </Link>
+        ) : null;
+    };
+    let linksNext = function (links) {
+        let rowCount = 0;
+        links.map(function (item, index) {
+            if (index > 0 && index < links.length - 1) {
+                rowCount++;
+            }
+        });
+        return rowCount > 1 ? (
+            <Link href={links[links.length - 1].url}>
+                {/* <Arrow color="#2F3E51" rotate="-90" /> */}
+                {/* <Arrow color="#2F3E51" rotate="-90" /> */}
+                <button className="arrow" style={{ transform: "rotate(90deg)" }}>
+                    <ArrowDown color="#1DBFCC" />
+                </button>
+            </Link>
+        ) : null;
+    };
     const newsData = [
         {
             img: "/assets/images/news/6.png",
@@ -43,17 +101,30 @@ const News = ({ seo, page }) => {
                 <PageHead title="სიახლეები" prev="მთავარი" active="სიახლეები" />
                 <div className="wrapper2 flex main">
                     <div className="news_list">
-                        {newsData.map((item) => {
+                        {blog.data.map((item, i) => {
                             return (
-                                <NewsItem
-                                    imgSrc={item.img}
-                                    title={item.title}
-                                    paragraph={item.paragraph}
-                                    date={item.date}
-                                />
+                                <React.Fragment key={i}>
+                                    <NewsItem
+                                        imgSrc={item.latest_image != null
+                                            ? "/" +
+                                            item.latest_image.path +
+                                            "/" +
+                                            item.latest_image.title
+                                            : null}
+                                        title={item.name}
+                                        paragraph={item.short_description}
+                                        date={item.date}
+                                    />
+                                    <p>{item.id}</p>
+                                </React.Fragment>
                             );
                         })}
-                        <Pagination />
+                        {/* <Pagination /> */}
+                        <div className="pagination flex centered">
+                            {linksPrev(blog.links)}
+                            <button className="pageNum">{links(blog.links)}</button>
+                            {linksNext(blog.links)}
+                        </div>
                     </div>
                     <div className="right">
                         <Title3 text="გალერეა" />

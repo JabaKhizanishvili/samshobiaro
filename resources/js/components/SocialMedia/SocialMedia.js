@@ -5,6 +5,7 @@ import { usePage } from "@inertiajs/inertia-react";
 
 export const SocialMedia = ({ color }) => {
     const { errors, gphone, gemail, gaddress, gfacebook, ginstagram, gyoutube } = usePage().props;
+    console.log(gfacebook.value);
     return (
         <div className="socialmedia flex centered">
             <Link href={gyoutube.value} style={{ marginRight: "20px" }}>

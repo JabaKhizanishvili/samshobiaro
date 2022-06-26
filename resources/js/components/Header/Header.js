@@ -62,7 +62,7 @@ const Header = () => {
         <div className="header">
             <div className="header_top">
                 <div className="wrapper flex">
-                    <Link href="/" className="logo">
+                    <Link href={route("client.home.index")} className="logo">
                         <img src='/assets/images/header/logo.png' alt="" />
                         {renderHTML(__('client.home_logo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </Link>

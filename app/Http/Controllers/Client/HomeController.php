@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Certificate;
 use App\Models\News;
+use App\Models\Blog;
 use App\Models\Doctor;
 use App\Models\Page;
 use App\Models\Product;
