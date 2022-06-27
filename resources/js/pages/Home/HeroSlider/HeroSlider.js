@@ -9,7 +9,6 @@ import "./HeroSlider.css";
 const HeroSlider = (props) => {
     let data = new Array();
     data.push(props.slider);
-    console.log(data[0], 'esaa');
     const images = ["/assets/images/hero/1.png", "/assets/images/hero/2.png", "/assets/images/hero/3.png"];
 
     const [index, setIndex] = useState(0);

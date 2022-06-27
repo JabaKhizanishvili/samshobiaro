@@ -3479,6 +3479,7 @@ var DoctorsHome = function DoctorsHome(_ref) {
       alt: ""
     })), item);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
+    link: route("client.doctors.index"),
     text: "\u10DC\u10D0\u10EE\u10D4 \u10E1\u10E0\u10E3\u10DA\u10D0\u10D3"
   })));
 };
@@ -3616,7 +3617,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var HeroSlider = function HeroSlider(props) {
   var data = new Array();
   data.push(props.slider);
-  console.log(data[0], 'esaa');
   var images = ["/assets/images/hero/1.png", "/assets/images/hero/2.png", "/assets/images/hero/3.png"];
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
@@ -3807,6 +3807,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var NewsHome = function NewsHome() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_8___default().init({
@@ -3862,6 +3863,7 @@ var NewsHome = function NewsHome() {
     largeText: "\u10D0\u10EE\u10D0\u10DA\u10D8 \u10D0\u10DB\u10D1\u10D4\u10D1\u10D8",
     subtitle: "\u10E1\u10D8\u10D0\u10EE\u10DA\u10D4\u10D4\u10D1\u10D8"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__.MainBtn, {
+    link: route("client.news.index"),
     text: "\u10E7\u10D5\u10D4\u10DA\u10D0 \u10E1\u10D8\u10D0\u10EE\u10DA\u10D4"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "news_slider flex",
@@ -3969,6 +3971,7 @@ var ServiceHome = function ServiceHome(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E9\u10D5\u10D4\u10DC \u10E8\u10D4\u10E1\u10D0\u10EE\u10D4\u10D1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "lorem ipsum dolor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
+    link: route("client.about.index"),
     text: "\u10D2\u10D0\u10D8\u10D2\u10D4 \u10DB\u10D4\u10E2\u10D8"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"

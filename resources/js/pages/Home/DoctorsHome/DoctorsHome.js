@@ -50,7 +50,7 @@ const DoctorsHome = ({ seo, info }) => {
                         );
                     })}
                 </div>
-                <MainBtn text="ნახე სრულად" />
+                <MainBtn link={route("client.doctors.index")} text="ნახე სრულად" />
             </div>
         </div>
     );

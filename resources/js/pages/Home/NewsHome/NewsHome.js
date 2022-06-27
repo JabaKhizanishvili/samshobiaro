@@ -12,6 +12,7 @@ import Calendar from "/assets/images/icons/news/calendar.svg";
 import { Link } from '@inertiajs/inertia-react'
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Route } from "react-router-dom";
 
 const NewsHome = () => {
     useEffect(() => {
@@ -66,7 +67,7 @@ const NewsHome = () => {
         <div className="newsHome wrapper">
             <div className="head flex">
                 <Title1 largeText="ახალი ამბები" subtitle="სიახლეები" />
-                <MainBtn text="ყველა სიახლე" />
+                <MainBtn link={route("client.news.index")} text="ყველა სიახლე" />
             </div>
             <div className="news_slider flex" data-aos="fade-right">
                 {/* <button className="arrow prev">

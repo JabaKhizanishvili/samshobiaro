@@ -56,7 +56,7 @@ const ServiceHome = ({ page, seo, images }) => {
                         საჩვენებელია, თუ როგორი იქნება ტექსტის ბლოკი. სწორედ ასეთ დროს არის
                         მოსახერხებელი ამ
                     </p>
-                    <MainBtn text="გაიგე მეტი" />
+                    <MainBtn link={route("client.about.index")} text="გაიგე მეტი" />
                 </div>
                 <div className="right">
                     <Title1 largeText="სერვისები" subtitle="ჩვენ გთავაზობთ" />
