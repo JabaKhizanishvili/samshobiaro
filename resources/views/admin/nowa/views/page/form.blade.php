@@ -74,7 +74,7 @@
                                         if($loop->first) $active = 'active';
                                         ?>
                                         <div class="tab-pane {{$active}}" id="lang-{{$locale}}">
-                                            {{-- <div class="main-content-label mg-b-5">
+                                            <div class="main-content-label mg-b-5">
                                                 @lang('admin.page_info')
                                             </div>
                                             <div class="form-group">
@@ -128,7 +128,7 @@
                                                     </div>
                                                 </small>
                                                 @enderror
-                                            </div> --}}
+                                            </div>
 
                                             <div class="main-content-label mg-b-5 text-danger">
                                                 @lang('admin.page_seo')
@@ -232,7 +232,7 @@
 
 
 
-    {{-- <div class="row">
+    <div class="row">
         <div class="col-lg-12 col-md-12">
             <div class="card">
                 <div class="card-body">
@@ -244,26 +244,6 @@
 
                             <input type="file" class="dropify" name="image[{{$item->id}}]" data-default-file="{{($item->file) ? asset($item->file->getFileUrlAttribute()) : ''}}" data-height="200"  />
 
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </div> --}}
-
-    {{-- to upload only one img --}}
-    <div class="row">
-        <div class="col-lg-12 col-md-12">
-            <div class="card">
-                <div class="card-body">
-                    <div>
-                        <h6 class="card-title mb-1">@lang('admin.sectionimages')</h6>
-                    </div>
-                    @foreach($page->sections as $item)
-                        <div class="form-group">
-
-                            {{-- <input type="file" class="dropify" name="image[{{$page->sections->id}}]" data-default-file="{{($page->sections->file) ? asset($page->sections->file->getFileUrlAttribute()) : ''}}" data-height="200"  /> --}}
- <input type="file" class="dropify" name="image[{{$item->id}}]" data-default-file="{{($item->file) ? asset($item->file->getFileUrlAttribute()) : ''}}" data-height="200"  />
                         </div>
                     @endforeach
                 </div>
@@ -376,13 +356,13 @@
     </script>
 
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
-    {{-- <script>
+    <script>
         @foreach(config('translatable.locales') as $locale)
         CKEDITOR.replace('description-{{$locale}}', {
             filebrowserUploadUrl: "{{route('upload', ['_token' => csrf_token() ])}}",
             filebrowserUploadMethod: 'form'
         });
         @endforeach
-    </script> --}}
+    </script>
 
 @endsection

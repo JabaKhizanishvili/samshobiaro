@@ -3487,7 +3487,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var DoctorsHome = function DoctorsHome(_ref) {
   var seo = _ref.seo,
-      info = _ref.info;
+      info = _ref.info,
+      img = _ref.img;
+  console.log('esaa', img[0]);
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3512,13 +3514,13 @@ var DoctorsHome = function DoctorsHome(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "shape shape_1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/doctors/1.png",
-    alt: ""
+    src: img[0],
+    alt: "error"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "shape shape_2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/doctors/2.png",
-    alt: ""
+    src: img[0],
+    alt: "error"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "shape shape_3"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3832,7 +3834,9 @@ var Home = function Home(_ref) {
     className: "homePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSlider_HeroSlider__WEBPACK_IMPORTED_MODULE_3__["default"], {
     slider: slider
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    img: images
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], {
     news: blog
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_GalleryHome_GalleryHome__WEBPACK_IMPORTED_MODULE_2__["default"], {
     img: gallery,
@@ -5180,7 +5184,7 @@ var SocialMedia = function SocialMedia(_ref) {
   console.log(gfacebook.value);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "socialmedia flex centered"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, gyoutube.value != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: gyoutube.value,
     style: {
       marginRight: "20px"
@@ -5196,7 +5200,7 @@ var SocialMedia = function SocialMedia(_ref) {
     d: "M23.171,7.977a2.965,2.965,0,0,0-2.059-2.059c-1.844-.494-9.265-.494-9.265-.494s-7.4-.01-9.265.494A2.965,2.965,0,0,0,.522,7.977,30.813,30.813,0,0,0,.007,13.7a30.812,30.812,0,0,0,.515,5.7,2.965,2.965,0,0,0,2.059,2.059c1.842.5,9.265.5,9.265.5s7.4,0,9.265-.5A2.965,2.965,0,0,0,23.171,19.4a30.812,30.812,0,0,0,.493-5.7,30.812,30.812,0,0,0-.493-5.724ZM9.478,17.242V10.149L15.655,13.7Z",
     transform: "translate(-0.007 -5.424)",
     fill: color
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }))), ginstagram.value != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: ginstagram.value,
     style: {
       marginRight: "20px"
@@ -5212,7 +5216,7 @@ var SocialMedia = function SocialMedia(_ref) {
     d: "M7.742,6.011a3.971,3.971,0,1,0,3.971,3.971A3.965,3.965,0,0,0,7.742,6.011Zm0,6.553a2.582,2.582,0,1,1,2.582-2.582A2.586,2.586,0,0,1,7.742,12.564ZM12.8,5.848a.926.926,0,1,1-.926-.926A.924.924,0,0,1,12.8,5.848Zm2.63.94a4.584,4.584,0,0,0-1.251-3.245,4.614,4.614,0,0,0-3.245-1.251c-1.279-.073-5.112-.073-6.39,0A4.607,4.607,0,0,0,1.3,3.54,4.6,4.6,0,0,0,.049,6.785c-.073,1.279-.073,5.112,0,6.39A4.584,4.584,0,0,0,1.3,16.421a4.62,4.62,0,0,0,3.245,1.251c1.279.073,5.112.073,6.39,0a4.584,4.584,0,0,0,3.245-1.251,4.614,4.614,0,0,0,1.251-3.245c.073-1.279.073-5.108,0-6.387ZM13.78,14.547a2.614,2.614,0,0,1-1.472,1.472,17.069,17.069,0,0,1-4.565.311,17.2,17.2,0,0,1-4.565-.311A2.614,2.614,0,0,1,1.7,14.547a17.069,17.069,0,0,1-.311-4.565A17.2,17.2,0,0,1,1.7,5.416,2.614,2.614,0,0,1,3.177,3.944a17.069,17.069,0,0,1,4.565-.311,17.2,17.2,0,0,1,4.565.311A2.614,2.614,0,0,1,13.78,5.416a17.069,17.069,0,0,1,.311,4.565A17.06,17.06,0,0,1,13.78,14.547Z",
     transform: "translate(0.005 -2.238)",
     fill: color
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }))), gfacebook.value != null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: gfacebook.value
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", {
     xmlns: "http://www.w3.org/2000/svg",

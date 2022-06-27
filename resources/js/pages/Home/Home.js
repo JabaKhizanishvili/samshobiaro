@@ -19,7 +19,7 @@ const Home = ({ page, seo, images, slider, blog, gallery, links }) => {
             <div className="homePage">
                 <HeroSlider slider={slider} />
                 <ServiceHome />
-                <DoctorsHome />
+                <DoctorsHome img={images} />
                 <NewsHome news={blog} />
                 <GalleryHome img={gallery} links={links} />
             </div>

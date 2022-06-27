@@ -23,12 +23,22 @@ class HomeController extends Controller
         $page = Page::where('key', 'home')->firstOrFail();
         $news = Blog::where("status", 1)->with(['file', 'translations'])->take(6)->get();
 
+        $images = [];
+        foreach ($page->sections as $sections) {
+            if ($sections->file) {
+                $images[] = asset($sections->file->getFileUrlAttribute());
+            } else {
+                $images[] = null;
+            }
+        }
+
         return Inertia::render('Home/Home', [
             "slider" => Slider::where("status", 1)->with(['file', 'translations'])->get(),
             "news" => $news,
             "blog" =>  Blog::with('latestImage')->get(),
             'gallery' => Gallery::take(8)->get(),
             "links" => asset('storage/images'),
+            "images" => $images,
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,

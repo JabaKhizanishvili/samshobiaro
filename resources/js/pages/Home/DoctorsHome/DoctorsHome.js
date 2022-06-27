@@ -11,7 +11,8 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const DoctorsHome = ({ seo, info }) => {
+const DoctorsHome = ({ seo, info, img }) => {
+    console.log('esaa', img[0]);
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
     useEffect(() => {
@@ -27,10 +28,11 @@ const DoctorsHome = ({ seo, info }) => {
         <div className="doctorsHome wrapper flex">
             <div className="img_shapes" data-aos="flip-left">
                 <div className="shape shape_1">
-                    <img src="/assets/images/doctors/1.png" alt="" />
+                    <img src={img[0]} alt="error" />
                 </div>
                 <div className="shape shape_2">
-                    <img src="/assets/images/doctors/2.png" alt="" />
+                    {/* <img src="/assets/images/doctors/2.png" alt="" /> */}
+                    <img src={img[0]} alt="error" />
                 </div>
                 <div className="shape shape_3"></div>
             </div>

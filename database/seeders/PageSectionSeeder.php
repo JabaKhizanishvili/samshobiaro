@@ -22,27 +22,20 @@ class PageSectionSeeder extends Seeder
                 'key' => 'home',
             ],
             [
-                'key' => 'purpose',
+                'key' => 'doctors',
             ],
             [
-                'key' => 'ethics'
+                'key' => 'news'
             ],
             [
-                'key' => 'politics'
+                'key' => 'contact'
             ],
             [
-                'key' => 'services'
+                'key' => 'gallery'
             ],
             [
-                'key' => 'certification'
+                'key' => 'aboutus'
             ],
-            [
-                'key' => 'comprecognition'
-            ],
-            [
-                'key' => 'contact',
-            ]
-
 
         ];
 

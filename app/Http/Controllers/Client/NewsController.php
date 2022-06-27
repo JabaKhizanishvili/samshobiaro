@@ -50,7 +50,6 @@ class NewsController extends Controller
         return Inertia::render('SingleNews/SingleNews', [
             // "news" => $news, "lastNews" => $lastNews,
             "news" => Blog::with('latestImage')->find($slug),
-            // "newsGallery" => Blog::with('latestImage')->latest()->limit(3)->get(),
             "newsGallery" => Blog::where('id', '!=', $slug)->with('latestImage')->latest()->limit(3)->get(),
             "seo" => [
                 "title" => $page->meta_title ?? $page->meta_title,
