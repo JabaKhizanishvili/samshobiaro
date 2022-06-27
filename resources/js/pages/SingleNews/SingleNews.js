@@ -15,7 +15,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const SingleNews = ({ seo, news }) => {
+const SingleNews = ({ seo, news, newsGallery }) => {
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
     const { errors, gphone, gemail, gaddress } = usePage().props;
@@ -76,21 +76,26 @@ const SingleNews = ({ seo, news }) => {
                                     src="/assets/images/icons/news/double-arrow.svg"
                                     alt=""
                                 />
-                                უკან დაბრუნება
+                                {renderHTML(__('client.singlenews_backbtn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </Link>
                         </div>
                     </div>
                     <div className="right">
                         <Title3 text={renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
-                        {otherNews.map((item) => {
+                        {newsGallery.map((item) => {
                             return (
                                 <div className="flex other_news">
                                     <div className="img">
-                                        <img src={item.img} alt="" />
+                                        <img src={item.latest_image != null
+                                            ? "/" +
+                                            item.latest_image.path +
+                                            "/" +
+                                            item.latest_image.title
+                                            : null} alt="" />
                                     </div>
                                     <div>
                                         <div className="para" style={{ marginBottom: "13px" }}>
-                                            {item.para}
+                                            {item.short_description}
                                         </div>
                                         <div className="date">
                                             <img src="/assets/images/icons/news/calendar.svg" alt="" /> {item.date}

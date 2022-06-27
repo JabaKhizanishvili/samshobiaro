@@ -4520,7 +4520,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var SingleNews = function SingleNews(_ref) {
   var seo = _ref.seo,
-      news = _ref.news;
+      news = _ref.news,
+      newsGallery = _ref.newsGallery;
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4582,24 +4583,24 @@ var SingleNews = function SingleNews(_ref) {
     },
     src: "/assets/images/icons/news/double-arrow.svg",
     alt: ""
-  }), "\u10E3\u10D9\u10D0\u10DC \u10D3\u10D0\u10D1\u10E0\u10E3\u10DC\u10D4\u10D1\u10D0"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), renderHTML(__('client.singlenews_backbtn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title3, {
     text: renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
-  }), otherNews.map(function (item) {
+  }), newsGallery.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "flex other_news"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: item.img,
+      src: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null,
       alt: ""
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "para",
       style: {
         marginBottom: "13px"
       }
-    }, item.para), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    }, item.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "date"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: "/assets/images/icons/news/calendar.svg",
