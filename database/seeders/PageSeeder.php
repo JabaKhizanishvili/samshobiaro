@@ -20,7 +20,6 @@ class PageSeeder extends Seeder
             [
                 'key' => 'home'
             ],
-            // about us
             [
                 'key' => 'doctors'
             ],
@@ -28,64 +27,14 @@ class PageSeeder extends Seeder
                 'key' => 'news'
             ],
             [
-                'key' => 'politics'
+                'key' => 'aboutus'
             ],
             [
-                'key' => 'management'
-            ],
-            [
-                'key' => 'recognition'
-            ],
-            // servies
-            [
-                'key' => 'services'
-            ],
-            [
-                'key' => 'stators'
-            ],
-            [
-                'key' => 'certification'
-            ],
-            [
-                'key' => 'comprecognition'
-            ],
-            // documentation
-            [
-                'key' => 'owner-application'
-            ],
-            [
-                'key' => 'evaluation'
-            ],
-            [
-                'key' => 'circulars'
-            ],
-            //our team
-            [
-                'key' => 'office'
-            ],
-            [
-                'key' => 'inspectors'
-            ],
-            [
-                'key' => 'career'
-            ],
-
-            // contact
-
-            // [
-            //     'key' => 'contact'
-            // ],
-
-
-            [
-                'key' => 'about'
+                'key' => 'gallery'
             ],
             [
                 'key' => 'contact'
             ],
-            [
-                'key' => 'products'
-            ]
 
 
         ];

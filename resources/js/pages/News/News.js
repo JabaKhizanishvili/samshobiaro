@@ -12,7 +12,9 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const News = ({ seo, page, news, blog, gephone }) => {
+const News = ({ seo, page, news, blog, gallery, gallerylinks }) => {
+
+    const { errors, gphone, gemail, gaddress } = usePage().props;
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
     let links = function (links) {
@@ -129,13 +131,23 @@ const News = ({ seo, page, news, blog, gephone }) => {
                     <div className="right">
                         <Title3 text={renderHTML(__('client.news_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                         <div className="img_grid">
-                            {imgGrid.map((img, i) => {
-                                return <img key={i} src={img} alt="" />;
+                            {gallery.map((img, i) => {
+                                return (
+                                    // <img key={i}
+                                    // src={img.latest_image != null
+                                    //     ? "/" +
+                                    //     img.latest_image.path +
+                                    //     "/" +
+                                    //     img.latest_image.title
+                                    //     : null} alt='asd' />
+
+                                    <img key={i} src={gallerylinks + "/" + img.name} />
+                                );
                             })}
                         </div>
                         <ConsultBox
                             content={renderHTML(__('client.news_contactifo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
-                            number={"+995 032 2 111 111"}
+                            number={gphone.value}
                         />
                     </div>
                 </div>

@@ -1,6 +1,13 @@
 {
     "menu": [
         {
+            "url": "page.index",
+            "name": "Pages",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
+        },
+        {
             "url": "doctors.index",
             "name": "Doctors",
             "i18n": "page",

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Blog;
+use App\Models\Gallery;
 use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -20,6 +21,8 @@ class NewsController extends Controller
 
         return Inertia::render('News/News', [
             "news" => $news,
+            "gallery" => Gallery::take(6)->get(),
+            "gallerylinks" => asset('storage/images'),
             "blog" =>  Blog::with('latestImage')->paginate(3),
             "seo" => [
                 "title" => $page->meta_title,

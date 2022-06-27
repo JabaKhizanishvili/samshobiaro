@@ -23,9 +23,12 @@ const Header = () => {
 
 
     // const { pathname } = useLocation();
-    const { pathname, currentLocale, locale_urls, locales } = usePage().props;
+    const { pathname, currentLocale, locale_urls, locales, currentlocale } = usePage().props;
 
-
+    const langarr = {
+        "ge": 'ქართული',
+        "en": 'english'
+    }
 
     let transparent = false;
 
@@ -111,7 +114,7 @@ const Header = () => {
                     })}
                     <div className="languages">
                         <div className="active">
-                            ქრთ <ArrowDown color="#171C26" />
+                            {langarr[currentlocale]} <ArrowDown color="#171C26" />
                         </div>
 
                         <div className="drop">

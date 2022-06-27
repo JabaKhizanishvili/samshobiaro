@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Middleware;
+use Illuminate\Support\Facades\App;
 
 
 class HandleInertiaRequests extends Middleware
@@ -80,6 +81,7 @@ class HandleInertiaRequests extends Middleware
             "locales" => $locales,
             "pathname" => $currentRoute,
             "locale_urls" => $locale_urls,
+            "currentlocale" => App::currentLocale(),
             'urlPrev'    => $urlPrev,
             //'categories' => $result,
             'info' => $_result,

@@ -8,13 +8,18 @@ import { PageHead } from "../../components/PageHead/PageHead";
 // import Arrow from "/assets/images/icons/news/double-arrow.svg";
 import { Title3 } from "../../components/Titles/Titles";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
 import { ConsultBox } from "../../components/ConsultBox/ConsultBox";
 import "./SingleNews.css";
 import Layout from "../../Layouts/Layout";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 
 const SingleNews = ({ seo, news }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
+    const { errors, gphone, gemail, gaddress } = usePage().props;
+
     const otherNews = [
         {
             img: "/assets/images/news/5.png",
@@ -36,9 +41,9 @@ const SingleNews = ({ seo, news }) => {
         <Layout seo={seo}>
             <div className="newsPage singleNewsPage">
                 <PageHead
-                    title="ახალი N2 სამშობიარო სახლი"
-                    prev="სიახლეები"
-                    active="ახალი N2 "
+                    title={renderHTML(__('client.singlenews_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+                    prev={renderHTML(__('client.nav_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+                    active={renderHTML(__('client.nav_singlenews', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                 />
                 <div className="wrapper2 flex main">
                     <div className="news_list">
@@ -76,7 +81,7 @@ const SingleNews = ({ seo, news }) => {
                         </div>
                     </div>
                     <div className="right">
-                        <Title3 text="ბოლოს დამატებული" />
+                        <Title3 text={renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                         {otherNews.map((item) => {
                             return (
                                 <div className="flex other_news">
@@ -95,8 +100,8 @@ const SingleNews = ({ seo, news }) => {
                             );
                         })}
                         <ConsultBox
-                            content="კონსულტაციაზე ჩასაწერად დაგვიკავშირდით"
-                            number="+995 032 2 111 111"
+                            content={renderHTML(__('client.singlenews_contactus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+                            number={gphone.value}
                         />
                     </div>
                 </div>

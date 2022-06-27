@@ -4137,7 +4137,13 @@ var News = function News(_ref) {
       page = _ref.page,
       news = _ref.news,
       blog = _ref.blog,
-      gephone = _ref.gephone;
+      gallery = _ref.gallery,
+      gallerylinks = _ref.gallerylinks;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.usePage)().props,
+      errors = _usePage$props.errors,
+      gphone = _usePage$props.gphone,
+      gemail = _usePage$props.gemail,
+      gaddress = _usePage$props.gaddress;
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4255,15 +4261,24 @@ var News = function News(_ref) {
     text: renderHTML(__('client.news_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img_grid"
-  }, imgGrid.map(function (img, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      key: i,
-      src: img,
-      alt: ""
-    });
+  }, gallery.map(function (img, i) {
+    return (
+      /*#__PURE__*/
+      // <img key={i}
+      // src={img.latest_image != null
+      //     ? "/" +
+      //     img.latest_image.path +
+      //     "/" +
+      //     img.latest_image.title
+      //     : null} alt='asd' />
+      react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+        key: i,
+        src: gallerylinks + "/" + img.name
+      })
+    );
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__.ConsultBox, {
     content: renderHTML(__('client.news_contactifo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
-    number: "+995 032 2 111 111"
+    number: gphone.value
   })))));
 };
 
@@ -4482,10 +4497,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/PageHead/PageHead */ "./resources/js/components/PageHead/PageHead.js");
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/ConsultBox/ConsultBox */ "./resources/js/components/ConsultBox/ConsultBox.js");
-/* harmony import */ var _SingleNews_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SingleNews.css */ "./resources/js/Pages/SingleNews/SingleNews.css");
-/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/ConsultBox/ConsultBox */ "./resources/js/components/ConsultBox/ConsultBox.js");
+/* harmony import */ var _SingleNews_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SingleNews.css */ "./resources/js/Pages/SingleNews/SingleNews.css");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
  // import Img1 from "/assets/images/news/6.png";
 // import Img2 from "/assets/images/news/5.png";
@@ -4501,9 +4517,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var SingleNews = function SingleNews(_ref) {
   var seo = _ref.seo,
       news = _ref.news;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props.localizations;
+  var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props,
+      errors = _usePage$props.errors,
+      gphone = _usePage$props.gphone,
+      gemail = _usePage$props.gemail,
+      gaddress = _usePage$props.gaddress;
   var otherNews = [{
     img: "/assets/images/news/5.png",
     para: "დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, ",
@@ -4517,14 +4549,14 @@ var SingleNews = function SingleNews(_ref) {
     para: "დეველოპერის ან დიზაინერირო ისეთი ამოცანების მარტივად შესრღიურ საქმიანობაში ლება, ყოველდღიურ საქმიანობაში  ",
     date: "12 ოქტომბერი, 2021"
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "newsPage singleNewsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
-    title: "\u10D0\u10EE\u10D0\u10DA\u10D8 N2 \u10E1\u10D0\u10DB\u10E8\u10DD\u10D1\u10D8\u10D0\u10E0\u10DD \u10E1\u10D0\u10EE\u10DA\u10D8",
-    prev: "\u10E1\u10D8\u10D0\u10EE\u10DA\u10D4\u10D4\u10D1\u10D8",
-    active: "\u10D0\u10EE\u10D0\u10DA\u10D8 N2 "
+    title: renderHTML(__('client.singlenews_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    prev: renderHTML(__('client.nav_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_singlenews', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2 flex main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4540,7 +4572,7 @@ var SingleNews = function SingleNews(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/news/calendar.svg",
     alt: ""
-  }), news.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
+  }), news.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
     href: route("client.news.index"),
     className: "return"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -4553,7 +4585,7 @@ var SingleNews = function SingleNews(_ref) {
   }), "\u10E3\u10D9\u10D0\u10DC \u10D3\u10D0\u10D1\u10E0\u10E3\u10DC\u10D4\u10D1\u10D0"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title3, {
-    text: "\u10D1\u10DD\u10DA\u10DD\u10E1 \u10D3\u10D0\u10DB\u10D0\u10E2\u10D4\u10D1\u10E3\u10DA\u10D8"
+    text: renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), otherNews.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "flex other_news"
@@ -4573,9 +4605,9 @@ var SingleNews = function SingleNews(_ref) {
       src: "/assets/images/icons/news/calendar.svg",
       alt: ""
     }), " ", item.date)));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__.ConsultBox, {
-    content: "\u10D9\u10DD\u10DC\u10E1\u10E3\u10DA\u10E2\u10D0\u10EA\u10D8\u10D0\u10D6\u10D4 \u10E9\u10D0\u10E1\u10D0\u10EC\u10D4\u10E0\u10D0\u10D3 \u10D3\u10D0\u10D2\u10D5\u10D8\u10D9\u10D0\u10D5\u10E8\u10D8\u10E0\u10D3\u10D8\u10D7",
-    number: "+995 032 2 111 111"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_3__.ConsultBox, {
+    content: renderHTML(__('client.singlenews_contactus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    number: gphone.value
   })))));
 };
 
@@ -4835,7 +4867,12 @@ var Header = function Header() {
       pathname = _usePage$props2.pathname,
       currentLocale = _usePage$props2.currentLocale,
       locale_urls = _usePage$props2.locale_urls,
-      locales = _usePage$props2.locales;
+      locales = _usePage$props2.locales,
+      currentlocale = _usePage$props2.currentlocale;
+  var langarr = {
+    "ge": 'ქართული',
+    "en": 'english'
+  };
   var transparent = false;
 
   if (pathname === "/") {
@@ -4918,7 +4955,7 @@ var Header = function Header() {
     className: "languages"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "active"
-  }, "\u10E5\u10E0\u10D7 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__.ArrowDown, {
+  }, langarr[currentlocale], " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__.ArrowDown, {
     color: "#171C26"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "drop"
