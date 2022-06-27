@@ -115,6 +115,10 @@ Route::prefix('{locale?}')
                 Route::resource('blogs', \App\Http\Controllers\Admin\BlogController::class);
                 Route::get('blogs/{blogs}/destroy', [\App\Http\Controllers\Admin\BlogController::class, 'destroy'])->name('blogs.destroy');
 
+                //slider
+                Route::resource('slider', \App\Http\Controllers\Admin\SliderController::class);
+                Route::get('slider/{slider}/destroy', [\App\Http\Controllers\Admin\SliderController::class, 'destroy'])->name('blogs.destroy');
+
                 //doctors
                 Route::resource('doctors', \App\Http\Controllers\Admin\DoctorsController::class);
                 Route::get('doctors/{doctors}/destroy', [\App\Http\Controllers\Admin\DoctorsController::class, 'destroy'])->name('doctors.destroy');

@@ -10,14 +10,15 @@ import Aos from "aos";
 import { Link, usePage } from "@inertiajs/inertia-react";
 import "aos/dist/aos.css";
 
-const Home = ({ page, seo, images }) => {
+const Home = ({ page, seo, images, slider }) => {
+
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
     return (
         <Layout seo={seo}>
             <div className="homePage">
-                <HeroSlider />
+                <HeroSlider slider={slider} />
                 <ServiceHome />
                 <DoctorsHome />
                 <NewsHome />

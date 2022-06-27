@@ -3206,7 +3206,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _components_Map_Map_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Map/Map.js */ "./resources/js/components/Map/Map.js");
 /* harmony import */ var _components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/MainBtn/MainBtn */ "./resources/js/components/MainBtn/MainBtn.js");
 /* harmony import */ var _components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/PageHead/PageHead */ "./resources/js/components/PageHead/PageHead.js");
@@ -3613,7 +3613,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var HeroSlider = function HeroSlider() {
+var HeroSlider = function HeroSlider(props) {
+  var data = new Array();
+  data.push(props.slider);
+  console.log(data[0], 'esaa');
   var images = ["/assets/images/hero/1.png", "/assets/images/hero/2.png", "/assets/images/hero/3.png"];
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
@@ -3622,7 +3625,7 @@ var HeroSlider = function HeroSlider() {
       setIndex = _useState2[1];
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var lastIndex = SliderData.length - 1;
+    var lastIndex = data[0].length - 1;
 
     if (index < 0) {
       setIndex(lastIndex);
@@ -3657,7 +3660,7 @@ var HeroSlider = function HeroSlider() {
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "heroSlider "
-  }, SliderData.map(function (data, indexData, i) {
+  }, data[0].map(function (data, indexData, i) {
     var position = "nextSlide";
 
     if (indexData === index) {
@@ -3673,11 +3676,11 @@ var HeroSlider = function HeroSlider() {
       key: indexData
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       className: "bg",
-      src: images[indexData],
-      alt: "hero img"
+      src: data.file != null ? "/" + data.file.path + "/" + data.file.title : null,
+      alt: ""
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "content wrapper"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, data.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, data.paragraph), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, data.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, data.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
       text: "\u10D2\u10D0\u10D8\u10D2\u10D4 \u10DB\u10D4\u10E2\u10D8"
     })));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -3693,7 +3696,7 @@ var HeroSlider = function HeroSlider() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagination"
   }, Array.from({
-    length: SliderData.length
+    length: data[0].length
   }).map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       key: i,
@@ -3747,7 +3750,8 @@ __webpack_require__.r(__webpack_exports__);
 var Home = function Home(_ref) {
   var page = _ref.page,
       seo = _ref.seo,
-      images = _ref.images;
+      images = _ref.images,
+      slider = _ref.slider;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_8___default().init({
       duration: 2000
@@ -3757,7 +3761,9 @@ var Home = function Home(_ref) {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "homePage"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSlider_HeroSlider__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_GalleryHome_GalleryHome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSlider_HeroSlider__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    slider: slider
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_GalleryHome_GalleryHome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -3777,11 +3783,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_elastic_carousel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-elastic-carousel */ "./node_modules/react-elastic-carousel/dist/index.es.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/MainBtn/MainBtn */ "./resources/js/components/MainBtn/MainBtn.js");
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
 /* harmony import */ var _NewsHome_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NewsHome.css */ "./resources/js/Pages/Home/NewsHome/NewsHome.css");
-/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
+/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_8__);
@@ -4008,7 +4014,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _News_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./News.css */ "./resources/js/Pages/News/News.css");
 /* harmony import */ var _components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Pagination/Pagination */ "./resources/js/components/Pagination/Pagination.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 /* harmony import */ var _components_Pagination_Pagination_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/Pagination/Pagination.css */ "./resources/js/components/Pagination/Pagination.css");
@@ -4126,7 +4132,7 @@ var News = function News(_ref) {
       paragraph: item.short_description,
       date: item.date,
       id: item.id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, item.id));
+    }));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "pagination flex centered"
   }, linksPrev(blog.links), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
@@ -4166,7 +4172,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _NewsItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewsItem.css */ "./resources/js/Pages/News/NewsItem/NewsItem.css");
-/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
+/* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 
 
@@ -4518,7 +4524,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _Map_Map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Map/Map */ "./resources/js/components/Map/Map.js");
 /* harmony import */ var _SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../SocialMedia/SocialMedia */ "./resources/js/components/SocialMedia/SocialMedia.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _Footer_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Footer.css */ "./resources/js/components/Footer/Footer.css");
  // import { Link, useLocation } from "react-router-dom";
 
@@ -4640,7 +4646,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
 /* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../SocialMedia/SocialMedia */ "./resources/js/components/SocialMedia/SocialMedia.js");
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Header.css */ "./resources/js/components/Header/Header.css");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
@@ -4896,7 +4902,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Pagination": () => (/* binding */ Pagination)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
+/* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
 /* harmony import */ var _Pagination_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pagination.css */ "./resources/js/components/Pagination/Pagination.css");
 
 
@@ -46890,7 +46896,7 @@ webpackContext.id = "./resources/js/Pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\test\\\\samshobiaro"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\jaba\\\\OneDrive\\\\სამუშაო დაფა\\\\test\\\\samshobiaro","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
+module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
 
 /***/ })
 

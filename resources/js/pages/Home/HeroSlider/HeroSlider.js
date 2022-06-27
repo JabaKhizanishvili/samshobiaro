@@ -6,13 +6,16 @@ import React, { useState, useEffect } from "react";
 import { MainBtn } from "../../../components/MainBtn/MainBtn";
 import "./HeroSlider.css";
 
-const HeroSlider = () => {
+const HeroSlider = (props) => {
+    let data = new Array();
+    data.push(props.slider);
+    console.log(data[0], 'esaa');
     const images = ["/assets/images/hero/1.png", "/assets/images/hero/2.png", "/assets/images/hero/3.png"];
 
     const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        const lastIndex = SliderData.length - 1;
+        const lastIndex = data[0].length - 1;
         if (index < 0) {
             setIndex(lastIndex);
         }
@@ -53,7 +56,7 @@ const HeroSlider = () => {
     ];
     return (
         <div className="heroSlider ">
-            {SliderData.map((data, indexData, i) => {
+            {data[0].map((data, indexData, i) => {
                 let position = "nextSlide";
                 if (indexData === index) {
                     position = "activeSlide";
@@ -66,10 +69,15 @@ const HeroSlider = () => {
                 }
                 return (
                     <article className={position} key={indexData}>
-                        <img className="bg" src={images[indexData]} alt="hero img" />
+                        <img className="bg" src={data.file != null
+                            ? "/" +
+                            data.file.path +
+                            "/" +
+                            data.file.title
+                            : null} alt="" />
                         <div className="content wrapper">
                             <h3>{data.title}</h3>
-                            <p>{data.paragraph}</p>
+                            <p>{data.description}</p>
                             <MainBtn text="გაიგე მეტი" />
                         </div>
                     </article>
@@ -82,7 +90,7 @@ const HeroSlider = () => {
                 {/* <ArrowDown color="#1dbfcc" /> */}
             </button>
             <div className="pagination">
-                {Array.from({ length: SliderData.length }).map((item, i) => {
+                {Array.from({ length: data[0].length }).map((item, i) => {
                     return (
                         <button
                             key={i}

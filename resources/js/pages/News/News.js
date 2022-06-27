@@ -115,7 +115,6 @@ const News = ({ seo, page, news, blog }) => {
                                         date={item.date}
                                         id={item.id}
                                     />
-                                    <p>{item.id}</p>
                                 </React.Fragment>
                             );
                         })}

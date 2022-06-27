@@ -22,6 +22,13 @@
             "slug": "page"
         },
         {
+            "url": "slider.index",
+            "name": "Slider",
+            "i18n": "page",
+            "icon": "language",
+            "slug": "page"
+        },
+        {
             "url": "javascript:void(0)",
             "name": "Language Settings",
             "i18n": "language",
