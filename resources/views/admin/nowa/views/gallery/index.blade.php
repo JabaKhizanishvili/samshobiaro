@@ -10,7 +10,7 @@
 
 
 
-   <div class="container pt-4">
+   <div class="container-fluid pt-4">
     <h2>Gallery</h2>
 
     <form action={{route('galleryaddimg')}} method="post" enctype="multipart/form-data">
@@ -18,6 +18,7 @@
    <div class="mb-3">
     <label for="formFile" class="form-label">Default file input example</label>
     <input class="form-control" name='img' type="file" id="formFile" required>
+    <input class="form-control" name='width' type="number" id="formFile" placeholder="width" required>
   </div>
   <button class="btn btn-primary">add img</button>
 

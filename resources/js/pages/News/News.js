@@ -7,13 +7,14 @@ import Layout from "../../Layouts/Layout";
 import "./News.css";
 import { Pagination } from "../../components/Pagination/Pagination";
 import { ArrowDown } from "/assets/images/icons/contact/contactIcons";
-import { Link } from "@inertiajs/inertia-react";
-import { Inertia } from "@inertiajs/inertia";
 import "../../components/Pagination/Pagination.css";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 
-const News = ({ seo, page, news, blog }) => {
-
+const News = ({ seo, page, news, blog, gephone }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     let links = function (links) {
         let rows = [];
         //links.shift();
@@ -97,7 +98,7 @@ const News = ({ seo, page, news, blog }) => {
     return (
         <Layout seo={seo}>
             <div className="newsPage">
-                <PageHead title="სიახლეები" prev="მთავარი" active="სიახლეები" />
+                <PageHead title={renderHTML(__('client.news_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                 <div className="wrapper2 flex main">
                     <div className="news_list">
                         {blog.data.map((item, i) => {
@@ -126,15 +127,15 @@ const News = ({ seo, page, news, blog }) => {
                         </div>
                     </div>
                     <div className="right">
-                        <Title3 text="გალერეა" />
+                        <Title3 text={renderHTML(__('client.news_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                         <div className="img_grid">
                             {imgGrid.map((img, i) => {
                                 return <img key={i} src={img} alt="" />;
                             })}
                         </div>
                         <ConsultBox
-                            content="კონსულტაციაზე ჩასაწერად დაგვიკავშირდით"
-                            number="+995 032 2 111 111"
+                            content={renderHTML(__('client.news_contactifo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
+                            number={"+995 032 2 111 111"}
                         />
                     </div>
                 </div>

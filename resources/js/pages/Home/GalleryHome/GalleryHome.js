@@ -14,7 +14,9 @@ import "aos/dist/aos.css";
 import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
-const GalleryHome = () => {
+const GalleryHome = (props) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
@@ -50,19 +52,19 @@ const GalleryHome = () => {
     ];
     return (
         <div className="GalleryHome wrapper">
-            <Title1 largeText="ფოტო გალერეა" />
+            <Title1 largeText={renderHTML(__('client.gallery_photogallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
             <div className="photo_grid" data-aos="fade-up">
-                {images.map((img, i) => {
+                {props.img.map((img, i) => {
                     return (
                         <div
                             key={i}
-                            className="img" style={{ gridColumn: `span ${img.span}` }}>
-                            <img src={img.src} alt="" />
+                            className="img" style={{ gridColumn: `span ${img.width}` }}>
+                            <img src={props.links + "/" + img.name}></img>
                         </div>
                     );
                 })}
             </div>
-            <MainBtn text="ნახე სრულად" link={route("client.gallery.index")} />
+            <MainBtn text={renderHTML(__('client.gallery_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} link={route("client.gallery.index")} />
         </div>
     );
 };

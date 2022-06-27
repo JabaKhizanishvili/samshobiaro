@@ -70,7 +70,7 @@ const Footer = () => {
                 >
                     <Link href="/" className="logo flex center">
                         <img src="/assets/images/header/logo2.png" alt="" />
-                        ახალი N2 სამშობიარო სახლი
+                        {renderHTML(__('client.home_logo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </Link>
                     <SocialMedia color="#171C26" />
                 </div>
@@ -85,7 +85,7 @@ const Footer = () => {
                         })}
                     </div>
                     <div className="right">
-                        <h2>საკონტაქტო ინფორმაცია</h2>
+                        <h2>{renderHTML(__('client.footer_contactinfo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</h2>
                         <Link href="/">
                             <Call color="#171C26" />
                             {gphone.value}

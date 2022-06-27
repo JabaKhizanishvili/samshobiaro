@@ -55,6 +55,7 @@ class GalleryController extends Controller
             $img->create([
                 "name" => $name,
                 "size" => $size,
+                "width" => $request->width,
                 "user_id" => $request->session()->get('loggedUser'),
             ]);
             return redirect()->back();

@@ -16,59 +16,67 @@ import { ServiceBox } from "../../components/ServiceBox/ServiceBox";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Layout from "../../Layouts/Layout";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 
 const AboutUs = ({ seo, page }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
+    // const checkList = [
+    //     "პროფესიონალიზმი",
+    //     "პასუხისმგებლობის მაღალი გრძნობა",
+    //     "დიდი გამოცდილება",
+    //     "საქმის სიყვარული",
+    //     "პროფესიონალიზმი",
+    //     "პასუხისმგებლობის მაღალი გრძნობა",
+    // ];
+
     const checkList = [
-        "პროფესიონალიზმი",
-        "პასუხისმგებლობის მაღალი გრძნობა",
-        "დიდი გამოცდილება",
-        "საქმის სიყვარული",
-        "პროფესიონალიზმი",
-        "პასუხისმგებლობის მაღალი გრძნობა",
+        renderHTML(__('client.doctors_proffesionalism', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_responsibility', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_experience', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_love', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     ];
     const serviceBoxData = [
         {
             icon: "/assets/images/icons/service/1.png",
-            title: "მეანობა",
-            para: "შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან ",
+            title: renderHTML(__('client.services_1', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_1_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#e4feff7d",
         },
         {
-            icon: "/assets/images/icons/service/1.png",
-            title: "ანტენატალური მეთვალყურეობა",
-            para: " შემთხვევითად გენერ, ირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნსირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრეალუ",
+            icon: "/assets/images/icons/service/2.png",
+            title: renderHTML(__('client.services_2', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_2_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#efefef7b",
         },
         {
-            icon: "/assets/images/icons/service/1.png",
-            title: "გინეკოლოგიური მომსახურება",
-            para: "რებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე ",
+            icon: "/assets/images/icons/service/3.png",
+            title: renderHTML(__('client.services_3', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_3_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#efefef7b",
         },
         {
-            icon: "/assets/images/icons/service/1.png",
-            title: "სრულფასოვანი ლაბორატორიული კვლევა",
-            para: " რებული ტექსტი ული ტექსტი ული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე",
+            icon: "/assets/images/icons/service/4.png",
+            title: renderHTML(__('client.services_4', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_4_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#e4feff7d",
         },
     ];
     return (
         <Layout seo={seo}>
             <div className="aboutPage">
-                <PageHead title="ჩვენ შესახებ" prev="მთავარი" active="ჩვენ შესახებ" />
+                <PageHead title={renderHTML(__('client.aboutus_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                 <div className="showcase">
                     <div className="wrapper">
                         <div className="content">
-                            <h4>ახალი N2 სამშობიარო სახლი</h4>
+                            <h4>{renderHTML(__('client.aboutus_newhome', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</h4>
                             <p>
-                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                                უამრავია, თუმცა არსებობს რამდენიმე ძირითად.
+                                {renderHTML(__('client.aboutus_newhometext', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
                             <div className="checks">
                                 {checkList.map((item) => {
@@ -88,12 +96,9 @@ const AboutUs = ({ seo, page }) => {
                 <div className="section2">
                     <div className="wrapper flex">
                         <div className="lft">
-                            <Title2 text="ვინ ვართ ჩვენ?" />
+                            <Title2 text={renderHTML(__('client.aboutus_whoarewe', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                             <p>
-                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი,
+                                {renderHTML(__('client.aboutus_whoarewe_1_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
                             <div className="img_flex flex">
                                 <div className="img">
@@ -104,22 +109,14 @@ const AboutUs = ({ seo, page }) => {
                                 </div>
                             </div>
                             <p>
-                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
-                                ყველაზე ხშირად ვიყენებთ ხოლმე.
+                                {renderHTML(__('client.aboutus_whoarewe_1_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
-                            <MainBtn text="დაგვიკავშირდი" />
+                            <MainBtn text={renderHTML(__('client.aboutus_whoarewe_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                         </div>
                         <div className="rgt">
-                            <Title2 text="ჩვენი მისია და მიზანი" />
+                            <Title2 text={renderHTML(__('client.aboutus_mission', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                             <p>
-                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და ინსტრუმენტები
-                                უამრავია, თუმცა არსებობს რამდენიმე ძირითადი, რომელსაც ომედიაში
-                                ყველაზე ხშირად ვიყენებთ ხოლმე.
+                                {renderHTML(__('client.aboutus_mission_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
                             <div className="img" data-aos="flip-left">
                                 <img src="/assets/images/about/3.png" alt="" />
@@ -128,14 +125,12 @@ const AboutUs = ({ seo, page }) => {
                     </div>
                 </div>
                 <div className="about_service wrapper ">
-                    <Title2 text="ჩვენი სერვისი" />
+                    <Title2 text={renderHTML(__('client.aboutus_ourservice', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                     <div className="flex">
                         <div data-aos="fade-right">
                             <img src="/assets/images/about/4.png" alt="" style={{ marginBottom: "30px" }} />
                             <p>
-                                დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის
-                                ხოლმე საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც
-                                სპეციფიური ინსტრუმენტი ჭირდება. ასეთი ამოცანები და
+                                {renderHTML(__('client.aboutus_ourservice_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
                         </div>
                         <div className="grid" data-aos="fade-left">

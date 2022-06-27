@@ -9,12 +9,15 @@ import "./NewsHome.css";
 // import Img3 from "/assets/images/news/3.png";
 import Calendar from "/assets/images/icons/news/calendar.svg";
 // import { Link } from "react-router-dom";
-import { Link } from '@inertiajs/inertia-react'
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 import { Route } from "react-router-dom";
 
-const NewsHome = () => {
+const NewsHome = (props) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
@@ -66,32 +69,38 @@ const NewsHome = () => {
     return (
         <div className="newsHome wrapper">
             <div className="head flex">
-                <Title1 largeText="ახალი ამბები" subtitle="სიახლეები" />
-                <MainBtn link={route("client.news.index")} text="ყველა სიახლე" />
+                <Title1 largeText={renderHTML(__('client.news_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} subtitle={renderHTML(__('client.news_siaxeebi', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
+                <MainBtn link={route("client.news.index")} text={renderHTML(__('client.news_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
             </div>
             <div className="news_slider flex" data-aos="fade-right">
                 {/* <button className="arrow prev">
                     <ArrowDown color="#1dbfcc" />
                 </button> */}
                 <Carousel breakPoints={breakPoints}>
-                    {newsData.map((item, i) => {
+                    {props.news.map((item, i) => {
                         return (
                             <div className="news_box" key={i}>
                                 <div className="img">
-                                    <img src={item.img} alt="" />
+                                    {/* <img src={item.img} alt="" /> */}
+                                    <img src={item.latest_image != null
+                                        ? "/" +
+                                        item.latest_image.path +
+                                        "/" +
+                                        item.latest_image.title
+                                        : null} />
                                 </div>
                                 <div className="content">
-                                    <div className="status">{item.status}</div>
+                                    <div className="status">{item.name}</div>
                                     <div className="date">
                                         <span>
                                             <img src={Calendar} alt="" />
                                         </span>
                                         {item.date}
                                     </div>
-                                    <div className="caption">{item.caption}</div>
-                                    <Link href="/" className="link ">
+                                    <div className="caption">{item.short_description}</div>
+                                    <Link href={route("client.news.show", item.id)} className="link ">
                                         <div>
-                                            სრულად ნახვა <div className="plus">+</div>
+                                            {renderHTML(__('client.news_post_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} <div className="plus">+</div>
                                         </div>
                                     </Link>
                                 </div>
@@ -102,8 +111,8 @@ const NewsHome = () => {
                 {/* <button className="arrow next">
                     <ArrowDown color="#1dbfcc" />
                 </button> */}
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

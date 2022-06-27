@@ -9,34 +9,38 @@ import { ServiceBox } from "../../../components/ServiceBox/ServiceBox";
 import "./ServiceHome.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 const ServiceHome = ({ page, seo, images }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
     const serviceBoxData = [
         {
             icon: "/assets/images/icons/service/1.png",
-            title: "მეანობა",
-            para: "შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან ",
+            title: renderHTML(__('client.services_1', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_1_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#e4feff7d",
         },
         {
             icon: "/assets/images/icons/service/2.png",
-            title: "ანტენატალური მეთვალყურეობა",
-            para: " შემთხვევითად გენერ, ირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნსირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრეალუ",
+            title: renderHTML(__('client.services_2', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_2_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#efefef7b",
         },
         {
             icon: "/assets/images/icons/service/3.png",
-            title: "გინეკოლოგიური მომსახურება",
-            para: "რებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე ",
+            title: renderHTML(__('client.services_3', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_3_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#efefef7b",
         },
         {
             icon: "/assets/images/icons/service/4.png",
-            title: "სრულფასოვანი ლაბორატორიული კვლევა",
-            para: " რებული ტექსტი ული ტექსტი ული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე",
+            title: renderHTML(__('client.services_4', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+            para: renderHTML(__('client.services_4_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
             background: "#e4feff7d",
         },
     ];
@@ -44,25 +48,20 @@ const ServiceHome = ({ page, seo, images }) => {
         <div className="serviceHome">
             <div className="wrapper flex content">
                 <div className="left">
-                    <p>ჩვენ შესახებ</p>
-                    <h2>lorem ipsum dolor</h2>
+                    <p>{renderHTML(__('client.services_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</p>
+                    <h2>{renderHTML(__('client.services_title', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</h2>
                     <p>
-                        შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-                        ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან მაქსიმალურად
-                        მიახლოებული შაბლონი წარუდგინონ
+                        {renderHTML(__('client.services_short_description', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </p>
                     <p>
-                        შემფასებელს. ხშირადაა შემთხვევა, როდესაც დიზაინის შესრულებისას
-                        საჩვენებელია, თუ როგორი იქნება ტექსტის ბლოკი. სწორედ ასეთ დროს არის
-                        მოსახერხებელი ამ
+                        {renderHTML(__('client.services_description', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </p>
-                    <MainBtn link={route("client.about.index")} text="გაიგე მეტი" />
+                    <MainBtn link={route("client.about.index")} text={renderHTML(__('client.services_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                 </div>
                 <div className="right">
-                    <Title1 largeText="სერვისები" subtitle="ჩვენ გთავაზობთ" />
+                    <Title1 largeText={renderHTML(__('client.services_services', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} subtitle={renderHTML(__('client.services_offer', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                     <p className="p">
-                        დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე
-                        საჭირო ისეთი
+                        {renderHTML(__('client.services_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                     </p>
                     <div className="service_grid" data-aos="fade-left">
                         {serviceBoxData.map((box, i) => {

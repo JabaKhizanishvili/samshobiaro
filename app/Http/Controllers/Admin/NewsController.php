@@ -147,7 +147,6 @@ class NewsController extends Controller
     {
         $url = locale_route('news.update', $news->id, false);
         $method = 'PUT';
-
         /*return view('admin.pages.product.form', [
             'product' => $product,
             'url' => $url,

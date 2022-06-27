@@ -7,17 +7,21 @@ import { Title1 } from "../../../components/Titles/Titles";
 import "./DoctorsHome.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 
 const DoctorsHome = ({ seo, info }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
     const checks = [
-        "პროფესიონალიზმი",
-        "პასუხისმგებლობის მაღალი გრძნობა",
-        "დიდი გამოცდილება",
-        "საქმის სიყვარული",
+        renderHTML(__('client.doctors_proffesionalism', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_responsibility', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_experience', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+        renderHTML(__('client.doctors_love', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     ];
     return (
         <div className="doctorsHome wrapper flex">
@@ -31,12 +35,10 @@ const DoctorsHome = ({ seo, info }) => {
                 <div className="shape shape_3"></div>
             </div>
             <div data-aos="fade-left">
-                <Title1 largeText="ჩვენი ექიმები" />
-                <h3>lorem ipsum dolor</h3>
+                <Title1 largeText={renderHTML(__('client.doctors_ourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
+                <h3>{renderHTML(__('client.doctors_title', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</h3>
                 <p className="p">
-                    შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული
-                    ნაწარმისემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და
-                    ტიპოგრაფიული ნაწარმის
+                    {renderHTML(__('client.doctors_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                 </p>
                 <div className="checks">
                     {checks.map((item, i) => {
@@ -50,7 +52,7 @@ const DoctorsHome = ({ seo, info }) => {
                         );
                     })}
                 </div>
-                <MainBtn link={route("client.doctors.index")} text="ნახე სრულად" />
+                <MainBtn link={route("client.doctors.index")} text={renderHTML(__('client.doctors_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
             </div>
         </div>
     );

@@ -25,6 +25,7 @@ class Gallery extends Model
     protected $fillable = [
         'name',
         'size',
+        'width',
     ];
 
     // public function getFilterScopes(): array

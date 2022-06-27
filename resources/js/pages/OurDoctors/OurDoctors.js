@@ -11,9 +11,14 @@ import { Title3 } from "../../components/Titles/Titles";
 // import Doctor8 from "/assets/images/doctors/5.png";
 import "./OurDoctors.css";
 import Layout from "../../Layouts/Layout";
+import { Link, usePage } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 
 const OurDoctors = ({ seo, doctor }) => {
+    const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
+    const sharedData = usePage().props.localizations;
+
     const doctors = [
         {
             img: "/assets/images/doctors/3.png",
@@ -83,14 +88,12 @@ const OurDoctors = ({ seo, doctor }) => {
     return (
         <Layout seo={seo}>
             <div className="ourDoctorsPage">
-                <PageHead title="ჩვენი ექიმები" prev="მთავარი" active="ჩვენი ექიმები" />
+                <PageHead title="ჩვენი ექიმები" prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_doctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                 <div className="wrapper2">
                     <div className="heading">
-                        <Title3 text="გაიცანით ჩვენი ექიმები" />
+                        <Title3 text={renderHTML(__('client.doctors_ourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                         <p>
-                            დეველოპერის ან დიზაინერის ყოველდღიურ საქმიანობაში ხშირად არის ხოლმე
-                            საჭირო ისეთი ამოცანების მარტივად შესრულება, რომელსაც სპეციფიური
-                            ინსტრუმენტი ჭირდება. ასეთი
+                            {renderHTML(__('client.doctors_main_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                         </p>
                     </div>
                     <div className="grid">

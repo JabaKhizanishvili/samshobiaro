@@ -3060,6 +3060,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
  // import Check from "../../assets/images/icons/service/check.svg";
@@ -3079,34 +3081,54 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var AboutUs = function AboutUs(_ref) {
   var seo = _ref.seo,
       page = _ref.page;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.usePage)().props.localizations;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_6___default().init({
       duration: 2000
     });
-  }, []);
-  var checkList = ["პროფესიონალიზმი", "პასუხისმგებლობის მაღალი გრძნობა", "დიდი გამოცდილება", "საქმის სიყვარული", "პროფესიონალიზმი", "პასუხისმგებლობის მაღალი გრძნობა"];
+  }, []); // const checkList = [
+  //     "პროფესიონალიზმი",
+  //     "პასუხისმგებლობის მაღალი გრძნობა",
+  //     "დიდი გამოცდილება",
+  //     "საქმის სიყვარული",
+  //     "პროფესიონალიზმი",
+  //     "პასუხისმგებლობის მაღალი გრძნობა",
+  // ];
+
+  var checkList = [renderHTML(__('client.doctors_proffesionalism', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_responsibility', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_experience', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_love', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))];
   var serviceBoxData = [{
     icon: "/assets/images/icons/service/1.png",
-    title: "მეანობა",
-    para: "შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან ",
+    title: renderHTML(__('client.services_1', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_1_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#e4feff7d"
   }, {
-    icon: "/assets/images/icons/service/1.png",
-    title: "ანტენატალური მეთვალყურეობა",
-    para: " შემთხვევითად გენერ, ირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნსირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრეალუ",
+    icon: "/assets/images/icons/service/2.png",
+    title: renderHTML(__('client.services_2', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_2_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#efefef7b"
   }, {
-    icon: "/assets/images/icons/service/1.png",
-    title: "გინეკოლოგიური მომსახურება",
-    para: "რებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე ",
+    icon: "/assets/images/icons/service/3.png",
+    title: renderHTML(__('client.services_3', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_3_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#efefef7b"
   }, {
-    icon: "/assets/images/icons/service/1.png",
-    title: "სრულფასოვანი ლაბორატორიული კვლევა",
-    para: " რებული ტექსტი ული ტექსტი ული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე",
+    icon: "/assets/images/icons/service/4.png",
+    title: renderHTML(__('client.services_4', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_4_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#e4feff7d"
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
@@ -3114,16 +3136,16 @@ var AboutUs = function AboutUs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "aboutPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
-    title: "\u10E9\u10D5\u10D4\u10DC \u10E8\u10D4\u10E1\u10D0\u10EE\u10D4\u10D1",
-    prev: "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
-    active: "\u10E9\u10D5\u10D4\u10DC \u10E8\u10D4\u10E1\u10D0\u10EE\u10D4\u10D1"
+    title: renderHTML(__('client.aboutus_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "showcase"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, "\u10D0\u10EE\u10D0\u10DA\u10D8 N2 \u10E1\u10D0\u10DB\u10E8\u10DD\u10D1\u10D8\u10D0\u10E0\u10DD \u10E1\u10D0\u10EE\u10DA\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h4", null, renderHTML(__('client.aboutus_newhome', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_newhometext', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "checks"
   }, checkList.map(function (item) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3139,8 +3161,8 @@ var AboutUs = function AboutUs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "lft"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_3__.Title2, {
-    text: "\u10D5\u10D8\u10DC \u10D5\u10D0\u10E0\u10D7 \u10E9\u10D5\u10D4\u10DC?"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    text: renderHTML(__('client.aboutus_whoarewe', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_whoarewe_1_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img_flex flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"
@@ -3152,13 +3174,13 @@ var AboutUs = function AboutUs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/about/2.png",
     alt: ""
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_4__.MainBtn, {
-    text: "\u10D3\u10D0\u10D2\u10D5\u10D8\u10D9\u10D0\u10D5\u10E8\u10D8\u10E0\u10D3\u10D8"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_whoarewe_1_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_4__.MainBtn, {
+    text: renderHTML(__('client.aboutus_whoarewe_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "rgt"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_3__.Title2, {
-    text: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10DB\u10D8\u10E1\u10D8\u10D0 \u10D3\u10D0 \u10DB\u10D8\u10D6\u10D0\u10DC\u10D8"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D4\u10D1\u10D8 \u10E3\u10D0\u10DB\u10E0\u10D0\u10D5\u10D8\u10D0, \u10D7\u10E3\u10DB\u10EA\u10D0 \u10D0\u10E0\u10E1\u10D4\u10D1\u10DD\u10D1\u10E1 \u10E0\u10D0\u10DB\u10D3\u10D4\u10DC\u10D8\u10DB\u10D4 \u10EB\u10D8\u10E0\u10D8\u10D7\u10D0\u10D3\u10D8, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10DD\u10DB\u10D4\u10D3\u10D8\u10D0\u10E8\u10D8 \u10E7\u10D5\u10D4\u10DA\u10D0\u10D6\u10D4 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D5\u10D8\u10E7\u10D4\u10DC\u10D4\u10D1\u10D7 \u10EE\u10DD\u10DA\u10DB\u10D4."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    text: renderHTML(__('client.aboutus_mission', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_mission_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img",
     "data-aos": "flip-left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -3167,7 +3189,7 @@ var AboutUs = function AboutUs(_ref) {
   }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "about_service wrapper "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_3__.Title2, {
-    text: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10E1\u10D4\u10E0\u10D5\u10D8\u10E1\u10D8"
+    text: renderHTML(__('client.aboutus_ourservice', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3178,7 +3200,7 @@ var AboutUs = function AboutUs(_ref) {
     style: {
       marginBottom: "30px"
     }
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8 \u10D3\u10D0")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_ourservice_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid",
     "data-aos": "fade-left"
   }, serviceBoxData.map(function (box) {
@@ -3212,9 +3234,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/PageHead/PageHead */ "./resources/js/components/PageHead/PageHead.js");
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
 /* harmony import */ var _Contact_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Contact.css */ "./resources/js/Pages/Contact/Contact.css");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 
@@ -3229,6 +3251,16 @@ __webpack_require__.r(__webpack_exports__);
 var Contact = function Contact(_ref) {
   var seo = _ref.seo,
       page = _ref.page;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.usePage)().props.localizations;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_8__.usePage)().props,
       errors = _usePage$props.errors,
       gphone = _usePage$props.gphone,
@@ -3238,29 +3270,29 @@ var Contact = function Contact(_ref) {
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__.Call, {
       color: "#1DBFCC"
     }),
-    text: "ტელეფონის ნომერი",
+    text: renderHTML(__('client.contact_phonenum', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     info: gphone.value
   }, {
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__.Mail, {
       color: "#1DBFCC"
     }),
-    text: "ელექტრონული ფოსტა",
+    text: renderHTML(__('client.contact_e_mail', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     info: gemail.value
   }, {
     icon: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_1__.Location, {
       color: "#1DBFCC"
     }),
-    text: "მისამართი",
+    text: renderHTML(__('client.contact_address', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     info: gaddress.value
   }];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Layouts_Layout__WEBPACK_IMPORTED_MODULE_7__["default"], {
     seo: seo
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "contactPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_4__.PageHead, {
-    title: "\u10D9\u10DD\u10DC\u10E2\u10D0\u10E5\u10E2\u10D8",
-    prev: "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
-    active: "\u10D9\u10DD\u10DC\u10E2\u10D0\u10E5\u10E2\u10D8"
+    title: renderHTML(__('client.contact_contact', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_contact', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3270,25 +3302,25 @@ var Contact = function Contact(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__.Title2, {
-    text: "\u10D7\u10E3 \u10D2\u10D0\u10E5\u10D5\u10D7 \u10D9\u10D8\u10D7\u10EE\u10D5\u10D4\u10D1\u10D8 \u10DB\u10DD\u10D2\u10D5\u10EC\u10D4\u10E0\u10D4\u10D7"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0,"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
+    text: renderHTML(__('client.contact_anyquestion', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.contact_anyquestion_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    placeholder: "\u10E1\u10D0\u10EE\u10D4\u10DA\u10D8 \u10D3\u10D0 \u10D2\u10D5\u10D0\u10E0\u10D8"
+    placeholder: __('client.contact_form_name', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    placeholder: "\u10E2\u10D4\u10DA\u10D4\u10E4\u10DD\u10DC\u10D8\u10E1 \u10DC\u10DD\u10DB\u10D4\u10E0\u10D8"
+    placeholder: __('client.contact_form_phone', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("input", {
     type: "text",
-    placeholder: "\u10D4\u10DA\u10D4\u10E5\u10E2\u10E0\u10DD\u10DC\u10E3\u10DA\u10D8 \u10E4\u10DD\u10E1\u10E2\u10D0"
+    placeholder: __('client.contact_form_email', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("textarea", {
-    placeholder: "\u10E8\u10D4\u10E2\u10E7\u10DD\u10D1\u10D8\u10DC\u10D4\u10D1\u10D0"
+    placeholder: __('client.contact_form_massage', sharedData)
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__.MainBtn, {
-    text: "\u10D2\u10D0\u10D2\u10D6\u10D0\u10D5\u10DC\u10D0"
+    text: renderHTML(__('client.contact_sendbtn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_5__.Title2, {
-    text: "\u10E1\u10D0\u10D9\u10DD\u10DC\u10E2\u10D0\u10E5\u10E2\u10DD \u10D8\u10DC\u10E4\u10DD\u10E0\u10DB\u10D0\u10EA\u10D8\u10D0"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0,"), contactInfo.map(function (info) {
+    text: renderHTML(__('client.contact_info', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.contactinfo_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), contactInfo.map(function (info) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "flex contact_info"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3320,6 +3352,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
 /* harmony import */ var _components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Pagination/Pagination */ "./resources/js/components/Pagination/Pagination.js");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 
@@ -3337,11 +3370,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var Gallery = function Gallery(_ref) {
   var seo = _ref.seo,
       images = _ref.images,
       links = _ref.links;
-  // const { images, links, name } = usePage().props;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.localizations; // const { images, links, name } = usePage().props;
+
   console.log(images);
   var photos = [{
     img: "/assets/images/doctors/3.png",
@@ -3385,9 +3429,9 @@ var Gallery = function Gallery(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "galleryPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
-    title: "\u10D2\u10D0\u10DA\u10D4\u10E0\u10D4\u10D0",
-    prev: "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
-    active: "\u10D2\u10D0\u10DA\u10D4\u10E0\u10D4\u10D0"
+    title: renderHTML(__('client.gallery_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper main "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3397,7 +3441,7 @@ var Gallery = function Gallery(_ref) {
       key: i,
       className: "img",
       style: {
-        gridColumn: "span ".concat(1)
+        gridColumn: "span ".concat(photo.width)
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: links + "/" + photo.name
@@ -3427,6 +3471,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
  // import Doctor1 from "/assets/images/doctors/1.png";
 // import Doctor2 from "/assets/images/doctors/2.png";
 // import Check from "/assets/images/icons/service/check.svg";
@@ -3437,15 +3483,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var DoctorsHome = function DoctorsHome(_ref) {
   var seo = _ref.seo,
       info = _ref.info;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props.localizations;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_4___default().init({
       duration: 2000
     });
   }, []);
-  var checks = ["პროფესიონალიზმი", "პასუხისმგებლობის მაღალი გრძნობა", "დიდი გამოცდილება", "საქმის სიყვარული"];
+  var checks = [renderHTML(__('client.doctors_proffesionalism', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_responsibility', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_experience', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), renderHTML(__('client.doctors_love', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "doctorsHome wrapper flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3466,10 +3524,10 @@ var DoctorsHome = function DoctorsHome(_ref) {
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title1, {
-    largeText: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, "lorem ipsum dolor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    largeText: renderHTML(__('client.doctors_ourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", null, renderHTML(__('client.doctors_title', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "p"
-  }, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__('client.doctors_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "checks"
   }, checks.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
@@ -3480,7 +3538,7 @@ var DoctorsHome = function DoctorsHome(_ref) {
     })), item);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
     link: route("client.doctors.index"),
-    text: "\u10DC\u10D0\u10EE\u10D4 \u10E1\u10E0\u10E3\u10DA\u10D0\u10D3"
+    text: renderHTML(__('client.doctors_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   })));
 };
 
@@ -3524,7 +3582,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var GalleryHome = function GalleryHome() {
+var GalleryHome = function GalleryHome(props) {
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.usePage)().props.localizations;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_4___default().init({
       duration: 2000
@@ -3555,23 +3622,22 @@ var GalleryHome = function GalleryHome() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "GalleryHome wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_1__.Title1, {
-    largeText: "\u10E4\u10DD\u10E2\u10DD \u10D2\u10D0\u10DA\u10D4\u10E0\u10D4\u10D0"
+    largeText: renderHTML(__('client.gallery_photogallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "photo_grid",
     "data-aos": "fade-up"
-  }, images.map(function (img, i) {
+  }, props.img.map(function (img, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       key: i,
       className: "img",
       style: {
-        gridColumn: "span ".concat(img.span)
+        gridColumn: "span ".concat(img.width)
       }
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: img.src,
-      alt: ""
+      src: props.links + "/" + img.name
     }));
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__.MainBtn, {
-    text: "\u10DC\u10D0\u10EE\u10D4 \u10E1\u10E0\u10E3\u10DA\u10D0\u10D3",
+    text: renderHTML(__('client.gallery_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     link: route("client.gallery.index")
   }));
 };
@@ -3751,7 +3817,10 @@ var Home = function Home(_ref) {
   var page = _ref.page,
       seo = _ref.seo,
       images = _ref.images,
-      slider = _ref.slider;
+      slider = _ref.slider,
+      blog = _ref.blog,
+      gallery = _ref.gallery,
+      links = _ref.links;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_8___default().init({
       duration: 2000
@@ -3763,7 +3832,12 @@ var Home = function Home(_ref) {
     className: "homePage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_HeroSlider_HeroSlider__WEBPACK_IMPORTED_MODULE_3__["default"], {
     slider: slider
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_GalleryHome_GalleryHome__WEBPACK_IMPORTED_MODULE_2__["default"], null)));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_ServiceHome_ServiceHome__WEBPACK_IMPORTED_MODULE_6__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DoctorsHome_DoctorsHome__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsHome_NewsHome__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    news: blog
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_GalleryHome_GalleryHome__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    img: gallery,
+    links: links
+  })));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
@@ -3788,10 +3862,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
 /* harmony import */ var _NewsHome_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NewsHome.css */ "./resources/js/Pages/Home/NewsHome/NewsHome.css");
 /* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
-/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 
@@ -3808,9 +3883,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var NewsHome = function NewsHome() {
+
+var NewsHome = function NewsHome(props) {
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.usePage)().props.localizations;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    aos__WEBPACK_IMPORTED_MODULE_8___default().init({
+    aos__WEBPACK_IMPORTED_MODULE_7___default().init({
       duration: 2000
     });
   }, []);
@@ -3860,40 +3945,39 @@ var NewsHome = function NewsHome() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "head flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_4__.Title1, {
-    largeText: "\u10D0\u10EE\u10D0\u10DA\u10D8 \u10D0\u10DB\u10D1\u10D4\u10D1\u10D8",
-    subtitle: "\u10E1\u10D8\u10D0\u10EE\u10DA\u10D4\u10D4\u10D1\u10D8"
+    largeText: renderHTML(__('client.news_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    subtitle: renderHTML(__('client.news_siaxeebi', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_3__.MainBtn, {
     link: route("client.news.index"),
-    text: "\u10E7\u10D5\u10D4\u10DA\u10D0 \u10E1\u10D8\u10D0\u10EE\u10DA\u10D4"
+    text: renderHTML(__('client.news_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "news_slider flex",
     "data-aos": "fade-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_elastic_carousel__WEBPACK_IMPORTED_MODULE_1__["default"], {
     breakPoints: breakPoints
-  }, newsData.map(function (item, i) {
+  }, props.news.map(function (item, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "news_box",
       key: i
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: item.img,
-      alt: ""
+      src: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "content"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "status"
-    }, item.status), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    }, item.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "date"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
       alt: ""
     })), item.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "caption"
-    }, item.caption), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.Link, {
-      href: "/",
+    }, item.short_description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.Link, {
+      href: route("client.news.show", item.id),
       className: "link "
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "\u10E1\u10E0\u10E3\u10DA\u10D0\u10D3 \u10DC\u10D0\u10EE\u10D5\u10D0 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, renderHTML(__('client.news_post_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "plus"
     }, "+")))));
   }))));
@@ -3922,6 +4006,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var aos_dist_aos_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! aos/dist/aos.css */ "./node_modules/aos/dist/aos.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
  // import Icon1 from "/assets/images/icons/service/1.png";
@@ -3934,10 +4020,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var ServiceHome = function ServiceHome(_ref) {
   var page = _ref.page,
       seo = _ref.seo,
       images = _ref.images;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_7__.usePage)().props.localizations;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_5___default().init({
       duration: 2000
@@ -3945,23 +4043,23 @@ var ServiceHome = function ServiceHome(_ref) {
   }, []);
   var serviceBoxData = [{
     icon: "/assets/images/icons/service/1.png",
-    title: "მეანობა",
-    para: "შემთხვევითად გენერირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებს, რეალურთან ",
+    title: renderHTML(__('client.services_1', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_1_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#e4feff7d"
   }, {
     icon: "/assets/images/icons/service/2.png",
-    title: "ანტენატალური მეთვალყურეობა",
-    para: " შემთხვევითად გენერ, ირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნსირებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრეალუ",
+    title: renderHTML(__('client.services_2', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_2_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#efefef7b"
   }, {
     icon: "/assets/images/icons/service/3.png",
-    title: "გინეკოლოგიური მომსახურება",
-    para: "რებული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე ",
+    title: renderHTML(__('client.services_3', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_3_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#efefef7b"
   }, {
     icon: "/assets/images/icons/service/4.png",
-    title: "სრულფასოვანი ლაბორატორიული კვლევა",
-    para: " რებული ტექსტი ული ტექსტი ული ტექსტი ეხმარება დიზაინერებს და ტიპოგრაფიული ნაწარმის შემქმნელებსრე",
+    title: renderHTML(__('client.services_4', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    para: renderHTML(__('client.services_4_txt', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     background: "#e4feff7d"
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3970,17 +4068,17 @@ var ServiceHome = function ServiceHome(_ref) {
     className: "wrapper flex content"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "left"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E9\u10D5\u10D4\u10DC \u10E8\u10D4\u10E1\u10D0\u10EE\u10D4\u10D1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "lorem ipsum dolor"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D8\u10D7\u10D0\u10D3 \u10D2\u10D4\u10DC\u10D4\u10E0\u10D8\u10E0\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8 \u10D4\u10EE\u10DB\u10D0\u10E0\u10D4\u10D1\u10D0 \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D4\u10D1\u10E1 \u10D3\u10D0 \u10E2\u10D8\u10DE\u10DD\u10D2\u10E0\u10D0\u10E4\u10D8\u10E3\u10DA\u10D8 \u10DC\u10D0\u10EC\u10D0\u10E0\u10DB\u10D8\u10E1 \u10E8\u10D4\u10DB\u10E5\u10DB\u10DC\u10D4\u10DA\u10D4\u10D1\u10E1, \u10E0\u10D4\u10D0\u10DA\u10E3\u10E0\u10D7\u10D0\u10DC \u10DB\u10D0\u10E5\u10E1\u10D8\u10DB\u10D0\u10DA\u10E3\u10E0\u10D0\u10D3 \u10DB\u10D8\u10D0\u10EE\u10DA\u10DD\u10D4\u10D1\u10E3\u10DA\u10D8 \u10E8\u10D0\u10D1\u10DA\u10DD\u10DC\u10D8 \u10EC\u10D0\u10E0\u10E3\u10D3\u10D2\u10D8\u10DC\u10DD\u10DC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10E8\u10D4\u10DB\u10E4\u10D0\u10E1\u10D4\u10D1\u10D4\u10DA\u10E1. \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3\u10D0\u10D0 \u10E8\u10D4\u10DB\u10D7\u10EE\u10D5\u10D4\u10D5\u10D0, \u10E0\u10DD\u10D3\u10D4\u10E1\u10D0\u10EA \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D8\u10E1 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D8\u10E1\u10D0\u10E1 \u10E1\u10D0\u10E9\u10D5\u10D4\u10DC\u10D4\u10D1\u10D4\u10DA\u10D8\u10D0, \u10D7\u10E3 \u10E0\u10DD\u10D2\u10DD\u10E0\u10D8 \u10D8\u10E5\u10DC\u10D4\u10D1\u10D0 \u10E2\u10D4\u10E5\u10E1\u10E2\u10D8\u10E1 \u10D1\u10DA\u10DD\u10D9\u10D8. \u10E1\u10EC\u10DD\u10E0\u10D4\u10D3 \u10D0\u10E1\u10D4\u10D7 \u10D3\u10E0\u10DD\u10E1 \u10D0\u10E0\u10D8\u10E1 \u10DB\u10DD\u10E1\u10D0\u10EE\u10D4\u10E0\u10EE\u10D4\u10D1\u10D4\u10DA\u10D8 \u10D0\u10DB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.services_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, renderHTML(__('client.services_title', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.services_short_description', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.services_description', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_1__.MainBtn, {
     link: route("client.about.index"),
-    text: "\u10D2\u10D0\u10D8\u10D2\u10D4 \u10DB\u10D4\u10E2\u10D8"
+    text: renderHTML(__('client.services_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title1, {
-    largeText: "\u10E1\u10D4\u10E0\u10D5\u10D8\u10E1\u10D4\u10D1\u10D8",
-    subtitle: "\u10E9\u10D5\u10D4\u10DC \u10D2\u10D7\u10D0\u10D5\u10D0\u10D6\u10DD\u10D1\u10D7"
+    largeText: renderHTML(__('client.services_services', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    subtitle: renderHTML(__('client.services_offer', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
     className: "p"
-  }, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__('client.services_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "service_grid",
     "data-aos": "fade-left"
   }, serviceBoxData.map(function (box, i) {
@@ -4018,9 +4116,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _News_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./News.css */ "./resources/js/Pages/News/News.css");
 /* harmony import */ var _components_Pagination_Pagination__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../components/Pagination/Pagination */ "./resources/js/components/Pagination/Pagination.js");
 /* harmony import */ var _assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../assets/images/icons/contact/contactIcons */ "./public/assets/images/icons/contact/contactIcons.js");
-/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
-/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-/* harmony import */ var _components_Pagination_Pagination_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../components/Pagination/Pagination.css */ "./resources/js/components/Pagination/Pagination.css");
+/* harmony import */ var _components_Pagination_Pagination_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../components/Pagination/Pagination.css */ "./resources/js/components/Pagination/Pagination.css");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
 
@@ -4038,7 +4136,18 @@ var News = function News(_ref) {
   var seo = _ref.seo,
       page = _ref.page,
       news = _ref.news,
-      blog = _ref.blog;
+      blog = _ref.blog,
+      gephone = _ref.gephone;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.usePage)().props.localizations;
 
   var links = function links(_links) {
     var rows = []; //links.shift();
@@ -4047,7 +4156,7 @@ var News = function News(_ref) {
     {
       _links.map(function (item, index) {
         if (index > 0 && index < _links.length - 1) {
-          rows.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.Link, {
+          rows.push( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.Link, {
             href: item.url,
             className: item.active ? "pageNum active" : "pageNum"
           }, item.label));
@@ -4066,7 +4175,7 @@ var News = function News(_ref) {
         rowCount++;
       }
     });
-    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.Link, {
+    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.Link, {
       href: links[0].url
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       className: "arrow",
@@ -4085,7 +4194,7 @@ var News = function News(_ref) {
         rowCount++;
       }
     });
-    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_9__.Link, {
+    return rowCount > 1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.Link, {
       href: links[links.length - 1].url
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       className: "arrow",
@@ -4119,9 +4228,9 @@ var News = function News(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "newsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
-    title: "\u10E1\u10D8\u10D0\u10EE\u10DA\u10D4\u10D4\u10D1\u10D8",
-    prev: "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
-    active: "\u10E1\u10D8\u10D0\u10EE\u10DA\u10D4\u10D4\u10D1\u10D8"
+    title: renderHTML(__('client.news_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_news', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2 flex main"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4143,7 +4252,7 @@ var News = function News(_ref) {
   }, links(blog.links)), linksNext(blog.links))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_3__.Title3, {
-    text: "\u10D2\u10D0\u10DA\u10D4\u10E0\u10D4\u10D0"
+    text: renderHTML(__('client.news_gallery', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img_grid"
   }, imgGrid.map(function (img, i) {
@@ -4153,7 +4262,7 @@ var News = function News(_ref) {
       alt: ""
     });
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_4__.ConsultBox, {
-    content: "\u10D9\u10DD\u10DC\u10E1\u10E3\u10DA\u10E2\u10D0\u10EA\u10D8\u10D0\u10D6\u10D4 \u10E9\u10D0\u10E1\u10D0\u10EC\u10D4\u10E0\u10D0\u10D3 \u10D3\u10D0\u10D2\u10D5\u10D8\u10D9\u10D0\u10D5\u10E8\u10D8\u10E0\u10D3\u10D8\u10D7",
+    content: renderHTML(__('client.news_contactifo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     number: "+995 032 2 111 111"
   })))));
 };
@@ -4177,13 +4286,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NewsItem_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NewsItem.css */ "./resources/js/Pages/News/NewsItem/NewsItem.css");
 /* harmony import */ var _assets_images_icons_news_calendar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../assets/images/icons/news/calendar.svg */ "./public/assets/images/icons/news/calendar.svg");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
  // import { Link } from "react-router-dom";
 
 
 
+
 var NewsItem = function NewsItem(props) {
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.usePage)().props.localizations;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "news_item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4201,7 +4321,7 @@ var NewsItem = function NewsItem(props) {
   }), props.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_3__.Link, {
     href: route("client.news.show", props.id),
     className: "more"
-  }, "\u10E1\u10E0\u10E3\u10DA\u10D0\u10D3 \u10DC\u10D0\u10EE\u10D5\u10D0 ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+  }, renderHTML(__('client.news_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "plus"
   }, "+"))));
 };
@@ -4226,6 +4346,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Titles/Titles */ "./resources/js/components/Titles/Titles.js");
 /* harmony import */ var _OurDoctors_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./OurDoctors.css */ "./resources/js/Pages/OurDoctors/OurDoctors.css");
 /* harmony import */ var _Layouts_Layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../Layouts/Layout */ "./resources/js/Layouts/Layout.js");
+/* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
 
 
  // import Doctor1 from "/assets/images/doctors/3.png";
@@ -4240,9 +4362,21 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 var OurDoctors = function OurDoctors(_ref) {
   var seo = _ref.seo,
       doctor = _ref.doctor;
+
+  var renderHTML = function renderHTML(rawHTML) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      dangerouslySetInnerHTML: {
+        __html: rawHTML
+      }
+    });
+  };
+
+  var sharedData = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_5__.usePage)().props.localizations;
   var doctors = [{
     img: "/assets/images/doctors/3.png",
     name: "სახელი გვარი",
@@ -4298,15 +4432,15 @@ var OurDoctors = function OurDoctors(_ref) {
     className: "ourDoctorsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
     title: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8",
-    prev: "\u10DB\u10D7\u10D0\u10D5\u10D0\u10E0\u10D8",
-    active: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8"
+    prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
+    active: renderHTML(__('client.nav_doctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "heading"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title3, {
-    text: "\u10D2\u10D0\u10D8\u10EA\u10D0\u10DC\u10D8\u10D7 \u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, "\u10D3\u10D4\u10D5\u10D4\u10DA\u10DD\u10DE\u10D4\u10E0\u10D8\u10E1 \u10D0\u10DC \u10D3\u10D8\u10D6\u10D0\u10D8\u10DC\u10D4\u10E0\u10D8\u10E1 \u10E7\u10DD\u10D5\u10D4\u10DA\u10D3\u10E6\u10D8\u10E3\u10E0 \u10E1\u10D0\u10E5\u10DB\u10D8\u10D0\u10DC\u10DD\u10D1\u10D0\u10E8\u10D8 \u10EE\u10E8\u10D8\u10E0\u10D0\u10D3 \u10D0\u10E0\u10D8\u10E1 \u10EE\u10DD\u10DA\u10DB\u10D4 \u10E1\u10D0\u10ED\u10D8\u10E0\u10DD \u10D8\u10E1\u10D4\u10D7\u10D8 \u10D0\u10DB\u10DD\u10EA\u10D0\u10DC\u10D4\u10D1\u10D8\u10E1 \u10DB\u10D0\u10E0\u10E2\u10D8\u10D5\u10D0\u10D3 \u10E8\u10D4\u10E1\u10E0\u10E3\u10DA\u10D4\u10D1\u10D0, \u10E0\u10DD\u10DB\u10D4\u10DA\u10E1\u10D0\u10EA \u10E1\u10DE\u10D4\u10EA\u10D8\u10E4\u10D8\u10E3\u10E0\u10D8 \u10D8\u10DC\u10E1\u10E2\u10E0\u10E3\u10DB\u10D4\u10DC\u10E2\u10D8 \u10ED\u10D8\u10E0\u10D3\u10D4\u10D1\u10D0. \u10D0\u10E1\u10D4\u10D7\u10D8")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    text: renderHTML(__('client.doctors_ourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.doctors_main_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "grid"
   }, doctor.map(function (doctor, index) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4603,7 +4737,7 @@ var Footer = function Footer() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/header/logo2.png",
     alt: ""
-  }), "\u10D0\u10EE\u10D0\u10DA\u10D8 N2 \u10E1\u10D0\u10DB\u10E8\u10DD\u10D1\u10D8\u10D0\u10E0\u10DD \u10E1\u10D0\u10EE\u10DA\u10D8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_3__.SocialMedia, {
+  }), renderHTML(__('client.home_logo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SocialMedia_SocialMedia__WEBPACK_IMPORTED_MODULE_3__.SocialMedia, {
     color: "#171C26"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "content flex"
@@ -4616,7 +4750,7 @@ var Footer = function Footer() {
     }, nav.nav);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "right"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "\u10E1\u10D0\u10D9\u10DD\u10DC\u10E2\u10D0\u10E5\u10E2\u10DD \u10D8\u10DC\u10E4\u10DD\u10E0\u10DB\u10D0\u10EA\u10D8\u10D0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, renderHTML(__('client.footer_contactinfo', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "/"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_assets_images_icons_contact_contactIcons__WEBPACK_IMPORTED_MODULE_4__.Call, {
     color: "#171C26"

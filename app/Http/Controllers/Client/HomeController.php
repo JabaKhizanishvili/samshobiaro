@@ -21,11 +21,15 @@ class HomeController extends Controller
     public function index()
     {
         $page = Page::where('key', 'home')->firstOrFail();
-        $news = News::where("status", 1)->with(['file', 'translations'])->take(6)->get();
+        $news = Blog::where("status", 1)->with(['file', 'translations'])->take(6)->get();
 
         return Inertia::render('Home/Home', [
             "slider" => Slider::where("status", 1)->with(['file', 'translations'])->get(),
-            "news" => $news, "seo" => [
+            "news" => $news,
+            "blog" =>  Blog::with('latestImage')->get(),
+            'gallery' => Gallery::take(8)->get(),
+            "links" => asset('storage/images'),
+            "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
                 "keywords" => $page->meta_keyword,
