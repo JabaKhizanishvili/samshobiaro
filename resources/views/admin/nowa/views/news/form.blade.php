@@ -87,7 +87,7 @@
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.date')</label>
-                                                <input type="text" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->date ?? ''}}">
+                                                <input type="date" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->date ?? ''}}">
                                             </div>
                                             @error($locale.'.date')
                                             <small class="text-danger">
