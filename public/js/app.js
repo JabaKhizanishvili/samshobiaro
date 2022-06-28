@@ -4554,7 +4554,28 @@ __webpack_require__.r(__webpack_exports__);
 var SingleNews = function SingleNews(_ref) {
   var seo = _ref.seo,
       news = _ref.news,
-      newsGallery = _ref.newsGallery;
+      newsGallery = _ref.newsGallery,
+      currentlocale = _ref.currentlocale;
+
+  var date = function date() {
+    var tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი'];
+    var tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var z = news.created_at.split("-");
+    z[2] = z[2].split(":");
+    z[2] = z[2][0].slice(0, z[2][0].search("T"));
+
+    if (z[1].length == 2 && z[1][0] == 0) {
+      z[1] = z[1].slice(1);
+    }
+
+    if (currentlocale == 'ge') {
+      z[1] = tveebi[z[1] - 1];
+      return z;
+    } else if (currentlocale == 'en') {
+      z[1] = tveebi1[z[1] - 1];
+      return z;
+    } else return z;
+  };
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -4606,7 +4627,7 @@ var SingleNews = function SingleNews(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
     src: "/assets/images/icons/news/calendar.svg",
     alt: ""
-  }), news.date), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
+  }), "".concat(date()[0], " ").concat(date()[1], ", ").concat(date()[2])), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_6__.Link, {
     href: route("client.news.index"),
     className: "return"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -4620,9 +4641,31 @@ var SingleNews = function SingleNews(_ref) {
     className: "right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_Titles_Titles__WEBPACK_IMPORTED_MODULE_2__.Title3, {
     text: renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
-  }), newsGallery.map(function (item) {
+  }), newsGallery.map(function (item, i) {
+    var tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი'];
+    var tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    var date = function date() {
+      var z = item.created_at.split("-");
+      z[2] = z[2].split(":");
+      z[2] = z[2][0].slice(0, z[2][0].search("T"));
+
+      if (z[1].length == 2 && z[1][0] == 0) {
+        z[1] = z[1].slice(1);
+      }
+
+      if (currentlocale == 'ge') {
+        z[1] = tveebi[z[1] - 1];
+        return z;
+      } else if (currentlocale == 'en') {
+        z[1] = tveebi1[z[1] - 1];
+        return z;
+      } else return z;
+    };
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "flex other_news"
+      className: "flex other_news",
+      key: i
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
       className: "img"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
@@ -4638,7 +4681,7 @@ var SingleNews = function SingleNews(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: "/assets/images/icons/news/calendar.svg",
       alt: ""
-    }), " ", item.date)));
+    }), " ", "".concat(date()[0], " ").concat(date()[1], ", ").concat(date()[2]))));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_ConsultBox_ConsultBox__WEBPACK_IMPORTED_MODULE_3__.ConsultBox, {
     content: renderHTML(__('client.singlenews_contactus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     number: gphone.value

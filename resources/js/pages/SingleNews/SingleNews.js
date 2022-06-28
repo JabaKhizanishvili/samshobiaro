@@ -15,11 +15,28 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const SingleNews = ({ seo, news, newsGallery }) => {
+const SingleNews = ({ seo, news, newsGallery, currentlocale }) => {
+    const date = () => {
+        const tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი']
+        const tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        let z = news.created_at.split("-");
+        z[2] = z[2].split(":");
+        z[2] = z[2][0].slice(0, z[2][0].search("T"));
+        if (z[1].length == 2 && z[1][0] == 0) {
+            z[1] = z[1].slice(1);
+        }
+        if (currentlocale == 'ge') {
+            z[1] = tveebi[z[1] - 1];
+            return z;
+        } else if (currentlocale == 'en') {
+            z[1] = tveebi1[z[1] - 1];
+            return z;
+        } else return z
+
+    }
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
     const { errors, gphone, gemail, gaddress } = usePage().props;
-
     const otherNews = [
         {
             img: "/assets/images/news/5.png",
@@ -68,7 +85,7 @@ const SingleNews = ({ seo, news, newsGallery }) => {
                         <div className="flex">
                             <div className="date">
                                 <img src="/assets/images/icons/news/calendar.svg" alt="" />
-                                {news.date}
+                                {`${date()[0]} ${date()[1]}, ${date()[2]}`}
                             </div>
                             <Link href={route("client.news.index")} className="return">
                                 <img
@@ -82,9 +99,27 @@ const SingleNews = ({ seo, news, newsGallery }) => {
                     </div>
                     <div className="right">
                         <Title3 text={renderHTML(__('client.singlenews_lastadded', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
-                        {newsGallery.map((item) => {
+                        {newsGallery.map((item, i) => {
+                            const tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი']
+                            const tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                            const date = () => {
+                                let z = item.created_at.split("-");
+                                z[2] = z[2].split(":");
+                                z[2] = z[2][0].slice(0, z[2][0].search("T"));
+                                if (z[1].length == 2 && z[1][0] == 0) {
+                                    z[1] = z[1].slice(1);
+                                }
+                                if (currentlocale == 'ge') {
+                                    z[1] = tveebi[z[1] - 1];
+                                    return z;
+                                } else if (currentlocale == 'en') {
+                                    z[1] = tveebi1[z[1] - 1];
+                                    return z;
+                                } else return z
+
+                            }
                             return (
-                                <div className="flex other_news">
+                                <div className="flex other_news" key={i}>
                                     <div className="img">
                                         <img src={item.latest_image != null
                                             ? "/" +
@@ -98,7 +133,7 @@ const SingleNews = ({ seo, news, newsGallery }) => {
                                             {item.short_description}
                                         </div>
                                         <div className="date">
-                                            <img src="/assets/images/icons/news/calendar.svg" alt="" /> {item.date}
+                                            <img src="/assets/images/icons/news/calendar.svg" alt="" /> {`${date()[0]} ${date()[1]}, ${date()[2]}`}
                                         </div>
                                     </div>
                                 </div>
