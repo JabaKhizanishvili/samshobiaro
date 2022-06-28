@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\PageSection;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,5 +15,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call([
+            LanguageSeeder::class,
+            PageSeeder::class,
+            PageSectionSeeder::class,
+            SettingSeeder::class,
+            UserSeeder::class,
+        ]);
     }
 }

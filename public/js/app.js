@@ -3066,11 +3066,7 @@ __webpack_require__.r(__webpack_exports__);
 
  // import Check from "../../assets/images/icons/service/check.svg";
 
- // import Img1 from "../../assets/images/about/1.png";
-// import Img2 from "../../assets/images/about/2.png";
-// import Img3 from "../../assets/images/about/3.png";
-// import Img4 from "../../assets/images/about/4.png";
-// import Icon1 from "../../assets/images/icons/service/1.png";
+ // import Icon1 from "../../assets/images/icons/service/1.png";
 // import Icon2 from "../../assets/images/icons/service/2.png";
 // import Icon3 from "../../assets/images/icons/service/3.png";
 // import Icon4 from "../../assets/images/icons/service/4.png";
@@ -3085,7 +3081,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var AboutUs = function AboutUs(_ref) {
   var seo = _ref.seo,
-      page = _ref.page;
+      page = _ref.page,
+      images = _ref.images;
+  console.log(images);
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3140,7 +3138,14 @@ var AboutUs = function AboutUs(_ref) {
     prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     active: renderHTML(__('client.nav_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "showcase"
+    className: "showcase",
+    style: {
+      background: "url(".concat(images[0], ") no-repeat"),
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      paddingTop: "72px",
+      paddingBottom: "124px"
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -3167,12 +3172,12 @@ var AboutUs = function AboutUs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/about/1.png",
+    src: images[1],
     alt: ""
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "img"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/about/2.png",
+    src: images[2],
     alt: ""
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", null, renderHTML(__('client.aboutus_whoarewe_1_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_MainBtn_MainBtn__WEBPACK_IMPORTED_MODULE_4__.MainBtn, {
     text: renderHTML(__('client.aboutus_whoarewe_btn', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
@@ -3184,7 +3189,7 @@ var AboutUs = function AboutUs(_ref) {
     className: "img",
     "data-aos": "flip-left"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/about/3.png",
+    src: images[3],
     alt: ""
   }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "about_service wrapper "
@@ -3195,7 +3200,7 @@ var AboutUs = function AboutUs(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     "data-aos": "fade-right"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/assets/images/about/4.png",
+    src: images[4],
     alt: "",
     style: {
       marginBottom: "30px"
@@ -4385,7 +4390,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var OurDoctors = function OurDoctors(_ref) {
   var seo = _ref.seo,
-      doctor = _ref.doctor;
+      doctor = _ref.doctor,
+      images = _ref.images;
 
   var renderHTML = function renderHTML(rawHTML) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
@@ -5489,7 +5495,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".aboutPage .showcase {\r\n    background: url(/assets/images/hero/3.png) no-repeat;\r\n    background-position: center;\r\n    background-size: cover;\r\n    padding-top: 72px;\r\n    padding-bottom: 124px;\r\n}\r\n\r\n.aboutPage .showcase h4 {\r\n    color: #1dbfcc;\r\n    font-size: 30px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.aboutPage .showcase .content {\r\n    max-width: 560px;\r\n    margin-right: 80px;\r\n    margin-left: auto;\r\n}\r\n\r\n.aboutPage .showcase .checks {\r\n    display: block;\r\n    margin-top: 30px;\r\n}\r\n\r\n.aboutPage .showcase .checks .item {\r\n    display: inline-block;\r\n    margin-bottom: 24px;\r\n    margin-right: 45px;\r\n}\r\n\r\n.aboutPage .showcase .checks span {\r\n    vertical-align: middle;\r\n    margin-right: 10px;\r\n}\r\n\r\n.aboutPage .section2 {\r\n    padding: 70px 0;\r\n    background-color: #f7f7f7;\r\n    margin-bottom: 56px;\r\n}\r\n\r\n.aboutPage .section2 .wrapper {\r\n    align-items: flex-start;\r\n}\r\n\r\n.aboutPage .section2 .lft {\r\n    margin-right: 170px;\r\n}\r\n\r\n.aboutPage .section2 .lft .img_flex {\r\n    height: 175px;\r\n    overflow: hidden;\r\n    margin: 30px 0;\r\n}\r\n\r\n.aboutPage .section2 .lft .img_flex .img {\r\n    height: 100%;\r\n    margin-right: 16px;\r\n}\r\n\r\n.aboutPage .section2 .lft .img_flex .img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n.aboutPage .section2 .lft .main_btn {\r\n    justify-content: center;\r\n    margin: auto;\r\n    margin-top: 35px;\r\n}\r\n\r\n.aboutPage .section2 .rgt .img {\r\n    width: 100%;\r\n    max-height: 386px;\r\n    overflow: hidden;\r\n    margin-top: 30px;\r\n}\r\n\r\n.aboutPage .section2 .rgt .img img {\r\n    width: 100%;\r\n    height: 100%;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\r\n}\r\n\r\n.aboutPage .about_service {\r\n    padding-bottom: 125px;\r\n}\r\n\r\n.aboutPage .service_box {\r\n    padding: 0;\r\n    width: 311px;\r\n}\r\n\r\n.aboutPage .service_box::after {\r\n    display: none;\r\n}\r\n\r\n.aboutPage .service_box:hover .title {\r\n    color: #171c26;\r\n}\r\n\r\n.aboutPage .service_box:hover .para {\r\n    color: #778197;\r\n}\r\n\r\n.aboutPage .about_service .grid {\r\n    display: grid;\r\n    grid-template-columns: repeat(2, 1fr);\r\n    grid-gap: 50px;\r\n}\r\n\r\n.aboutPage .about_service .flex div:first-child {\r\n    max-width: 596px;\r\n}\r\n\r\n@media screen and (max-width: 1400px) {\r\n    .aboutPage .about_service .grid {\r\n        margin-left: 40px;\r\n        grid-gap: 22px;\r\n    }\r\n\r\n    .aboutPage .section2 .lft {\r\n        margin-right: 40px;\r\n    }\r\n\r\n    .aboutPage .showcase {\r\n        background-position-x: -230px;\r\n    }\r\n\r\n    .aboutPage .showcase .content {\r\n        margin-right: 0;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .aboutPage .service_box {\r\n        width: 267px;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 1000px) {\r\n    .aboutPage .about_service {\r\n        padding-bottom: 71px;\r\n    }\r\n\r\n    .aboutPage .about_service .flex {\r\n        flex-direction: column;\r\n    }\r\n\r\n    .aboutPage .about_service .flex div:first-child {\r\n        max-width: none;\r\n    }\r\n\r\n    .aboutPage .about_service .grid {\r\n        margin-left: 0;\r\n        width: 100%;\r\n        margin-top: 40px;\r\n    }\r\n\r\n    .aboutPage .service_box {\r\n        width: 100%;\r\n    }\r\n\r\n    .aboutPage .section2 {\r\n        padding: 47px 0;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 900px) {\r\n    .aboutPage .section2 .wrapper {\r\n        flex-direction: column;\r\n    }\r\n\r\n    .aboutPage .section2 .lft {\r\n        margin-right: 0;\r\n        margin-bottom: 40px;\r\n    }\r\n\r\n    .aboutPage .section2 .lft .img_flex {\r\n        justify-content: flex-start;\r\n    }\r\n\r\n    .aboutPage .showcase {\r\n        background-position-x: unset;\r\n        background-position: right;\r\n    }\r\n\r\n    .aboutPage .showcase .content {\r\n        max-width: none;\r\n    }\r\n\r\n    .aboutPage .showcase .checks .item {\r\n        margin-bottom: 5px;\r\n        margin-right: 21px;\r\n    }\r\n\r\n    .aboutPage .showcase {\r\n        padding-top: 35px;\r\n        padding-bottom: 54px;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 700px) {\r\n    .aboutPage .about_service .grid {\r\n        grid-template-columns: 1fr;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 500px) {\r\n    .aboutPage .showcase h4 {\r\n        font-size: 26px;\r\n        margin-bottom: 8px;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* .aboutPage .showcase {\n    background: url(/assets/images/hero/3.png) no-repeat;\n    background-position: center;\n    background-size: cover;\n    padding-top: 72px;\n    padding-bottom: 124px;\n} */\n\n.aboutPage .showcase h4 {\n    color: #1dbfcc;\n    font-size: 30px;\n    margin-bottom: 20px;\n}\n\n.aboutPage .showcase .content {\n    max-width: 560px;\n    margin-right: 80px;\n    margin-left: auto;\n}\n\n.aboutPage .showcase .checks {\n    display: block;\n    margin-top: 30px;\n}\n\n.aboutPage .showcase .checks .item {\n    display: inline-block;\n    margin-bottom: 24px;\n    margin-right: 45px;\n}\n\n.aboutPage .showcase .checks span {\n    vertical-align: middle;\n    margin-right: 10px;\n}\n\n.aboutPage .section2 {\n    padding: 70px 0;\n    background-color: #f7f7f7;\n    margin-bottom: 56px;\n}\n\n.aboutPage .section2 .wrapper {\n    align-items: flex-start;\n}\n\n.aboutPage .section2 .lft {\n    margin-right: 170px;\n}\n\n.aboutPage .section2 .lft .img_flex {\n    height: 175px;\n    overflow: hidden;\n    margin: 30px 0;\n}\n\n.aboutPage .section2 .lft .img_flex .img {\n    height: 100%;\n    margin-right: 16px;\n}\n\n.aboutPage .section2 .lft .img_flex .img img {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n\n.aboutPage .section2 .lft .main_btn {\n    justify-content: center;\n    margin: auto;\n    margin-top: 35px;\n}\n\n.aboutPage .section2 .rgt .img {\n    width: 100%;\n    max-height: 386px;\n    overflow: hidden;\n    margin-top: 30px;\n}\n\n.aboutPage .section2 .rgt .img img {\n    width: 100%;\n    height: 100%;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n\n.aboutPage .about_service {\n    padding-bottom: 125px;\n}\n\n.aboutPage .service_box {\n    padding: 0;\n    width: 311px;\n}\n\n.aboutPage .service_box::after {\n    display: none;\n}\n\n.aboutPage .service_box:hover .title {\n    color: #171c26;\n}\n\n.aboutPage .service_box:hover .para {\n    color: #778197;\n}\n\n.aboutPage .about_service .grid {\n    display: grid;\n    grid-template-columns: repeat(2, 1fr);\n    grid-gap: 50px;\n}\n\n.aboutPage .about_service .flex div:first-child {\n    max-width: 596px;\n}\n\n@media screen and (max-width: 1400px) {\n    .aboutPage .about_service .grid {\n        margin-left: 40px;\n        grid-gap: 22px;\n    }\n\n    .aboutPage .section2 .lft {\n        margin-right: 40px;\n    }\n\n    .aboutPage .showcase {\n        background-position-x: -230px;\n    }\n\n    .aboutPage .showcase .content {\n        margin-right: 0;\n    }\n}\n\n@media screen and (max-width: 1200px) {\n    .aboutPage .service_box {\n        width: 267px;\n    }\n}\n\n@media screen and (max-width: 1000px) {\n    .aboutPage .about_service {\n        padding-bottom: 71px;\n    }\n\n    .aboutPage .about_service .flex {\n        flex-direction: column;\n    }\n\n    .aboutPage .about_service .flex div:first-child {\n        max-width: none;\n    }\n\n    .aboutPage .about_service .grid {\n        margin-left: 0;\n        width: 100%;\n        margin-top: 40px;\n    }\n\n    .aboutPage .service_box {\n        width: 100%;\n    }\n\n    .aboutPage .section2 {\n        padding: 47px 0;\n    }\n}\n\n@media screen and (max-width: 900px) {\n    .aboutPage .section2 .wrapper {\n        flex-direction: column;\n    }\n\n    .aboutPage .section2 .lft {\n        margin-right: 0;\n        margin-bottom: 40px;\n    }\n\n    .aboutPage .section2 .lft .img_flex {\n        justify-content: flex-start;\n    }\n\n    .aboutPage .showcase {\n        background-position-x: unset;\n        background-position: right;\n    }\n\n    .aboutPage .showcase .content {\n        max-width: none;\n    }\n\n    .aboutPage .showcase .checks .item {\n        margin-bottom: 5px;\n        margin-right: 21px;\n    }\n\n    .aboutPage .showcase {\n        padding-top: 35px;\n        padding-bottom: 54px;\n    }\n}\n\n@media screen and (max-width: 700px) {\n    .aboutPage .about_service .grid {\n        grid-template-columns: 1fr;\n    }\n}\n\n@media screen and (max-width: 500px) {\n    .aboutPage .showcase h4 {\n        font-size: 26px;\n        margin-bottom: 8px;\n    }\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

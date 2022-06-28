@@ -3,10 +3,6 @@ import { PageHead } from "../../components/PageHead/PageHead";
 import "./AboutUs.css";
 // import Check from "../../assets/images/icons/service/check.svg";
 import { Title2 } from "../../components/Titles/Titles";
-// import Img1 from "../../assets/images/about/1.png";
-// import Img2 from "../../assets/images/about/2.png";
-// import Img3 from "../../assets/images/about/3.png";
-// import Img4 from "../../assets/images/about/4.png";
 // import Icon1 from "../../assets/images/icons/service/1.png";
 // import Icon2 from "../../assets/images/icons/service/2.png";
 // import Icon3 from "../../assets/images/icons/service/3.png";
@@ -20,7 +16,8 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const AboutUs = ({ seo, page }) => {
+const AboutUs = ({ seo, page, images }) => {
+    console.log(images);
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
     useEffect(() => {
@@ -71,7 +68,13 @@ const AboutUs = ({ seo, page }) => {
         <Layout seo={seo}>
             <div className="aboutPage">
                 <PageHead title={renderHTML(__('client.aboutus_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_aboutus', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
-                <div className="showcase">
+                <div className="showcase" style={{
+                    background: `url(${images[0]}) no-repeat`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    paddingTop: "72px",
+                    paddingBottom: "124px",
+                }}>
                     <div className="wrapper">
                         <div className="content">
                             <h4>{renderHTML(__('client.aboutus_newhome', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}</h4>
@@ -102,10 +105,10 @@ const AboutUs = ({ seo, page }) => {
                             </p>
                             <div className="img_flex flex">
                                 <div className="img">
-                                    <img src="/assets/images/about/1.png" alt="" />
+                                    <img src={images[1]} alt="" />
                                 </div>
                                 <div className="img">
-                                    <img src="/assets/images/about/2.png" alt="" />
+                                    <img src={images[2]} alt="" />
                                 </div>
                             </div>
                             <p>
@@ -119,7 +122,7 @@ const AboutUs = ({ seo, page }) => {
                                 {renderHTML(__('client.aboutus_mission_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
                             <div className="img" data-aos="flip-left">
-                                <img src="/assets/images/about/3.png" alt="" />
+                                <img src={images[3]} alt="" />
                             </div>
                         </div>
                     </div>
@@ -128,7 +131,7 @@ const AboutUs = ({ seo, page }) => {
                     <Title2 text={renderHTML(__('client.aboutus_ourservice', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                     <div className="flex">
                         <div data-aos="fade-right">
-                            <img src="/assets/images/about/4.png" alt="" style={{ marginBottom: "30px" }} />
+                            <img src={images[4]} alt="" style={{ marginBottom: "30px" }} />
                             <p>
                                 {renderHTML(__('client.aboutus_ourservice_text', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))}
                             </p>
@@ -147,7 +150,7 @@ const AboutUs = ({ seo, page }) => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </Layout >
     );
 };
 

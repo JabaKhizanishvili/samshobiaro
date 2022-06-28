@@ -15,7 +15,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const OurDoctors = ({ seo, doctor }) => {
+const OurDoctors = ({ seo, doctor, images }) => {
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
 

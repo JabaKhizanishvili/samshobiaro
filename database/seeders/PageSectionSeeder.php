@@ -25,7 +25,8 @@ class PageSectionSeeder extends Seeder
                 'key' => 'doctors',
             ],
             [
-                'key' => 'news'
+                'key' => 'news',
+                'count' => 5
             ],
             [
                 'key' => 'contact'
@@ -34,7 +35,8 @@ class PageSectionSeeder extends Seeder
                 'key' => 'gallery'
             ],
             [
-                'key' => 'aboutus'
+                'key' => 'aboutus',
+                'count' => 5,
             ],
 
         ];

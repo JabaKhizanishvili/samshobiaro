@@ -86,10 +86,20 @@ class HomeController extends Controller
 
     public function doctors()
     {
-        $page = Page::where('key', 'home')->firstOrFail();
+        $page = Page::where('key', 'doctors')->firstOrFail();
+
+        $images = [];
+        foreach ($page->sections as $sections) {
+            if ($sections->file) {
+                $images[] = asset($sections->file->getFileUrlAttribute());
+            } else {
+                $images[] = null;
+            }
+        }
 
         return Inertia::render('OurDoctors/OurDoctors', [
             "doctor" => Doctor::with('latestImage')->get(),
+            "images" => $images,
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
@@ -156,7 +166,7 @@ class HomeController extends Controller
 
     public function tip($locale, $n)
     {
-        $page = Page::where('key', 'about')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
         return Inertia::render('SingleTip/Tip' . $n, ["seo" => [
             "title" => $page->meta_title,
@@ -180,7 +190,7 @@ class HomeController extends Controller
 
     public function doctor($locale, $n)
     {
-        $page = Page::where('key', 'about')->firstOrFail();
+        $page = Page::where('key', 'home')->firstOrFail();
 
         return Inertia::render('OurDoctors/Doctor' . $n, ["seo" => [
             "title" => $page->meta_title,
