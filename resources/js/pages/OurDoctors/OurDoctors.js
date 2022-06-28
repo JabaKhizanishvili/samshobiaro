@@ -88,7 +88,7 @@ const OurDoctors = ({ seo, doctor, images }) => {
     return (
         <Layout seo={seo}>
             <div className="ourDoctorsPage">
-                <PageHead title="ჩვენი ექიმები" prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_doctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
+                <PageHead title={renderHTML(__('client.doctors_yourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} prev={renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} active={renderHTML(__('client.nav_doctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />
                 <div className="wrapper2">
                     <div className="heading">
                         <Title3 text={renderHTML(__('client.doctors_ourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))} />

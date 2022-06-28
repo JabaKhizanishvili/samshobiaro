@@ -4456,7 +4456,7 @@ var OurDoctors = function OurDoctors(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "ourDoctorsPage"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_components_PageHead_PageHead__WEBPACK_IMPORTED_MODULE_1__.PageHead, {
-    title: "\u10E9\u10D5\u10D4\u10DC\u10D8 \u10D4\u10E5\u10D8\u10DB\u10D4\u10D1\u10D8",
+    title: renderHTML(__('client.doctors_yourdoctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     prev: renderHTML(__('client.nav_main', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>')),
     active: renderHTML(__('client.nav_doctors', sharedData).replace(/(?:\r\n|\r|\n)/g, '<br>'))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
