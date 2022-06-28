@@ -63,4 +63,10 @@ class Blog extends Model
     }
 
     protected $translationModel = BlogTranslation::class;
+
+
+    // public function getCreatedAtAttribute($date)
+    // {
+    //     $this->attributes['created_at'] = 'asdasd' . $date;
+    // }
 }

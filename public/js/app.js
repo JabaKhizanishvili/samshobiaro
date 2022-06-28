@@ -3827,7 +3827,8 @@ var Home = function Home(_ref) {
       slider = _ref.slider,
       blog = _ref.blog,
       gallery = _ref.gallery,
-      links = _ref.links;
+      links = _ref.links,
+      currentlocale = _ref.currentlocale;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     aos__WEBPACK_IMPORTED_MODULE_8___default().init({
       duration: 2000
@@ -4147,7 +4148,8 @@ var News = function News(_ref) {
       news = _ref.news,
       blog = _ref.blog,
       gallery = _ref.gallery,
-      gallerylinks = _ref.gallerylinks;
+      gallerylinks = _ref.gallerylinks,
+      currentlocale = _ref.currentlocale;
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_10__.usePage)().props,
       errors = _usePage$props.errors,
       gphone = _usePage$props.gphone,
@@ -4251,13 +4253,34 @@ var News = function News(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "news_list"
   }, blog.data.map(function (item, i) {
+    var tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი'];
+    var tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    var date = function date() {
+      var z = item.created_at.split("-");
+      z[2] = z[2].split(":");
+      z[2] = z[2][0].slice(0, z[2][0].search("T"));
+
+      if (z[1].length == 2 && z[1][0] == 0) {
+        z[1] = z[1].slice(1);
+      }
+
+      if (currentlocale == 'ge') {
+        z[1] = tveebi[z[1] - 1];
+        return z;
+      } else {
+        z[1] = tveebi1[z[1] - 1];
+        return z;
+      }
+    };
+
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
       key: i
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_NewsItem_NewsItem__WEBPACK_IMPORTED_MODULE_2__["default"], {
       imgSrc: item.latest_image != null ? "/" + item.latest_image.path + "/" + item.latest_image.title : null,
       title: item.name,
       paragraph: item.short_description,
-      date: item.date,
+      date: "".concat(date()[0], " ").concat(date()[1], ", ").concat(date()[2]),
       id: item.id
     }));
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {

@@ -85,7 +85,7 @@
                                             </small>
                                             @enderror
 
-                                            <div class="form-group">
+                                            {{-- <div class="form-group">
                                                 <label class="form-label">@lang('admin.date')</label>
                                                 <input type="date" name="{{$locale.'[date]'}}" class="form-control" placeholder="@lang('admin.date')" value="{{$blog->translate($locale)->date ?? ''}}">
                                             </div>
@@ -95,8 +95,19 @@
                                                     {{$message}}
                                                 </div>
                                             </small>
-                                            @enderror
+                                            @enderror --}}
+                                            <input type="hidden" name="{{$locale.'[date]'}}" id='dro'>
+                                            <script>
 
+                                                var dateObj = new Date();
+                                                var month = dateObj.getUTCMonth() + 1; //months from 1-12
+                                                var day = dateObj.getUTCDate();
+                                                var year = dateObj.getUTCFullYear();
+
+                                                const newdate = `${day} ${month} ${year}`;
+                                                var dro = document.getElementById('dro');
+                                                dro.value = newdate
+                                                </script>
 
                                             <div class="form-group">
                                                 <label class="form-label">@lang('admin.short_description')</label>

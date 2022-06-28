@@ -58,15 +58,7 @@ use Spatie\Searchable\SearchResult;
 class News extends Model implements Searchable
 {
     use SoftDeletes, Translatable, HasFactory, ScopeFilter;
-
-    /**
-     * @var string
-     */
     protected $table = 'news';
-
-    /**
-     * @var string[]
-     */
     protected $fillable = [
         'slug',
         'status',
@@ -116,25 +108,16 @@ class News extends Model implements Searchable
         );
     }
 
-    /**
-     * @return BelongsTo
-     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 
-    /**
-     * @return MorphMany
-     */
     public function files(): MorphMany
     {
         return $this->morphMany(File::class, 'fileable');
     }
 
-    /**
-     * @return MorphOne
-     */
     public function file(): MorphOne
     {
         return $this->morphOne(File::class, 'fileable');

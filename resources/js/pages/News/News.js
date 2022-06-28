@@ -12,8 +12,7 @@ import { Link, usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 
-const News = ({ seo, page, news, blog, gallery, gallerylinks }) => {
-
+const News = ({ seo, page, news, blog, gallery, gallerylinks, currentlocale }) => {
     const { errors, gphone, gemail, gaddress } = usePage().props;
     const renderHTML = (rawHTML) => React.createElement("div", { dangerouslySetInnerHTML: { __html: rawHTML } });
     const sharedData = usePage().props.localizations;
@@ -104,6 +103,23 @@ const News = ({ seo, page, news, blog, gallery, gallerylinks }) => {
                 <div className="wrapper2 flex main">
                     <div className="news_list">
                         {blog.data.map((item, i) => {
+                            const tveebi = ['იანვარი', 'თებერვალი', 'მარტი', 'აპრილი', 'მაისი', 'ივნისი', 'ივლისი', 'აგვისტო', 'სექტემბერი', 'ოქტომბერი', 'ნოემბერი', 'დეკემბერი']
+                            const tveebi1 = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+                            const date = () => {
+                                let z = item.created_at.split("-");
+                                z[2] = z[2].split(":");
+                                z[2] = z[2][0].slice(0, z[2][0].search("T"));
+                                if (z[1].length == 2 && z[1][0] == 0) {
+                                    z[1] = z[1].slice(1);
+                                }
+                                if (currentlocale == 'ge') {
+                                    z[1] = tveebi[z[1] - 1];
+                                    return z;
+                                } else {
+                                    z[1] = tveebi1[z[1] - 1];
+                                    return z;
+                                }
+                            }
                             return (
                                 <React.Fragment key={i}>
                                     <NewsItem
@@ -115,7 +131,7 @@ const News = ({ seo, page, news, blog, gallery, gallerylinks }) => {
                                             : null}
                                         title={item.name}
                                         paragraph={item.short_description}
-                                        date={item.date}
+                                        date={`${date()[0]} ${date()[1]}, ${date()[2]}`}
                                         id={item.id}
                                     />
                                 </React.Fragment>
