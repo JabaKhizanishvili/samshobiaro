@@ -4268,10 +4268,10 @@ var News = function News(_ref) {
       if (currentlocale == 'ge') {
         z[1] = tveebi[z[1] - 1];
         return z;
-      } else {
+      } else if (currentlocale == 'en') {
         z[1] = tveebi1[z[1] - 1];
         return z;
-      }
+      } else return z;
     };
 
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, {

@@ -115,10 +115,11 @@ const News = ({ seo, page, news, blog, gallery, gallerylinks, currentlocale }) =
                                 if (currentlocale == 'ge') {
                                     z[1] = tveebi[z[1] - 1];
                                     return z;
-                                } else {
+                                } else if (currentlocale == 'en') {
                                     z[1] = tveebi1[z[1] - 1];
                                     return z;
-                                }
+                                } else return z
+
                             }
                             return (
                                 <React.Fragment key={i}>
